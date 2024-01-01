@@ -46,9 +46,9 @@ const ContactForm = () => {
                 </SheetTrigger>
                 <SheetContent className="bg-white">
                     <SheetHeader>
-                        <SheetTitle>Let's have a talk</SheetTitle>
+                        <SheetTitle>Let`&apos;s have a talk</SheetTitle>
                         <SheetDescription>
-                            We're here to assist you in creating the perfect event. Reach out to us with any inquiries, collaborations, or just to say hello!
+                            We`&apos;re here to assist you in creating the perfect event. Reach out to us with any inquiries, collaborations, or just to say hello!
                         </SheetDescription>
                     </SheetHeader>
                     <div className="grid gap-4 py-4">

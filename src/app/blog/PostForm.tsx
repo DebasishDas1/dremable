@@ -6,6 +6,7 @@ import { db, storage } from '@/app/firebase'
 import { Button } from "@/components/ui/button"
 import { CameraAlt, Send } from '@mui/icons-material';
 import { DocumentData } from 'firebase/firestore';
+import Image from "next/image"
 
 const PostForm = () => {
     const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -91,7 +92,7 @@ const PostForm = () => {
                 {
                     imageState &&
                     <div className='flex flex-col filter hover:brightness-100 translate duration-150 transform scale-105 cursor-pointer p-2' onClick={removeImage}>
-                        <img className='w-full object-contain' src={imageState} alt='preview' />
+                        <Image className='w-full object-contain' src={imageState} alt='preview' width={100} height={100} />
                     </div>
                 }
             </div>

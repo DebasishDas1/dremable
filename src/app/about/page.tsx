@@ -15,7 +15,7 @@ const About = () => {
             <div className='flex flex-col md:w-[65%] w-[85%] items-center'>
                 <PageTitle title='Weaving threads of love' />
                 <div className="pb-10 text-stone-500 text-xl">
-                    Unveiling India's premier wedding orchestration platform
+                    Unveiling India`&apos;s premier wedding orchestration platform
                 </div>
                 <div>
                     One Stop Solution to Organize a Hustle free Dream Wedding to make
@@ -49,25 +49,25 @@ const About = () => {
                 </div>
                 <Title>What We Do ?</Title>
                 <div className='pb-2'>
-                    Love stories don't unfold in spreadsheets; they ignite in moments, in laughter, in tears of joy shared under a sky lit by a thousand dreams. We, at [Your Website Name], understand this. We believe your wedding shouldn't be a project to manage, but a
+                    Love stories don`&apos;t unfold in spreadsheets; they ignite in moments, in laughter, in tears of joy shared under a sky lit by a thousand dreams. We, at [Your Website Name], understand this. We believe your wedding shouldn`&apos;t be a project to manage, but a
                     symphony to orchestrate.
                 </div>
                 <div className='pb-2'>
-                    We're more than just an aggregator; we're your confidantes, your dream weavers, your
+                    We`&apos;re more than just an aggregator; we`&apos;re your confidantes, your dream weavers, your
                     trusted guides into the exquisite realm of creating an unforgettable wedding. Let go of
-                    the endless lists and frantic searching. Here, amidst curated excellence, you'll find every piece of your exquisite fairytale falling effortlessly into place.
+                    the endless lists and frantic searching. Here, amidst curated excellence, you`&apos;ll find every piece of your exquisite fairytale falling effortlessly into place.
                 </div>
                 <Title>From Spark to Sparkle</Title>
                 <div className='pb-2'>
                     It all began with a shared vision – to transform the wedding experience for those who
-                    truly appreciate the finer things. We, a team of passionate individuals who've seen the
+                    truly appreciate the finer things. We, a team of passionate individuals who`&apos;ve seen the
                     magic of love firsthand, envisioned a platform where discerning couples could discover
                     the best, hand-picked service providers, all under one roof.
                 </div>
                 <div className='pb-2'>
                     We meticulously combed through every detail, seeking those who not only possess
                     exceptional skill, but who share our unyielding commitment to artistry, impeccable
-                    service, and an unwavering dedication to exceeding expectations. Whether it's a
+                    service, and an unwavering dedication to exceeding expectations. Whether it`&apos;s a
                     whimsical garden soiree or a grand ballroom gala, our vendors are seasoned artists,
                     ready to paint your love story onto the canvas of your wedding day.
                 </div>
@@ -81,20 +81,20 @@ const About = () => {
                 <div className='pb-2'>
                     Picture this: a room overflowing with overflowing spreadsheets, phone calls bouncing
                     between caterers and decorators, faces etched with a tension that only the impending
-                    "Big Day" could conjure. Days turned into weeks, the joy of the coming nuptials
+                    `&apos;Big Day`&apos; could conjure. Days turned into weeks, the joy of the coming nuptials
                     swallowed by the logistical quagmire. Memories etched in anxiety replaced those
                     envisioned in laughter.
                 </div>
                 <div className='pb-2'>
-                    One such memory stands out. It was Aunt Sarah's wedding – the vibrant crimson
-                    lehenga overshadowed by a frantic search for the missing groom's cufflinks. The air,
+                    One such memory stands out. It was Aunt Sarah`&apos;s wedding – the vibrant crimson
+                    lehenga overshadowed by a frantic search for the missing groom`&apos;s cufflinks. The air,
                     thick with expectation, fractured by raised voices and misplaced deliveries. And amidst
                     the frantic dance of last-minute adjustments, we saw a glint of regret in her eyes, a
                     yearning for the pure joy the day was supposed to hold.
                 </div>
                 <div className='pb-2'>
                     It was in that moment, a collective spark ignited within us. We dreamt of a different
-                    reality, one where wedding planning wasn't a battle against an ever-growing hydra of
+                    reality, one where wedding planning wasn`&apos;t a battle against an ever-growing hydra of
                     details, but a waltz into a world of curated magic. We envisioned a platform where the
                     only hustle belonged to the dance floor, and the pressure was reserved for the
                     champagne corks.
@@ -106,8 +106,8 @@ const About = () => {
                     story unfolds in a flawlessly orchestrated masterpiece.
                 </div>
                 <div className='pb-2'>
-                    So, let go of the spreadsheets and the frantic calls. With us, your wedding isn't just a
-                    celebration; it's an escape into a world where every detail whispers your unique love
+                    So, let go of the spreadsheets and the frantic calls. With us, your wedding isn`&apos;t just a
+                    celebration; it`&apos;s an escape into a world where every detail whispers your unique love
                     story. Come, step into our haven, and let us orchestrate the unforgettable, hustle-free
                     dream wedding you deserve. Let your fairytale begin, stress-free and sparkling.
                 </div>

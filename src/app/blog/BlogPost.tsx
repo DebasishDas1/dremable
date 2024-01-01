@@ -12,19 +12,6 @@ const BlogPost: React.FC<BlogPostProps> = ({ message, timestamp, imageUrl }) => 
     const [likes, setLikes] = useState(0);
     const [comments, setComments] = useState(0);
 
-    // Extract seconds from the timestamp string and convert to a number
-    // const matchArray = timestamp.match(/\d+/);
-
-    // if (!matchArray || matchArray.length === 0) {
-    //     console.error('Invalid timestamp format:', timestamp);
-    //     return null; // or handle the error in your preferred way
-    // }
-
-    // const timestampInSeconds = parseInt(matchArray[0], 10);
-    // const dateObject = new Date(timestampInSeconds * 1000); // Convert seconds to milliseconds
-
-    // const formattedDate = dateObject.toLocaleString();
-
     return (
         <div className="rounded-lg bg-white md:w-[45%] mx-auto my-4 p-4 shadow-lg">
             <h2 className="text-2xl font-semibold mb-2">{message}</h2>

@@ -51,7 +51,7 @@ const HeroSection = () => {
                 <div className='flex flex-col md:w-[75%] w-[90%] md:items-center'>
                     <Title> Let’s Plan Your Dream  Wedding Now </Title>
                     <div className='pb-2'>
-                        Planning your wedding shouldn't be a chaotic whirlwind. Dremable brings calm to the storm,
+                        Planning your wedding shouldn`&apos;t be a chaotic whirlwind. Dremable brings calm to the storm,
                         connecting you with a handpicked network of top-notch wedding professionals. From
                         visionaries who orchestrate unforgettable celebrations to artists who transform spaces
                         into breathtaking masterpieces, find the perfect match for every part of your special day.

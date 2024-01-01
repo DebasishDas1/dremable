@@ -51,12 +51,12 @@ const HeroSection = () => {
                 <div className='flex flex-col md:w-[75%] w-[90%] md:items-center'>
                     <Title> Let’s Plan Your Dream  Wedding Now </Title>
                     <div className='pb-2'>
-                        Planning your wedding shouldn't be a chaotic whirlwind. EOD brings calm to the storm,
+                        Planning your wedding shouldn't be a chaotic whirlwind. Dremable brings calm to the storm,
                         connecting you with a handpicked network of top-notch wedding professionals. From
                         visionaries who orchestrate unforgettable celebrations to artists who transform spaces
                         into breathtaking masterpieces, find the perfect match for every part of your special day.
                     </div>
-                    <Title> How EOD makes your planning smooth sailing</Title>
+                    <Title> How Dremable makes your planning smooth sailing</Title>
                     {
                         benifits.map(({ title, describe }) => (
                             <div key={title} className="flex p-2 md:w-[80%] bg-white rounded-lg m-2 items-center shadow-xl">
@@ -69,7 +69,7 @@ const HeroSection = () => {
                         ))
                     }
                     <div className='pb-2 pt-10'>
-                        No more endless scrolling, frantic emails, or phone tag nightmares. EOD empowers you
+                        No more endless scrolling, frantic emails, or phone tag nightmares. Dremable empowers you
                         to plan your dream wedding with ease, trust, and joy.
                     </div>
                 </div>

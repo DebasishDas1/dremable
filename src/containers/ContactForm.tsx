@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState } from 'react'
 import { Facebook, Instagram, LinkedIn } from '@mui/icons-material';
+import Link from "next/link"
 
 const ContactForm = () => {
     const [customerData, setCustomerData] = useState({
@@ -79,10 +80,13 @@ const ContactForm = () => {
                             />
                         </div>
                     </div>
-                    <div className="flex flrx-col p-4">
-                        <div className="pr-2 pl-2" ><Facebook /></div>
-                        <div className="pr-2 pl-2" ><Instagram /></div>
-                        <div className="pr-2 pl-2" ><LinkedIn /></div>
+                    <div className="flex flrx-col pt-2 mb-4 justify-end">
+                        <Link href={'https://www.facebook.com/profile.php?id=61555124971996&mibextid=eHce3h'} className={`cursor-pointer py-2 pl-2`} target="_blank">
+                            <Facebook />
+                        </Link>
+                        <Link href={'https://www.instagram.com/dremablewedding?igsh=MTloaG1iaDUzMHdlNg=='} className={`cursor-pointer py-2 pl-2`} target="_blank">
+                            <Instagram />
+                        </Link>
                     </div>
                     <SheetFooter>
                         <SheetClose asChild>

@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation'
 import Image from "next/image"
 import Link from "next/link"
-import logo from '../../public/logoLight.png'
+import logo from '../../public/longLogo.png'
 import { nav_options, nav_sub_options } from '@/components/constants'
 import MobileNav from '@/components/sheared/MobileNav'
 import NavItems from '@/components/sheared/NavItems'
@@ -20,7 +20,7 @@ const NavBer = () => {
                     <Image
                         src={logo}
                         alt="logo"
-                        width={60}
+                        width={150}
                         height={60}
                     />
                 </Link>

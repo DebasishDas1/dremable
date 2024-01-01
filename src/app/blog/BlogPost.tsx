@@ -16,7 +16,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ message, timestamp, imageUrl }) => 
         <div className="rounded-lg bg-white md:w-[45%] mx-auto my-4 p-4 shadow-lg">
             <h2 className="text-2xl font-semibold mb-2">{message}</h2>
             {/* <p className="text-gray-500 text-sm">{formattedDate}</p> */}
-            {imageUrl && <img src={imageUrl} alt="Post" />}
+            {imageUrl && <img className='w-[100%]' src={imageUrl} alt="Post" />}
             <div className="flex items-center py-3">
                 <button
                     className="flex items-center space-x-1"

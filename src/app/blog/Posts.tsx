@@ -9,15 +9,15 @@ const Post = () => {
     const [value, loading, error] = useCollection(q);
 
     if (loading) {
-        return <p>Loading...</p>;
+        return <p className='p-10'>Loading...</p>;
     }
 
     if (error) {
-        return <p>Error: {error.message}</p>;
+        return <p className='p-5' >Error: {error.message}</p>;
     }
 
     if (!value) {
-        return <p>No data available.</p>;
+        return <p className='p-5' >No data available.</p>;
     }
 
     return (

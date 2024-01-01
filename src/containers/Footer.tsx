@@ -9,10 +9,10 @@ const Footer = () => {
             </div>
             <span className='text-xl' >Contact us</span>
             <div className="flex flrx-col pt-1 mb-1">
-                <Link href={'https://www.facebook.com/profile.php?id=61555124971996&mibextid=eHce3h'} className={`cursor-pointer py-2 pl-2`} target="_blank">
+                <Link href={'https://www.facebook.com/profile.php?id=61555124971996&mibextid=eHce3h'} className={`cursor-pointer py-1 pl-1`} target="_blank">
                     <Facebook />
                 </Link>
-                <Link href={'https://www.instagram.com/dremablewedding?igsh=MTloaG1iaDUzMHdlNg=='} className={`cursor-pointer py-2 pl-2`} target="_blank">
+                <Link href={'https://www.instagram.com/dremablewedding?igsh=MTloaG1iaDUzMHdlNg=='} className={`cursor-pointer py-1 pl-1`} target="_blank">
                     <Instagram />
                 </Link>
             </div>

@@ -24,7 +24,7 @@ const HeroSection = () => {
                         </div>
                         <div className="bottom-2 absolute flex justify-center w-full" >
                             <Button size='lg' asChild className="button w-fit ">
-                                <Link href={'/planner'}>Explore now</Link>
+                                <Link href={'/magicians/planners'}>Explore now</Link>
                             </Button>
                         </div>
 
@@ -41,7 +41,7 @@ const HeroSection = () => {
                             <div className="font-bold pb-2">Timeless Celebrations</div>
                             <div className="w-[80%] text-lg pb-5" > Your dream wedding begins here. Expression of Dreams specializes in turning your love story into a breathtaking celebration, blending elegance, imagination, and heartfelt dedication</div>
                             <Button size='lg' asChild className="button w-full sm:w-fit">
-                                <Link href={'/planner'}>Explore now</Link>
+                                <Link href={'/magicians/planners'}>Explore now</Link>
                             </Button>
                         </div>
 

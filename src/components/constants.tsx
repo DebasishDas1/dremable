@@ -12,6 +12,11 @@ export const nav_options = [
         icon: <Feed />
     },
     {
+        name: 'Community',
+        linkUrl: '/community',
+        icon: <Feed />
+    },
+    {
         name: 'About',
         linkUrl: '/about',
         icon: <Info />

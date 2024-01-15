@@ -16,7 +16,6 @@ const BlogPost: React.FC<BlogPostProps> = ({ message, timestamp, imageUrl }) => 
     return (
         <div className="rounded-xl bg-white md:w-[60%] w-[100%] mx-auto mb-6 p-4 shadow-lg">
             <h2 className="text-2xl font-semibold mb-2">{message}</h2>
-            {/* <p className="text-gray-500 text-sm">{formattedDate}</p> */}
             {imageUrl &&
                 <Image
                     src={imageUrl}

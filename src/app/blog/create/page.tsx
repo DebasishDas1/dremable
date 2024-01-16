@@ -1,13 +1,12 @@
 import PageTitle from '@/components/sheared/PageTitle'
+import BolgForm from '@/components/sheared/BolgForm'
 
 const CraeteBlog = () => {
     return (
         <div className='flex flex-col items-center'>
             <div className='flex flex-col md:w-[65%] w-[90%] items-center'>
                 <PageTitle title='Create Wedding Blog' />
-                <div className='bg-white w-[100%] p-3 border-r-8'>
-                    yo
-                </div>
+                <BolgForm type='create' />
             </div>
         </div>
     )

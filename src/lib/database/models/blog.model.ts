@@ -5,7 +5,7 @@ export interface IBlog extends Document {
     title: string;
     description?: string;
     location?: string;
-    createdAt: Date;
+    date: Date;
     imageUrl: string;
     phone: string;
     url?: string;
@@ -16,7 +16,7 @@ const BlogrSchema = new Schema({
     title: { type: String, required: true },
     description: { type: String },
     location: { type: String },
-    createdAt: { type: Date, default: Date.now },
+    date: { type: Date, default: Date.now },
     imageUrl: { type: String },
     phone: { type: String },
     url: { type: String },

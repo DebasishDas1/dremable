@@ -1,12 +1,12 @@
 'use client'
 import { useRef, useState } from 'react';
-import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { collection, addDoc, serverTimestamp, updateDoc, doc } from 'firebase/firestore';
 import { db, storage } from '@/app/firebase'
 import { Button } from "@/components/ui/button"
 import { CameraAlt, Send } from '@mui/icons-material';
 import { DocumentData } from 'firebase/firestore';
 import Image from "next/image"
+import { Textarea } from '@/components/ui/textarea';
 
 const PostForm = () => {
     const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -64,13 +64,9 @@ const PostForm = () => {
 
     return (
         <div
-            className="bg-white md:w-[45%] md:p-4 shadow-2xl flex flex-col rounded-lg items-center">
+            className="bg-white md:w-[45%] p-2 shadow-2xl flex flex-col rounded-lg items-center mb-2">
             <div className='flex items-center w-[90%]'>
-                <textarea
-                    className="bg-gray-100 flex-grow p-5 focus:outline-none w-[100%]"
-                    placeholder="What's on your mind"
-                    ref={inputRef}
-                />
+                <Textarea placeholder="What's on your mind" ref={inputRef} className='mr-4' />
                 <Button className='w-fit rounded-full' type="submit" onClick={sendPost}>
                     <Send />
                 </Button>

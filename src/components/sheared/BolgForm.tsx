@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -16,10 +16,10 @@ import { Textarea } from "@/components/ui/textarea"
 import DropDown from "./DropDown"
 import FileUploder from "./FileUploder"
 import { useState } from "react"
-import { LocationOn, CalendarMonth } from '@mui/icons-material';
+import { LocationOn, CalendarMonth, PhoneIphone, Link } from '@mui/icons-material';
 import DatePicker from "react-datepicker";
 import { useUploadThing } from '@/lib/uploadthing'
-
+import { createBlog } from '@/lib/actions/blog.action'
 import "react-datepicker/dist/react-datepicker.css";
 import { useRouter } from "next/navigation"
 
@@ -37,7 +37,7 @@ const formSchema = z.object({
     imageUrl: z.string(),
     phone: z.string().min(2, "Username must be at least 2 characters."),
     url: z.string().min(2, "Username must be at least 2 characters."),
-    category: z.string(),
+    categoryID: z.string(),
 })
 
 const BolgForm = ({ type }: BolgFormProps) => {
@@ -45,7 +45,6 @@ const BolgForm = ({ type }: BolgFormProps) => {
     const { startUpload } = useUploadThing('imageUploader')
     const router = useRouter()
 
-    // 1. Define your form.
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -56,13 +55,13 @@ const BolgForm = ({ type }: BolgFormProps) => {
             imageUrl: '',
             phone: '',
             url: '',
-            category: '',
+            categoryID: '',
         },
     })
 
-    // 2. Define a submit handler.
     async function onSubmit(values: z.infer<typeof formSchema>) {
         let uplodedImageUrl = values.imageUrl
+
         if (files.length > 0) {
             const uplodedImage = await startUpload(files)
 
@@ -72,14 +71,14 @@ const BolgForm = ({ type }: BolgFormProps) => {
         }
         if (type === 'create') {
             try {
-                // const newBlog = await createBlog({
-                //     blog: { ...values, imageUrl: uplodedImageUrl },
-                //     path: '/profie'
-                // })
-                // if (newBlog) {
-                //     form.reset()
-                //     router.push(`/blog/${newBlog._id}`)
-                // }
+                const newBlog = await createBlog({
+                    blog: { ...values, imageUrl: uplodedImageUrl },
+                    path: '/profie'
+                })
+                if (newBlog) {
+                    form.reset()
+                    router.push(`/blog/${newBlog._id}`)
+                }
             } catch (error) {
                 console.log(error);
             }
@@ -89,7 +88,7 @@ const BolgForm = ({ type }: BolgFormProps) => {
     return (
         <div className='bg-white w-full p-3 border-r-8 rounded-xl shadow-lg'>
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className='flex flex-col gap-3'>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-5">
                     <div className="flex flex-col gap-5 md:flex-row">
                         <FormField
                             control={form.control}
@@ -97,7 +96,7 @@ const BolgForm = ({ type }: BolgFormProps) => {
                             render={({ field }) => (
                                 <FormItem className="w-full">
                                     <FormControl>
-                                        <Input placeholder="Blog title" {...field} />
+                                        <Input className="input-field" placeholder="Blog title" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -105,7 +104,7 @@ const BolgForm = ({ type }: BolgFormProps) => {
                         />
                         <FormField
                             control={form.control}
-                            name="category"
+                            name="categoryID"
                             render={({ field }) => (
                                 <FormItem className="w-full">
                                     <FormControl>
@@ -155,7 +154,22 @@ const BolgForm = ({ type }: BolgFormProps) => {
                                     <FormControl>
                                         <div className="flex-center h-[55px] w-full overflow-hidden rounded-full bg-gray-50 px-4 py-2">
                                             <LocationOn />
-                                            <Input placeholder="Event loaction" {...field} />
+                                            <Input className="input-field" placeholder="Event loaction" {...field} />
+                                        </div>
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="phone"
+                            render={({ field }) => (
+                                <FormItem className="w-full">
+                                    <FormControl>
+                                        <div className="flex-center h-[55px] w-full overflow-hidden rounded-full bg-gray-50 px-4 py-2">
+                                            <PhoneIphone />
+                                            <Input className="input-field" placeholder="contact" {...field} />
                                         </div>
                                     </FormControl>
                                     <FormMessage />
@@ -186,7 +200,23 @@ const BolgForm = ({ type }: BolgFormProps) => {
                             )}
                         />
                     </div>
-
+                    <div className="flex flex-col gap-5 md:flex-row">
+                        <FormField
+                            control={form.control}
+                            name="url"
+                            render={({ field }) => (
+                                <FormItem className="w-full">
+                                    <FormControl>
+                                        <div className="flex-center h-[55px] w-full overflow-hidden rounded-full bg-gray-50 px-4 py-2">
+                                            <Link />
+                                            <Input className="input-field" placeholder="Event url" {...field} />
+                                        </div>
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
                     <Button type="submit">Submit</Button>
                 </form>
             </Form>

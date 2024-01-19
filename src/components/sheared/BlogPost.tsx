@@ -2,24 +2,35 @@
 import { useState } from 'react';
 import Image from "next/image"
 import { ThumbUp, Comment } from '@mui/icons-material';
-import img from '../../../public/longLogo.png'
+import { formatDateTime } from '@/lib/utils'
+import Link from 'next/link'
 
-const BlogPost = () => {
+type BlogPostProps = {
+    title: string,
+    description: string | undefined,
+    id: string,
+    date: Date;
+    image: string;
+}
+
+const BlogPost = ({ title, description, id, date, image }: BlogPostProps) => {
     const [likes, setLikes] = useState(0);
     const [comments, setComments] = useState(0);
     const imageUrl = true
 
     return (
         <div className="rounded-xl bg-white md:w-[60%] w-[100%] mx-auto mb-6 p-4 shadow-lg">
-            <h2 className="text-2xl font-semibold mb-2">bolg post</h2>
+            <Link href={`/blog/${id}`} >
+                <h2 className="text-2xl font-semibold mb-2">{title}</h2>
+            </Link>
             <div className='flex flex-row'>
                 <h6 className="text-sm my-2 basis-3/4">
-                    easy, deep, delicate and filled with a touching atmosphere, comfortable and comfortable, let the mood relax.
+                    {description}
                 </h6>
                 <div className='basis-1/4 flex items-center blur-sm' >
                     {imageUrl &&
                         <Image
-                            src={img}
+                            src={image}
                             alt="logo"
                             width={500}
                             height={500}
@@ -27,7 +38,7 @@ const BlogPost = () => {
                     }
                 </div>
             </div>
-            <h6 className="text-sm my-1 text-stone-500">2 jan 2024</h6>
+            <h6 className="text-sm my-1 text-stone-500">{formatDateTime(date).dateOnly}</h6>
 
             <div className="flex items-center mt-5">
                 <button

@@ -2,6 +2,7 @@
 
 import { connectToDatabase } from "../database"
 import Category from "../database/models/category.model"
+import { handleError } from '@/lib/utils'
 
 type createCatagoryProps = {
     catagoryName: string
@@ -15,8 +16,7 @@ export const createCatagory = async ({ catagoryName }: createCatagoryProps) => {
 
         return JSON.parse(JSON.stringify(newCatagory))
     } catch (error) {
-        console.log(error);
-
+        handleError(error)
     }
 }
 
@@ -28,7 +28,20 @@ export const getAllCatagory = async () => {
 
         return JSON.parse(JSON.stringify(Catagories))
     } catch (error) {
-        console.log(error);
+        handleError(error)
+    }
+}
 
+export const getCatagoryById = async (CatagoryID: string) => {
+    try {
+        await connectToDatabase();
+
+        const CategoryName = await Category.findById(CatagoryID);
+
+        if (!CategoryName) throw new Error("event not found")
+
+        return JSON.parse(JSON.stringify(CategoryName))
+    } catch (error) {
+        handleError(error)
     }
 }

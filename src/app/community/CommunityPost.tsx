@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react';
 import { ThumbUp, Comment } from '@mui/icons-material';
+import Image from "next/image"
 
 interface BlogPostProps {
     message: string;
@@ -13,10 +14,16 @@ const BlogPost: React.FC<BlogPostProps> = ({ message, timestamp, imageUrl }) => 
     const [comments, setComments] = useState(0);
 
     return (
-        <div className="rounded-lg bg-white md:w-[45%] mx-auto my-4 p-4 shadow-lg">
+        <div className="rounded-xl bg-white md:w-[60%] w-[100%] mx-auto mb-6 p-4 shadow-lg">
             <h2 className="text-2xl font-semibold mb-2">{message}</h2>
-            {/* <p className="text-gray-500 text-sm">{formattedDate}</p> */}
-            {imageUrl && <img className='w-[100%]' src={imageUrl} alt="Post" />}
+            {imageUrl &&
+                <Image
+                    src={imageUrl}
+                    alt="logo"
+                    width={1000}
+                    height={1000}
+                />
+            }
             <div className="flex items-center py-3">
                 <button
                     className="flex items-center space-x-1"

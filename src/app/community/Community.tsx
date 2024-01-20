@@ -2,7 +2,7 @@
 import { collection, addDoc, getFirestore, query, orderBy } from 'firebase/firestore';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import { db } from '../firebase';
-import BlogPost from './BlogPost';
+import CommunityPost from './CommunityPost';
 
 const Post = () => {
     const q = query(collection(getFirestore(db.app), 'posts'), orderBy('timestamp', 'desc'));
@@ -25,7 +25,7 @@ const Post = () => {
             {value.docs.map((post) => {
                 const { id, message, timestamp, imageUrl } = post.data(); // Access the data using .data()
                 return (
-                    <BlogPost
+                    <CommunityPost
                         key={post.id}
                         message={message}
                         timestamp={timestamp}

@@ -9,7 +9,6 @@ const HeroSection = () => {
     return (
         <div>
             <div className='flex flex-col items-center'>
-                {/* wellcome text */}
                 <div className="">
                     <div className='relative flex md:hidden'>
                         <Image

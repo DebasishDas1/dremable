@@ -13,7 +13,6 @@ type CreateBlogParams = {
         location?: string;
         date: Date;
         imageUrl: string;
-        phone: string;
         url?: string;
         categoryID: String
     };

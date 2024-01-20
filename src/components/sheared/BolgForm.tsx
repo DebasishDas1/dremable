@@ -16,7 +16,7 @@ import { Textarea } from "@/components/ui/textarea"
 import DropDown from "./DropDown"
 import FileUploder from "./FileUploder"
 import { useState } from "react"
-import { LocationOn, CalendarMonth, PhoneIphone, Link } from '@mui/icons-material';
+import { LocationOn, CalendarMonth, Link } from '@mui/icons-material';
 import DatePicker from "react-datepicker";
 import { useUploadThing } from '@/lib/uploadthing'
 import { createBlog } from '@/lib/actions/blog.action'
@@ -30,12 +30,11 @@ type BolgFormProps = {
 const formSchema = z.object({
     title: z.string().min(2, "Title must be at least 3 characters."),
     description: z.string().min(2, "Description must be at least 2 characters.")
-        .max(1000, "Description must be at most 1000 characters."),
+        .max(10000, "Description must be at most 1000 characters."),
     location: z.string().min(2, "Location must be at least 3 characters.")
         .max(400, "Location must be at most 400 characters."),
     date: z.date(),
     imageUrl: z.string(),
-    phone: z.string().min(2, "Username must be at least 2 characters."),
     url: z.string().min(2, "Username must be at least 2 characters."),
     categoryID: z.string(),
 })
@@ -53,7 +52,6 @@ const BolgForm = ({ type }: BolgFormProps) => {
             location: '',
             date: new Date(),
             imageUrl: '',
-            phone: '',
             url: '',
             categoryID: '',
         },
@@ -155,21 +153,6 @@ const BolgForm = ({ type }: BolgFormProps) => {
                                         <div className="flex-center h-[55px] w-full overflow-hidden rounded-full bg-gray-50 px-4 py-2">
                                             <LocationOn />
                                             <Input className="input-field" placeholder="Event loaction" {...field} />
-                                        </div>
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="phone"
-                            render={({ field }) => (
-                                <FormItem className="w-full">
-                                    <FormControl>
-                                        <div className="flex-center h-[55px] w-full overflow-hidden rounded-full bg-gray-50 px-4 py-2">
-                                            <PhoneIphone />
-                                            <Input className="input-field" placeholder="contact" {...field} />
                                         </div>
                                     </FormControl>
                                     <FormMessage />

@@ -34,9 +34,8 @@ const MobileNav = () => {
                         showSubOptions &&
                         <div >
                             {nav_sub_options.map((option) => (
-                                <SheetClose asChild>
+                                <SheetClose asChild key={option.linkUrl}>
                                     <NavItems
-                                        key={option.linkUrl}
                                         url={option.linkUrl}
                                         title={option.name}
                                         icon={option.icon}
@@ -51,9 +50,8 @@ const MobileNav = () => {
                     {nav_options
                         .filter(option => option.name !== 'Magicians')
                         .map(option => (
-                            <SheetClose asChild>
+                            <SheetClose asChild key={option.linkUrl}>
                                 <NavItems
-                                    key={option.linkUrl}
                                     url={option.linkUrl}
                                     title={option.name}
                                     icon={option.icon}

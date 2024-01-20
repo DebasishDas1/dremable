@@ -8,6 +8,7 @@ import CloudIcon from '@mui/icons-material/Cloud';
 
 import { Button } from '@/components/ui/button'
 import { convertFileToUrl } from '@/lib/utils'
+import Image from 'next/image'
 
 type FileUploaderProps = {
     onFieldChange: (url: string) => void
@@ -19,7 +20,7 @@ const FileUploder = ({ imageUrl, onFieldChange, setFiles }: FileUploaderProps) =
     const onDrop = useCallback((acceptedFiles: FileWithPath[]) => {
         setFiles(acceptedFiles)
         onFieldChange(convertFileToUrl(acceptedFiles[0]))
-    }, [])
+    }, [onFieldChange, setFiles])
 
     const { getRootProps, getInputProps } = useDropzone({
         onDrop,
@@ -34,7 +35,7 @@ const FileUploder = ({ imageUrl, onFieldChange, setFiles }: FileUploaderProps) =
 
             {imageUrl ? (
                 <div className="flex h-full w-full flex-1 justify-center ">
-                    <img
+                    <Image
                         src={imageUrl}
                         alt="image"
                         width={250}

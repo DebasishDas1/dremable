@@ -22,7 +22,7 @@ const Blog = async () => {
                 <PageTitle title='Wedding Blog' />
                 <BlogPostContainers
                     data={blogs?.data}
-                    emptyTitle="No Events Found"
+                    emptyTitle="No Blogs Found"
                     emptyStateSubtext="Come back later"
                     collectionType='Weeding'
                     limit={6}

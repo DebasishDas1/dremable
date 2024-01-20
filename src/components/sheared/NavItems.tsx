@@ -5,7 +5,8 @@ import { usePathname } from "next/navigation"
 type Props = {
     url: string
     title: string
-    icon?: React.ReactElement;
+    icon?: React.ReactElement
+    type?: "submit"
 }
 
 const NavItems = ({ url, title, icon }: Props) => {

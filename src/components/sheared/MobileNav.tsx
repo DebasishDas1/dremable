@@ -34,12 +34,16 @@ const MobileNav = () => {
                         showSubOptions &&
                         <div >
                             {nav_sub_options.map((option) => (
-                                <NavItems
-                                    key={option.linkUrl}
-                                    url={option.linkUrl}
-                                    title={option.name}
-                                    icon={option.icon}
-                                />
+                                <SheetClose asChild>
+                                    <NavItems
+                                        key={option.linkUrl}
+                                        url={option.linkUrl}
+                                        title={option.name}
+                                        icon={option.icon}
+                                        type="submit"
+                                    />
+                                </SheetClose>
+
                             ))}
                         </div>
 
@@ -47,12 +51,16 @@ const MobileNav = () => {
                     {nav_options
                         .filter(option => option.name !== 'Magicians')
                         .map(option => (
-                            <NavItems
-                                key={option.linkUrl}
-                                url={option.linkUrl}
-                                title={option.name}
-                                icon={option.icon}
-                            />
+                            <SheetClose asChild>
+                                <NavItems
+                                    key={option.linkUrl}
+                                    url={option.linkUrl}
+                                    title={option.name}
+                                    icon={option.icon}
+                                    type="submit"
+                                />
+                            </SheetClose>
+
                         ))}
                     <ContactForm />
                 </SheetContent>

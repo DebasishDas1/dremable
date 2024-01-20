@@ -25,7 +25,7 @@ const MagiciansCard = ({ name, contact, address, reating, url }: Props) => {
     }
 
     return (
-        <div className='flex flex-col justify-between font-sans bg-white rounded-lg p-4 mb-4 m-2 md:w-60 md:h-60  w-[100%] hover:shadow-2xl shadow-lg'>
+        <div className='flex flex-col justify-between font-sans bg-white rounded-lg p-4 mb-4 m-2 md:w-60 md:h-[260px]  w-[100%] hover:shadow-2xl shadow-lg'>
             <div className='mb-2'>
                 <div className='lex-auto text-lg font-bold'>{name}</div>
                 <div className='w-full text-sm text-slate-700'>{address}</div>

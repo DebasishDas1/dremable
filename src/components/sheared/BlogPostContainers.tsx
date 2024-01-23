@@ -1,30 +1,15 @@
-import BlogPost from './BlogPost'
-import { IBlog } from '@/lib/database/models/blog.model'
+import BlogPost from './BlogPost';
+import { IBlog } from '@/lib/database/models/blog.model';
+import { getAllBlog } from '@/lib/actions/blog.action';
 
-type BlogPostContainersProps = {
-    data: IBlog[],
-    emptyTitle: string,
-    emptyStateSubtext: string,
-    collectionType?: 'Weeding' | 'birthday',
-    limit: number,
-    page: number | string,
-    totalPages?: number
-}
+const BlogPostContainers = async () => {
+    try {
+        const blogs: IBlog[] = await getAllBlog();
 
-const BlogPostContainers = ({
-    data,
-    emptyTitle,
-    emptyStateSubtext,
-    collectionType,
-    limit,
-    page,
-    totalPages,
-}: BlogPostContainersProps) => {
-    return (
-        <>
-            {data.length > 0 ?
+        if (blogs.length > 0) {
+            return (
                 <div className="flex flex-col items-center gap-5">
-                    {data.map((blog) => (
+                    {blogs.map(blog => (
                         <BlogPost
                             key={blog._id}
                             title={blog.title}
@@ -35,13 +20,20 @@ const BlogPostContainers = ({
                         />
                     ))}
                 </div>
-                : <div className='w-full bg-white flex items-center flex-col p-10 rounded-l shadow-lgg' >
-                    <h1 className='p-bold-20 md:h5-bold'>{emptyTitle}</h1>
-                    <p>{emptyStateSubtext}</p>
+            );
+        } else {
+            return (
+                <div className='w-full bg-white flex items-center flex-col p-10 rounded-l shadow-lg'>
+                    <h1 className='p-bold-20 md:h5-bold'>No Blogs Found</h1>
+                    <p>Come back later</p>
                 </div>
-            }
-        </>
-    )
-}
+            );
+        }
+    } catch (error) {
+        // Handle the error, log it, or show a user-friendly message.
+        console.error('Error fetching blogs:', error);
+        return null; // Or handle the error in a way that makes sense for your application.
+    }
+};
 
-export default BlogPostContainers
+export default BlogPostContainers;

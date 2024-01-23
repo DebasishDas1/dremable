@@ -14,7 +14,7 @@ type BlogPostProps = {
 
 const BlogPost = ({ title, description, id, date, image }: BlogPostProps) => {
     return (
-        <div className="rounded-xl bg-white md:w-[60%] w-full p-4 shadow-lg">
+        <div className="rounded-xl bg-white md:w-[600px] w-full p-4 shadow-lg">
             <Link href={`/blog/${id}`} >
                 <h2 className="text-2xl font-semibold mb-2">{title}</h2>
             </Link>

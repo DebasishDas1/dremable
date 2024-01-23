@@ -30,9 +30,8 @@ const BlogPostContainers = async () => {
             );
         }
     } catch (error) {
-        // Handle the error, log it, or show a user-friendly message.
         console.error('Error fetching blogs:', error);
-        return null; // Or handle the error in a way that makes sense for your application.
+        return null;
     }
 };
 

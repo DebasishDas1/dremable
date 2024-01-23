@@ -58,24 +58,13 @@ type GetAllBlogssParams = {
     page: number
 }
 
-export const getAllBlog = async ({ query, limit = 20, page, category }: GetAllBlogssParams) => {
+export const getAllBlog = async () => {
     try {
         await connectToDatabase();
 
         const blogs = await Blog.find();
-        const conditions = {}
-        // const blogsQuary = await Blog.find(conditions)
-        //     .sort({ date: 'desc' })
-        //     .skip(0)
-        //     .limit(limit)
 
-        // const blogs = await populateBlog(blogsQuary)
-        const blogsCount = await Blog.countDocuments(conditions)
-
-        return {
-            data: JSON.parse(JSON.stringify(blogs)),
-            totalPages: Math.ceil(blogsCount / limit),
-        }
+        return JSON.parse(JSON.stringify(blogs))
     } catch (error) {
         handleError(error)
     }

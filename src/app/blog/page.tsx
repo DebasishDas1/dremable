@@ -9,19 +9,14 @@ export const metadata: Metadata = {
 }
 
 const Blog = async () => {
-    const blogs = await getAllBlog({
-        query: '',
-        page: 1,
-        category: '',
-        limit: 20,
-    })
+    const blogs = await getAllBlog()
 
     return (
         <div className='flex flex-col items-center'>
             <div className='flex flex-col md:w-[65%] w-[90%] items-center'>
                 <PageTitle title='Wedding Blog' />
                 <BlogPostContainers
-                    data={blogs?.data}
+                    data={blogs}
                     emptyTitle="No Blogs Found"
                     emptyStateSubtext="Come back later"
                     collectionType='Weeding'

@@ -63,7 +63,6 @@ export const getAllBlog = async () => {
         await connectToDatabase();
 
         const blogs = await Blog.find()
-        alert(JSON.parse(JSON.stringify(blogs)));
 
         return JSON.parse(JSON.stringify(blogs))
     } catch (error) {

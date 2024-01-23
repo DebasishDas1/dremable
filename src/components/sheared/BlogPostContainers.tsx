@@ -11,7 +11,7 @@ const BlogPostContainers = async () => {
                 <div className="flex flex-col items-center gap-5">
                     <div>
                         {blogs.map(a =>
-                            <div>{a.title}</div>
+                            <div key={a._id}>{a.title}</div>
                         )}
                     </div>
                     {blogs.map(blog => (

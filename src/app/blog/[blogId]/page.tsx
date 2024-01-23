@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { Place, Celebration, CalendarMonth, PhoneIphone, InsertLink } from '@mui/icons-material';
 import { formatDateTime } from '@/lib/utils'
 import Link from 'next/link';
+import { text } from 'stream/consumers';
+import { error } from 'console';
 
 interface BlogDetailsPageProps {
     params: { blogId: string }
@@ -52,11 +54,11 @@ const BlogDetailsPage = async ({ params: { blogId } }: BlogDetailsPageProps) => 
                     }
                 </div>
                 <div className='m-4'>
-                    {blogDetails.description}
+                    <div dangerouslySetInnerHTML={{ __html: blogDetails.description }} />
                 </div>
             </div>
         </div>
     )
-}
+};
 
 export default BlogDetailsPage

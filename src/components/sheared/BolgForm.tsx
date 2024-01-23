@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import {
     Form,
     FormControl,
@@ -11,10 +12,9 @@ import {
     FormItem,
     FormMessage,
 } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import DropDown from "./DropDown"
 import FileUploder from "./FileUploder"
+import BolgFormDescription from './BolgFormDescription'
 import { useState } from "react"
 import { LocationOn, CalendarMonth, Link } from '@mui/icons-material';
 import DatePicker from "react-datepicker";
@@ -106,7 +106,10 @@ const BolgForm = ({ type }: BolgFormProps) => {
                             render={({ field }) => (
                                 <FormItem className="w-full">
                                     <FormControl>
-                                        <DropDown onChabgeHandler={field.onChange} value={field.value} />
+                                        <DropDown
+                                            onChabgeHandler={field.onChange}
+                                            value={field.value}
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -120,7 +123,10 @@ const BolgForm = ({ type }: BolgFormProps) => {
                             render={({ field }) => (
                                 <FormItem className="w-full">
                                     <FormControl className="h-72">
-                                        <Textarea placeholder="Blog description" {...field} />
+                                        <BolgFormDescription
+                                            onFieldChange={field.onChange}
+                                            value={field.value}
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>

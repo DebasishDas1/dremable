@@ -9,11 +9,6 @@ const BlogPostContainers = async () => {
         if (blogs.length > 0) {
             return (
                 <div className="flex flex-col items-center gap-5">
-                    <div>
-                        {blogs.map(a =>
-                            <div key={a._id}>{a.title}</div>
-                        )}
-                    </div>
                     {blogs.map(blog => (
                         <BlogPost
                             key={blog._id}

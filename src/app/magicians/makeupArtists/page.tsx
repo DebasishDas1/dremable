@@ -117,19 +117,19 @@ const makeupArtists = () => {
                     }
                 </div>
                 <Title> Dreamable: Radiate Confidence on Your Wedding Day with Your Perfect Bridal Makeup Artist in Kolkata</Title>
-                Wedding is a moment you'll cherish forever, and flawless makeup that enhances your natural beauty plays a crucial role in capturing that feeling. At Dreamable, we connect you with Kolkata's best bridal makeup artists, ensuring you radiate confidence and glow on your special day. From traditional Bengali wedding styles to modern glamour, find your perfect match and experience artistry that reflects your unique vision.
+                Wedding is a moment you&apos;ll cherish forever, and flawless makeup that enhances your natural beauty plays a crucial role in capturing that feeling. At Dreamable, we connect you with Kolkata&apos;s best bridal makeup artists, ensuring you radiate confidence and glow on your special day. From traditional Bengali wedding styles to modern glamour, find your perfect match and experience artistry that reflects your unique vision.
                 <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">Why Choose Dremable</div>
                 <PageBnifitOptions banifits={choseDremable} />
                 <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">Finding Your Perfect Kolkata Bridal Makeup Artist</div>
                 <PageBnifitOptions banifits={makeupArtist} />
                 <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">Dremable Makes Finding Your Dream Makeup Artist Easier</div>
                 <PageBnifitOptions banifits={artistEasier} />
-                <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">Before You Say "I Do" to a Makeup Artist</div>
+                <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">Before You Say &quot;I Do&quot; to a Makeup Artist</div>
                 <PageBnifitOptions banifits={iDoArtist} />
                 <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">Tips for a Successful Collaboration</div>
                 <PageBnifitOptions banifits={collaboration} />
                 <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">Start Your Dream Today</div>
-                Browse our directory of Kolkata's most talented bridal makeup artists and find your perfect match! With Dreamable by your side, you can step into your wedding day feeling confident, radiant, and undeniably beautiful. Remember, your makeup should tell your story – let Dremable help you write it on your canvas of beauty
+                Browse our directory of Kolkata&apos;s most talented bridal makeup artists and find your perfect match! With Dreamable by your side, you can step into your wedding day feeling confident, radiant, and undeniably beautiful. Remember, your makeup should tell your story – let Dremable help you write it on your canvas of beauty
             </div>
         </div>
     )

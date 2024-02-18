@@ -1,21 +1,21 @@
-import HeroSection from '@/containers/HeroSection';
+import HeroSection from "@/containers/HeroSection";
 import Title from "@/components/sheared/Title"
-import { benefits } from '@/components/constants'
-import { LocationSearching } from '@mui/icons-material';
+import { benefits } from "@/components/constants"
+import { LocationSearching } from "@mui/icons-material";
 
 const sectionWidthMd = "md:w-[75%]";
 const sectionWidthFull = "w-[90%]";
 
 export default function Home() {
   return (
-    <main className='flex flex-col items-center'>
+    <main className="flex flex-col items-center">
       <HeroSection />
 
       {/* Problem and Solution Section */}
       <div className={`flex flex-col ${sectionWidthMd} ${sectionWidthFull} md:items-center space-y-6`}>
         <Title> Let’s Plan Your Dream Wedding Now </Title>
-        <div className='pb-4'>
-          Planning your wedding shouldn't be a chaotic whirlwind. Dreamable brings calm to the storm,
+        <div className="pb-4">
+          Planning your wedding shouldn&apos;t be a chaotic whirlwind. Dreamable brings calm to the storm,
           connecting you with a handpicked network of top-notch wedding professionals. From
           visionaries who orchestrate unforgettable celebrations to artists who transform spaces
           into breathtaking masterpieces, find the perfect match for every part of your special day.
@@ -33,7 +33,7 @@ export default function Home() {
           </div>
         ))}
 
-        <div className='pb-4 pt-8'>
+        <div className="pb-4 pt-8">
           No more endless scrolling, frantic emails, or phone tag nightmares. Dreamable empowers you
           to plan your dream wedding with ease, trust, and joy.
         </div>

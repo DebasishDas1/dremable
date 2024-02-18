@@ -87,17 +87,17 @@ const Photographers = () => {
                     }
                 </div>
                 <Title>Dreamable: Capture Timeless Memories with Your Perfect Wedding Photographer!</Title>
-                Looking for best wedding photographers near you to capture the magic of your Dream wedding? Your search ends here! Dremable connects you with Kolkata's best wedding photographers, specializing in various styles, including Bengali wedding photography.
+                Looking for best wedding photographers near you to capture the magic of your Dream wedding? Your search ends here! Dremable connects you with Kolkata&apos;s best wedding photographers, specializing in various styles, including Bengali wedding photography.
                 <br /><br />
                 Find your ideal match, discover breathtaking portfolios, and book with ease – from stunning portraits to candid moments, we ensure your story unfolds beautifully.
                 <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">How to Find Your Perfect Wedding Photographer</div>
                 <PageBnifitOptions banifits={findPhotographer} />
                 <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">Dreamable Makes Finding Your Dream Photographer Easier</div>
                 <PageBnifitOptions banifits={dreamPhotographer} />
-                <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">Before You Say "I Do" to a Photographer</div>
+                <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">Before You Say &quot;I Do&quot; to a Photographer</div>
                 <PageBnifitOptions banifits={toDoPhotographer} />
                 <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">Start Your Dream Today</div>
-                Browse our directory of Kolkata's most talented wedding photographers and find your perfect match! With Dreamable by your side, you can focus on cherishing every moment while they capture timeless memories that will last a lifetime
+                Browse our directory of Kolkata&apos;s most talented wedding photographers and find your perfect match! With Dreamable by your side, you can focus on cherishing every moment while they capture timeless memories that will last a lifetime
             </div>
         </div>
     )

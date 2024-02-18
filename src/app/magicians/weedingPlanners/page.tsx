@@ -103,13 +103,13 @@ const weedingPlanners = () => {
                 Search for wedding planners in Kolkata or Bengali wedding planner in Kolkata and get overwhelmed? Dreamable takes the stress out of finding the best wedding planner in Kolkata, turning your dream wedding into a reality.
                 <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">Why Choose Dreamable ?</div>
                 <PageBnifitOptions banifits={chooseDreamable} />
-                <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">Say "I Do" to the Right Planner</div>
-                Wondering how to choose the best Marriage planner in Kolkata? We've got you covered! Ask these crucial questions
+                <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">Say &quot;I Do&quot; to the Right Planner</div>
+                Wondering how to choose the best Marriage planner in Kolkata? We&apos;ve got you covered! Ask these crucial questions
                 <PageBnifitOptions banifits={rightPlanner} />
                 <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">Mistakes a Marriage Planner Helps You Avoid</div>
                 <PageBnifitOptions banifits={rightPlanner} />
                 <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">Start Your Dream Today</div>
-                Browse our directory of Kolkata's finest wedding planners and find your perfect match! With Dreamable by your side, your Dream wedding unfolds flawlessly, allowing you to truly revel in the magic of your happily ever after.
+                Browse our directory of Kolkata&apos;s finest wedding planners and find your perfect match! With Dreamable by your side, your Dream wedding unfolds flawlessly, allowing you to truly revel in the magic of your happily ever after.
             </div>
         </div>
     )

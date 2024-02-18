@@ -18,7 +18,7 @@ const HeroSection = () => {
                 </div>
                 <div className="bottom-2 absolute flex justify-center w-full" >
                     <Button size='lg' asChild className="button w-fit ">
-                        <Link href={'/magicians/planners'}>Explore now</Link>
+                        <Link href={'/magicians/weedingPlanners'}>Explore now</Link>
                     </Button>
                 </div>
 

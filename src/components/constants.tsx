@@ -3,7 +3,7 @@ import { Info, AutoFixHigh, Feed, AddAPhoto, FormatListBulleted, ColorLens } fro
 export const nav_options = [
     {
         name: 'Magicians',
-        linkUrl: '/magicians/planners',
+        linkUrl: '/magicians/weedingPlanners',
         icon: <AutoFixHigh />
     },
     {
@@ -25,8 +25,8 @@ export const nav_options = [
 
 export const nav_sub_options = [
     {
-        name: 'Planners',
-        linkUrl: '/magicians/planners',
+        name: 'Weeding Planners',
+        linkUrl: '/magicians/weedingPlanners',
         icon: <FormatListBulleted />
     },
     {
@@ -35,13 +35,13 @@ export const nav_sub_options = [
         icon: <AddAPhoto />
     },
     {
-        name: 'Artists',
-        linkUrl: '/magicians/artists',
+        name: 'Makeup Artists',
+        linkUrl: '/magicians/makeupArtists',
         icon: <ColorLens />
     },
 ]
 
-export const benifits = [
+export const benefits = [
     {
         title: 'Browse by category',
         describe: `Explore a curated directory of wedding planners,

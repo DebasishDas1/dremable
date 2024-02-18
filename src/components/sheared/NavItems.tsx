@@ -1,12 +1,13 @@
 'use client'
+
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-// NavItems.tsx
+import { ReactElement } from "react";
+
 type Props = {
     url: string
     title: string
-    icon?: React.ReactElement
-    type?: "submit"
+    icon?: ReactElement
 }
 
 const NavItems = ({ url, title, icon }: Props) => {
@@ -14,16 +15,15 @@ const NavItems = ({ url, title, icon }: Props) => {
     const showSubtitle = pathname.includes(title.toLowerCase());
 
     return (
-        <Link href={url} className={`flex regular-16 cursor-pointer pb-5 items-center pt-2 font-bold
-            ${(showSubtitle) ? 'text-black' : 'text-stone-500 '} `}>
-            <div className='mr-2'>
-                {icon}
-            </div>
-            {title}
+        <Link href={url} className={`flex regular-16 cursor-pointer pb-5 items-center pt-2 font-bold ${showSubtitle ? 'text-black' : 'text-stone-500'}`} >
+            <button type="submit">
+                <span className='mr-2'>
+                    {icon}
+                </span>
+                {title}
+            </button>
         </Link>
     )
 }
 
 export default NavItems;
-
-

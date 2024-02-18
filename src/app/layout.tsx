@@ -11,11 +11,8 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Dremable',
-  description: 'celebration website',
-  icons: {
-    icon: '/assets/Medcare.svg'
-  }
+  title: 'Dremable - Your Dream Wedding starts from here ',
+  description: 'Dream of a perfect wedding? Dreamable makes it real! From wedding planners & photographers to makeup artists & vendors, Find everything as you dream',
 }
 
 export default function RootLayout({

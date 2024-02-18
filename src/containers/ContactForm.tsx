@@ -1,4 +1,5 @@
 'use client'
+
 import {
     Sheet,
     SheetClose,
@@ -15,6 +16,7 @@ import { Label } from "@/components/ui/label"
 import { useState } from 'react'
 import { Facebook, Instagram, LinkedIn } from '@mui/icons-material';
 import Link from "next/link"
+import { FormEvent } from 'react';
 
 const ContactForm = () => {
     const [customerData, setCustomerData] = useState({
@@ -36,6 +38,17 @@ const ContactForm = () => {
                 [id]: value
             }
         })
+    }
+
+    const handelSubmit = (e: FormEvent<HTMLButtonElement>) => {
+        e.preventDefault()
+        console.log(customerData);
+
+        setCustomerData({
+            name: '',
+            email: '',
+            message: ''
+        });
     }
 
     return (
@@ -90,7 +103,7 @@ const ContactForm = () => {
                     </div>
                     <SheetFooter>
                         <SheetClose asChild>
-                            <Button type="submit">Send Message</Button>
+                            <Button onClick={handelSubmit} type="submit">Send Message</Button>
                         </SheetClose>
                     </SheetFooter>
                 </SheetContent>

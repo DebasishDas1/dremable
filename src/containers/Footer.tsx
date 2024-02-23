@@ -1,4 +1,4 @@
-import { Facebook, Instagram } from '@mui/icons-material';
+import { Facebook, Instagram, Twitter } from '@mui/icons-material';
 import Link from "next/link"
 
 const Footer = () => {
@@ -15,9 +15,12 @@ const Footer = () => {
                 <Link href={'https://www.instagram.com/dremablewedding?igsh=MTloaG1iaDUzMHdlNg=='} className={`cursor-pointer py-1 pl-1`} target="_blank">
                     <Instagram />
                 </Link>
+                <Link href={'https://twitter.com/dremablewedding'} className={`cursor-pointer py-1 pl-1`} target="_blank">
+                    <Twitter />
+                </Link>
             </div>
             <div>
-                Copyright © 2023 Dremable Inc. All rights reserved.
+                Copyright © 2024 Dremable Inc. All rights reserved.
             </div>
         </footer>
     )

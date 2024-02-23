@@ -12,6 +12,7 @@ const blog: React.FC = () => {
     return (
         <div className='flex flex-col items-center'>
             <PageTitle title='Our Community' />
+            <h1 className='hidden'> title=Our Community</h1>
             <CommunityForm />
             <Community />
         </div>

@@ -15,14 +15,14 @@ export default function Home() {
       <div className={`flex flex-col ${sectionWidthMd} ${sectionWidthFull} md:items-center space-y-6`}>
         <Title> Let’s Plan Your Dream Wedding Now </Title>
         <div className="pb-4">
-          Planning your wedding shouldn&apos;t be a chaotic whirlwind. Dreamable brings calm to the storm,
+          Planning your wedding shouldn&apos;t be a chaotic whirlwind. Dremable brings calm to the storm,
           connecting you with a handpicked network of top-notch wedding professionals. From
           visionaries who orchestrate unforgettable celebrations to artists who transform spaces
           into breathtaking masterpieces, find the perfect match for every part of your special day.
         </div>
 
         {/* Benefits Section */}
-        <Title> How Dreamable makes your planning smooth sailing</Title>
+        <Title> How Dremable makes your planning smooth sailing</Title>
         {benefits.map(({ title, describe }) => (
           <div key={title} className="flex flex-col p-4 md:w-[80%] bg-white rounded-lg my-4 shadow-md">
             <div className="flex items-center mb-2">
@@ -34,7 +34,7 @@ export default function Home() {
         ))}
 
         <div className="pb-4 pt-8">
-          No more endless scrolling, frantic emails, or phone tag nightmares. Dreamable empowers you
+          No more endless scrolling, frantic emails, or phone tag nightmares. Dremable empowers you
           to plan your dream wedding with ease, trust, and joy.
         </div>
       </div>

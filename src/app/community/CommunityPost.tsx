@@ -14,8 +14,8 @@ const BlogPost: React.FC<BlogPostProps> = ({ message, timestamp, imageUrl }) => 
     const [comments, setComments] = useState(0);
 
     return (
-        <div className="rounded-xl bg-white md:w-[60%] w-[100%] mx-auto mb-6 p-4 shadow-lg">
-            <h2 className="text-2xl font-semibold mb-2">{message}</h2>
+        <div className="flex flex-col p-4 md:w-[80%] bg-white rounded-lg my-4 shadow-md">
+            <h3 className="ml-2 text-lg md:text-xl font-semibold">{message}</h3>
             {imageUrl &&
                 <Image
                     src={imageUrl}
@@ -24,7 +24,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ message, timestamp, imageUrl }) => 
                     height={1000}
                 />
             }
-            <div className="flex items-center py-3">
+            <div className="flex items-center p-3 ">
                 <button
                     className="flex items-center space-x-1"
                     onClick={() => setLikes(prevLikes => prevLikes + 1)}>

@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState } from 'react'
-import { Facebook, Instagram, LinkedIn } from '@mui/icons-material';
+import { Facebook, Instagram, Twitter } from '@mui/icons-material';
 import Link from "next/link"
 import { FormEvent } from 'react';
 
@@ -99,6 +99,9 @@ const ContactForm = () => {
                         </Link>
                         <Link href={'https://www.instagram.com/dremablewedding?igsh=MTloaG1iaDUzMHdlNg=='} className={`cursor-pointer py-2 pl-2`} target="_blank">
                             <Instagram />
+                        </Link>
+                        <Link href={'https://twitter.com/dremablewedding'} className={`cursor-pointer py-2 pl-2`} target="_blank">
+                            <Twitter />
                         </Link>
                     </div>
                     <SheetFooter>

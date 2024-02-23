@@ -21,7 +21,7 @@ const Post = () => {
     }
 
     return (
-        <div className='w-[100%]'>
+        <div className='md:w-[65%] w-[85%] flex items-center flex-col'>
             {value.docs.map((post) => {
                 const { id, message, timestamp, imageUrl } = post.data(); // Access the data using .data()
                 return (

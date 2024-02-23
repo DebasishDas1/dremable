@@ -12,6 +12,7 @@ const Blog = () => {
         <div className='flex flex-col items-center'>
             <div className='flex flex-col md:w-[65%] w-[90%] items-center'>
                 <PageTitle title='Wedding Blog' />
+                <h1 className='hidden'>Wedding Blog</h1>
                 <BlogPostContainers />
             </div>
         </div>

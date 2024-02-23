@@ -11,11 +11,11 @@ export const nav_options = [
         linkUrl: '/blog',
         icon: <Feed />
     },
-    {
-        name: 'Community',
-        linkUrl: '/community',
-        icon: <Feed />
-    },
+    // {
+    //     name: 'Community',
+    //     linkUrl: '/community',
+    //     icon: <Feed />
+    // },
     {
         name: 'About',
         linkUrl: '/about',

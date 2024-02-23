@@ -102,6 +102,7 @@ const makeupArtists = () => {
         <div className='flex flex-col items-center'>
             <div className='flex flex-col md:w-[65%] w-[85%] items-center'>
                 <PageTitle title='Bridal makeup artists in kolkata' />
+                <h1 className='hidden'>Bridal makeup artists in kolkata</h1>
                 <div className='flex flex-wrap h-auto items-center justify-evenly'>
                     {
                         artistsData.map(provider => (

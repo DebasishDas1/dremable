@@ -14,6 +14,7 @@ export default function Home() {
       {/* Problem and Solution Section */}
       <div className={`flex flex-col ${sectionWidthMd} ${sectionWidthFull} md:items-center space-y-6`}>
         <Title> Let’s Plan Your Dream Wedding Now </Title>
+        <h1 className='hidden'>Let’s Plan Your Dream Wedding Now</h1>
         <div className="pb-4">
           Planning your wedding shouldn&apos;t be a chaotic whirlwind. Dremable brings calm to the storm,
           connecting you with a handpicked network of top-notch wedding professionals. From

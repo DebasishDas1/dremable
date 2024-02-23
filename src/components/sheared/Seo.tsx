@@ -76,11 +76,13 @@ export const SeoOptimizationHeader: React.FC = () => {
 };
 
 export const SeoOptimizationBody: React.FC = () => {
-    return <>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDR7CP7Z"
-                height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe>
-        </noscript>
-    </>
+    return (
+        <>
+            {/* Google Tag Manager (noscript) */}
+            <noscript>
+                <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDR7CP7Z"
+                    height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe>
+            </noscript>
+        </>
+    );
 }

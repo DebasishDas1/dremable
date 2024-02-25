@@ -1,58 +1,59 @@
 export const SeoOptimizationHeader: React.FC = () => {
+    const CorporationSchema = {
+        "@context": "https://schema.org",
+        "@type": "Corporation",
+        "name": "Dremable",
+        "alternateName": "Dremable Wedding",
+        "url": "https://www.dremable.com/",
+        "logo": "https://drive.google.com/file/d/1vGso-q00IrIGLVPbJNDiVwEEPuw_jQlg/view?usp=sharing",
+        "sameAs": [
+            "https://www.facebook.com/profile.php?id=61555124971996&mibextid=eHce3h",
+            "https://www.instagram.com/dremablewedding?igsh=MTloaG1iaDUzMHdlNg==",
+            "https://www.youtube.com/channel/UCjqqcLCuG2YdM9Sh5QJJCYA",
+            "https://www.dremable.com/"
+        ]
+    };
+
+    const BreadcrumbListSchema = {
+        "@context": "https://schema.org/",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Wedding Planners",
+            "item": "https://www.dremable.com/magicians/weedingPlanners"
+        }, {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Wedding Photographers",
+            "item": "https://www.dremable.com/magicians/photographers"
+        }, {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Bridal Makeup Artists",
+            "item": "https://www.dremable.com/magicians/makeupArtists"
+        }, {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Who We Are",
+            "item": "https://www.dremable.com/about"
+        }]
+    }
+
+
     return (
         <>
             {/* Corporation Schema */}
-            {/* <script type="application/ld+json">
-                {JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "Corporation",
-                    "name": "Dremable",
-                    "alternateName": "Dremable Wedding",
-                    "url": "https://www.dremable.com/",
-                    "logo": "https://drive.google.com/file/d/1vGso-q00IrIGLVPbJNDiVwEEPuw_jQlg/view?usp=sharing",
-                    "sameAs": [
-                        "https://www.facebook.com/profile.php?id=61555124971996&mibextid=eHce3h",
-                        "https://www.instagram.com/dremablewedding?igsh=MTloaG1iaDUzMHdlNg==",
-                        "https://www.youtube.com/channel/UCjqqcLCuG2YdM9Sh5QJJCYA",
-                        "https://twitter.com/dremablewedding",
-                        "https://www.dremable.com/"
-                    ]
-                })}
-            </script> */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(CorporationSchema) }}
+            />
 
-            {/* BreadcrumbList */}
-            {/* <script type="application/ld+json">
-                {JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "BreadcrumbList",
-                    "itemListElement": [
-                        {
-                            "@type": "ListItem",
-                            "position": 1,
-                            "name": "Wedding Planners",
-                            "item": "https://www.dremable.com/magicians/weddingPlanners"
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 2,
-                            "name": "Wedding Photographers",
-                            "item": "https://www.dremable.com/magicians/photographers"
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 3,
-                            "name": "Bridal Makeup Artists",
-                            "item": "https://www.dremable.com/magicians/makeupArtists"
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 4,
-                            "name": "Who We Are",
-                            "item": "https://www.dremable.com/about"
-                        }
-                    ]
-                })}
-            </script> */}
+            {/* BreadcrumbList Schema */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(BreadcrumbListSchema) }}
+            />
 
             {/* gtag */}
             <script
@@ -85,4 +86,4 @@ export const SeoOptimizationBody: React.FC = () => {
             </noscript>
         </>
     );
-}
+};

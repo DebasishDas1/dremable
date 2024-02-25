@@ -25,7 +25,7 @@ const Testimonial = () => {
                                 {Array.from({ length: starCount }).map((_, i) => <Star key={i} />)}
                                 {Array.from({ length: 5 - starCount }).map((_, i) => <StarOutline key={i} />)}
                             </div>
-                            <div className='w-full text-sm text-slate-700 font-serif'>"{describe}"</div>
+                            <div className='w-full text-sm text-slate-700 font-serif'>{describe}</div>
                         </div>
                     </CarouselItem>
                 ))}

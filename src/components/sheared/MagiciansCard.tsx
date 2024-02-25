@@ -44,7 +44,6 @@ const MagiciansCard = ({ name, contact, address, reating, url }: Props) => {
                     }
                 </div>
             </div>
-
         </div>
     )
 }

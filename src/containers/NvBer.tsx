@@ -14,7 +14,7 @@ const NavBer = () => {
     const showSubtitle = pathname.includes("magicians");
 
     return (
-        <div className='sticky top-0 w-100 md:px-10 px-4 py-1 backdrop-blur-xl text-xl z-50'>
+        <div className='sticky top-0 md:px-10 px-4 backdrop-blur-3xl bg-white/10 text-xl z-50'>
             <div className='flex items-center justify-between'>
                 <Link href='/' className='flex-shrink-0'>
                     <Image
@@ -24,7 +24,7 @@ const NavBer = () => {
                         height={60}
                     />
                 </Link>
-                <ul className="hidden h-full gap-12 md:flex">
+                <ul className="hidden gap-12 md:flex">
                     {nav_options.map(option => (
                         <NavItems
                             key={option.linkUrl}
@@ -52,10 +52,7 @@ const NavBer = () => {
                     ))}
                 </div>
             }
-
-
         </div>
-
     );
 };
 

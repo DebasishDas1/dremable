@@ -13,12 +13,24 @@ import {
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { useState } from 'react'
+import { useState, FormEvent, useLayoutEffect } from 'react'
 import { Facebook, Instagram, Twitter } from '@mui/icons-material';
 import Link from "next/link"
-import { FormEvent } from 'react';
 
 const ContactForm = () => {
+    const [side, setSide] = useState<"bottom" | "right">("right");
+
+    useLayoutEffect(() => {
+        const updateSide = () => {
+            setSide(window.innerWidth <= 768 ? "bottom" : "right");
+        };
+        window.addEventListener("resize", updateSide);
+        updateSide();
+        return () => {
+            window.removeEventListener("resize", updateSide);
+        };
+    }, []);
+
     const [customerData, setCustomerData] = useState({
         name: '',
         email: '',
@@ -57,7 +69,7 @@ const ContactForm = () => {
                 <SheetTrigger asChild>
                     <Button type="submit" className="font-bold">Contact Us</Button>
                 </SheetTrigger>
-                <SheetContent className="bg-white">
+                <SheetContent className="backdrop-blur-xl bg-white/60 text-2xl" side={side}>
                     <SheetHeader>
                         <SheetTitle>Let`&apos;s have a talk</SheetTitle>
                         <SheetDescription>

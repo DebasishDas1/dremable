@@ -2,7 +2,7 @@ export const SeoOptimizationHeader: React.FC = () => {
     return (
         <>
             {/* Corporation Schema */}
-            <script type="application/ld+json">
+            {/* <script type="application/ld+json">
                 {JSON.stringify({
                     "@context": "https://schema.org",
                     "@type": "Corporation",
@@ -18,10 +18,10 @@ export const SeoOptimizationHeader: React.FC = () => {
                         "https://www.dremable.com/"
                     ]
                 })}
-            </script>
+            </script> */}
 
             {/* BreadcrumbList */}
-            <script type="application/ld+json">
+            {/* <script type="application/ld+json">
                 {JSON.stringify({
                     "@context": "https://schema.org",
                     "@type": "BreadcrumbList",
@@ -52,7 +52,7 @@ export const SeoOptimizationHeader: React.FC = () => {
                         }
                     ]
                 })}
-            </script>
+            </script> */}
 
             {/* gtag */}
             <script

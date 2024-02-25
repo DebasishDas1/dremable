@@ -12,10 +12,10 @@ type Props = {
 
 const NavItems = ({ url, title, icon }: Props) => {
     const pathname = usePathname().split('/')
-    const showSubtitle = pathname.includes(title.toLowerCase());
+    const showSubtitle = pathname.map(item => item.toLowerCase().replace(/\s+/g, '')).includes(title.toLowerCase().replace(/\s+/g, ''))
 
     return (
-        <Link href={url} className={`flex regular-16 cursor-pointer pb-5 items-center pt-2 font-bold ${showSubtitle ? 'text-black' : 'text-stone-500'}`} >
+        <Link href={url} className={`flex regular-16 cursor-pointer pb-5 items-center pt-2 ${showSubtitle ? 'font-black' : 'font-light'}`} >
             <button type="submit">
                 <span className='mr-2'>
                     {icon}

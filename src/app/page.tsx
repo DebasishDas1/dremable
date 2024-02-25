@@ -1,5 +1,7 @@
 import HeroSection from "@/containers/HeroSection";
 import Title from "@/components/sheared/Title"
+import Testimonial from "@/components/sheared/Testimonial"
+import DremableFeatures from "@/components/sheared/DremableFeatures"
 import { benefits } from "@/components/constants"
 import { LocationSearching } from "@mui/icons-material";
 
@@ -22,6 +24,9 @@ export default function Home() {
           into breathtaking masterpieces, find the perfect match for every part of your special day.
         </div>
 
+        {/* Features Section */}
+        <DremableFeatures />
+
         {/* Benefits Section */}
         <Title> How Dremable makes your planning smooth sailing</Title>
         {benefits.map(({ title, describe }) => (
@@ -39,9 +44,10 @@ export default function Home() {
           to plan your dream wedding with ease, trust, and joy.
         </div>
       </div>
-
       {/* Testimonial Section */}
-      {/* Features Section */}
+      <Title>Testimonial</Title>
+      <Testimonial />
+
       {/* FAQ Section */}
     </main>
   );

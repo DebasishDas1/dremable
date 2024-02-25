@@ -21,7 +21,6 @@ export const plannerData = [
     { name: 'Saymber Wedding Planner', contact: '70440 74047', address: 'Kalikapur Rd, Kolkata, 700078', url: '' },
     { name: 'Da louie Event Planner', contact: '7044000821', address: 'Basudevpur Colony, Kolkata, 700008', url: '' },
     { name: 'Orion Events', contact: '9903089646', address: 'Sovabazar, Hatkhola, Kolkata, West Bengal 700005', url: 'http://www.orioncaterersandevents.in/' },
-    { name: 'Orion Events', contact: '99030 89646', address: 'Sovabazar, Hatkhola, Kolkata, West Bengal 700005', url: 'http://www.orioncaterersandevents.in/' },
     { name: 'The Royal Reception', contact: '98364 60606', address: 'Rabindra Sarani Kolkata Gpo, Kolkata 700003', url: 'https://theroyalreception.com/' },
     { name: 'Wedding Sutra Event Management', contact: '90511 99999', address: 'Beadon Street, Kolkata', url: 'https://weddingsutra.co.in/' },
     { name: 'Silver Sand Event Management', contact: '98311 77461', address: 'Garfa Main Road, Haltu, Kolkata - 700078', url: 'https://www.silversandevent.com/' },

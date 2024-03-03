@@ -74,8 +74,11 @@ const DropDown = ({ value, onChabgeHandler }: DropDownProps) => {
                             <AlertDialogTitle>New Catagory</AlertDialogTitle>
                             <AlertDialogDescription>
                                 <Input
+                                    id="catagory"
                                     type="text"
                                     placeholder="Catagory name"
+                                    className="input-field"
+                                    value={newCatagory}
                                     onChange={e => setNewCatagory(e.target.value)}
                                 />
                             </AlertDialogDescription>

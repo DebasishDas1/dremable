@@ -18,8 +18,10 @@ const BlogDetailsPage = async ({ params: { blogId } }: BlogDetailsPageProps) => 
     return (
         <div className='flex flex-col items-center'>
             <div className='flex flex-col md:w-[65%] w-full items-center'>
-                <PageTitle title={blogDetails.title} />
-                <h1 className='hidden'> title={blogDetails.title}</h1>
+                <div className='w-[80%]'>
+                    <PageTitle title={blogDetails.title} />
+                    <h1 className='hidden'> title={blogDetails.title}</h1>
+                </div>
                 <Image
                     src={blogDetails.imageUrl}
                     alt="hero image"

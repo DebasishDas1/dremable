@@ -45,7 +45,6 @@ const DropDown = ({ value, onChabgeHandler }: DropDownProps) => {
     useEffect(() => {
         const getCatagories = async () => {
             const catagoriesList = await getAllCatagory();
-
             catagoriesList && setCatagories(catagoriesList as ICatagory[])
         }
         getCatagories()
@@ -77,7 +76,6 @@ const DropDown = ({ value, onChabgeHandler }: DropDownProps) => {
                                 <Input
                                     type="text"
                                     placeholder="Catagory name"
-                                    className="input-field"
                                     onChange={e => setNewCatagory(e.target.value)}
                                 />
                             </AlertDialogDescription>
@@ -88,7 +86,6 @@ const DropDown = ({ value, onChabgeHandler }: DropDownProps) => {
                         </AlertDialogFooter>
                     </AlertDialogContent>
                 </AlertDialog>
-
             </SelectContent>
         </Select>
 

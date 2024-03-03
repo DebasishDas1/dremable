@@ -19,11 +19,6 @@ type CreateBlogParams = {
     path: string;
 };
 
-const populateBlog = (query: any) => {
-    return query
-        .populate({ path: 'category', model: Category, select: '_id name' })
-}
-
 export const createBlog = async ({ blog, path }: CreateBlogParams) => {
     try {
         await connectToDatabase();
@@ -58,13 +53,39 @@ type GetAllBlogssParams = {
     page: number
 }
 
-export const getAllBlog = async () => {
+const populateBlog = (query: any) => {
+    return query
+        .populate({ path: 'category', model: Category, select: '_id name' })
+}
+
+const getCategoryByName = async (name: string) => {
+    return Category.findOne({ name: { $regex: name, $options: 'i' } })
+}
+
+// GET ALL Blog
+export const getAllBlog = async ({ query, limit = 6, page, category }: GetAllBlogssParams) => {
     try {
-        await connectToDatabase();
+        await connectToDatabase()
 
-        const blogs = await Blog.find()
+        const titleCondition = query ? { title: { $regex: query, $options: 'i' } } : {}
+        const categoryCondition = category ? await getCategoryByName(category) : null
+        const conditions = {
+            $and: [titleCondition, categoryCondition ? { category: categoryCondition._id } : {}],
+        }
 
-        return JSON.parse(JSON.stringify(blogs))
+        const skipAmount = (Number(page) - 1) * limit
+        const blogQuery = Blog.find(conditions)
+            .sort({ createdAt: 'desc' })
+            .skip(skipAmount)
+            .limit(limit)
+
+        const events = await populateBlog(blogQuery)
+        const blogCount = await Blog.countDocuments(conditions)
+
+        return {
+            data: JSON.parse(JSON.stringify(events)),
+            totalPages: Math.ceil(blogCount / limit),
+        }
     } catch (error) {
         handleError(error)
     }

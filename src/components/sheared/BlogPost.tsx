@@ -10,6 +10,7 @@ type BlogPostProps = {
     id: string,
     date: Date;
     image: string;
+    hasOrderLink?: boolean,
 }
 
 const BlogPost = ({ title, description, id, date, image }: BlogPostProps) => {
@@ -26,29 +27,36 @@ const BlogPost = ({ title, description, id, date, image }: BlogPostProps) => {
     const limitedDescription = limitDescription(description);
 
     return (
-        <div className="rounded-xl bg-white md:w-[600px] w-full p-4 shadow-lg">
-            <Link href={`/blog/${id}`} >
-                <h2 className="text-2xl font-semibold mb-2">{title}</h2>
-            </Link>
-            <div className='flex flex-row '>
-                {limitedDescription && (
-                    <div className="text-sm my-2 mr-2 basis-3/4">
-                        <div dangerouslySetInnerHTML={{ __html: limitedDescription }} />
-                    </div>
-                )}
-                {image && (
-                    <div className='basis-1/4 flex items-center blur-sm' >
-                        <Image
-                            src={image}
-                            alt="image"
-                            width={250}
-                            height={250}
-                            className="w-full object-cover object-center"
-                        />
-                    </div>
-                )}
+        <div className="group relative flex flex-col md:min-h-[250px] min-h-[500px] max-w-[600px] overflow-hidden rounded-xl bg-white">
+            <Link
+                href={`/blog/${id}`}
+                style={{ backgroundImage: `url(${image})` }}
+                className="flex-center flex-grow bg-cover bg-center md:hidden blur-sm"
+            />
+            <div className="p-4">
+                <Link href={`/blog/${id}`} >
+                    <h2 className="text-2xl font-semibold mb-2">{title}</h2>
+                </Link>
+                <div className='flex flex-row '>
+                    {limitedDescription && (
+                        <div className="text-sm my-2 mr-2 md:basis-3/4">
+                            <div dangerouslySetInnerHTML={{ __html: limitedDescription }} />
+                        </div>
+                    )}
+                    {image && (
+                        <div className='basis-1/4 md:flex items-center blur-sm hidden' >
+                            <Image
+                                src={image}
+                                alt="image"
+                                width={250}
+                                height={250}
+                                className="w-full object-cover object-center"
+                            />
+                        </div>
+                    )}
+                </div>
+                <h6 className="text-sm my-1 text-stone-500">{formatDateTime(date).dateOnly}</h6>
             </div>
-            <h6 className="text-sm my-1 text-stone-500">{formatDateTime(date).dateOnly}</h6>
         </div>
     )
 }

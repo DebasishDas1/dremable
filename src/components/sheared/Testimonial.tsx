@@ -19,7 +19,7 @@ const Testimonial = () => {
             <CarouselContent>
                 {testimonial_info.map(({ name, starCount, describe }, index) => (
                     <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                        <div className='flex flex-col font-sans  bg-white rounded-lg p-4 m h-[260px]'>
+                        <div className='flex flex-col font-sans  bg-white rounded-lg p-4 h-[265px]'>
                             <div className='lex-auto text-lg font-bold'>{name}</div>
                             <div className='my-2'>
                                 {Array.from({ length: starCount }).map((_, i) => <Star key={i} />)}

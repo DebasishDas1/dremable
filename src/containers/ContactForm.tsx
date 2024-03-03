@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState, FormEvent, useLayoutEffect } from 'react'
-import { Facebook, Instagram, Twitter } from '@mui/icons-material';
+import { Facebook, Instagram, X } from '@mui/icons-material';
 import Link from "next/link"
 
 const ContactForm = () => {
@@ -69,7 +69,7 @@ const ContactForm = () => {
                 <SheetTrigger asChild>
                     <Button type="submit" className="font-bold">Contact Us</Button>
                 </SheetTrigger>
-                <SheetContent className="backdrop-blur-xl bg-white/60 text-2xl" side={side}>
+                <SheetContent className="backdrop-blur-3xl bg-white/60 text-2xl" side={side}>
                     <SheetHeader>
                         <SheetTitle>Let`&apos;s have a talk</SheetTitle>
                         <SheetDescription>
@@ -113,7 +113,7 @@ const ContactForm = () => {
                             <Instagram />
                         </Link>
                         <Link href={'https://twitter.com/dremablewedding'} className={`cursor-pointer py-2 pl-2`} target="_blank">
-                            <Twitter />
+                            <X />
                         </Link>
                     </div>
                     <SheetFooter>

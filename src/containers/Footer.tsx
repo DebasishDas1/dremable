@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter } from '@mui/icons-material';
+import { Facebook, Instagram, X } from '@mui/icons-material';
 import Link from "next/link"
 
 const Footer = () => {
@@ -16,7 +16,7 @@ const Footer = () => {
                     <Instagram />
                 </Link>
                 <Link href={'https://twitter.com/dremablewedding'} className={`cursor-pointer py-1 pl-1`} target="_blank">
-                    <Twitter />
+                    <X />
                 </Link>
             </div>
             <div>

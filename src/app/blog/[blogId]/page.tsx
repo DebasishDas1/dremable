@@ -18,7 +18,7 @@ const BlogDetailsPage = async ({ params: { blogId } }: BlogDetailsPageProps) => 
     return (
         <div className='flex flex-col items-center'>
             <div className='flex flex-col md:w-[65%] w-full items-center'>
-                <div className='w-[80%]'>
+                <div className='w-[90%]'>
                     <PageTitle title={blogDetails.title} />
                     <h1 className='hidden'> title={blogDetails.title}</h1>
                 </div>

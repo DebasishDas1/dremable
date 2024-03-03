@@ -78,7 +78,6 @@ const DropDown = ({ value, onChabgeHandler }: DropDownProps) => {
                                     type="text"
                                     placeholder="Catagory name"
                                     className="input-field"
-                                    value={newCatagory}
                                     onChange={e => setNewCatagory(e.target.value)}
                                 />
                             </AlertDialogDescription>

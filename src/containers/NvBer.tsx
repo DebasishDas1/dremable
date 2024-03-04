@@ -14,7 +14,7 @@ const NavBer = () => {
     const showSubtitle = pathname.includes("magicians");
 
     return (
-        <div className='sticky top-0 md:px-10 px-4 backdrop-blur-3xl bg-white/10 text-xl z-50'>
+        <div className='sticky top-0 md:px-10 px-4 backdrop-blur-3xl bg-white/20 text-xl z-50'>
             <div className='flex items-center justify-between'>
                 <Link href='/' className='flex-shrink-0'>
                     <Image

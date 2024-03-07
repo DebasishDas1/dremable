@@ -31,32 +31,32 @@ type DropDownProps = {
 }
 
 const DropDown = ({ value, onChabgeHandler }: DropDownProps) => {
-    // const [catagories, setCatagories] = useState<ICatagory[]>([]);
-    // const [newCatagory, setNewCatagory] = useState('')
+    const defaultCategories: ICatagory[] = [
+        { name: "Wedding Planning", _id: "65e9d7d6bbcda6e720c174f1" },
+        { name: "Wedding Photography", _id: "65e9d7e6bbcda6e720c174f3" },
+        { name: "Bridal Makeup", _id: "65e9d7f5bbcda6e720c174f5" },
+        { name: "Destination Wedding", _id: "65e9d803bbcda6e720c174f7" },
+        { name: "Pre Wedding", _id: "65e9d815bbcda6e720c174f9" }
+    ];
 
-    // const handelAddCatagory = () => {
-    //     createCatagory({
-    //         catagoryName: newCatagory.trim()
-    //     }).then((catagory) => {
-    //         setCatagories(oldData => [...oldData, catagory])
-    //     })
-    // }
+    const [catagories, setCatagories] = useState<ICatagory[]>([]);
+    const [newCatagory, setNewCatagory] = useState('')
 
-    // useEffect(() => {
-    //     const getCatagories = async () => {
-    //         const catagoriesList = await getAllCatagory();
-    //         catagoriesList && setCatagories(catagoriesList as ICatagory[])
-    //     }
-    //     getCatagories()
-    // }, [])
+    const handelAddCatagory = () => {
+        createCatagory({
+            catagoryName: newCatagory.trim()
+        }).then((catagory) => {
+            setCatagories(oldData => [...oldData, catagory])
+        })
+    }
 
-    const catagories = [
-        "Wedding Planning",
-        "Wedding Photography",
-        "Bridal Makeup",
-        "Destination Wedding",
-        "Pre Wedding"
-    ]
+    useEffect(() => {
+        const getCatagories = async () => {
+            const catagoriesList = await getAllCatagory();
+            catagoriesList && setCatagories(catagoriesList as ICatagory[])
+        }
+        getCatagories()
+    }, [])
 
     return (
         <Select onValueChange={onChabgeHandler} defaultValue={value}>
@@ -66,22 +66,13 @@ const DropDown = ({ value, onChabgeHandler }: DropDownProps) => {
             <SelectContent>
                 {catagories.map(catagory => (
                     <SelectItem
-                        key={catagory}
-                        value={catagory}
+                        key={catagory._id}
+                        value={catagory._id}
                         className='select-ttem p-ragiler-14'
-                    >{catagory}</SelectItem>
+                    >{catagory.name}</SelectItem>
                 ))
                 }
-                {/* {catagories.length > 1 &&
-                    catagories.map(catagory => (
-                        <SelectItem
-                            key={catagory._id}
-                            value={catagory._id}
-                            className='select-ttem p-ragiler-14'
-                        >{catagory.name}</SelectItem>
-                    ))
-                } */}
-                {/* <AlertDialog>
+                <AlertDialog>
                     <AlertDialogTrigger className="p-medium-14 flex w-full rounded-sm py-3 pl-8  text-primary-500 hover:bg-primary-50 focus:text-primary-500" >
                         Add new Catagory
                     </AlertDialogTrigger>
@@ -103,7 +94,7 @@ const DropDown = ({ value, onChabgeHandler }: DropDownProps) => {
                             <AlertDialogAction onClick={() => startTransition(handelAddCatagory)} >Add</AlertDialogAction>
                         </AlertDialogFooter>
                     </AlertDialogContent>
-                </AlertDialog> */}
+                </AlertDialog>
             </SelectContent>
         </Select>
 

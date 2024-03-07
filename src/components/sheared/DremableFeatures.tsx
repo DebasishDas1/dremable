@@ -8,24 +8,34 @@ interface FeatureProps {
     text: string;
     url: string;
     sideLink: string;
+    side: string;
 }
 
-const FeatureItem: FC<FeatureProps> = ({ text, url, sideLink }) => {
+const FeatureItem: FC<FeatureProps> = ({ text, url, sideLink, side }) => {
     return (
-        <div className='relative my-2 rounded-lg overflow-hidden'>
+        <div className='h-[400px] relative my-2 rounded-lg overflow-hidden'>
             <Image
                 src={url}
                 alt="landing page"
                 width={1500}
-                height={500}
-                className="object-cover"
+                height={1500}
+                className="object-cover md:blur-3xl my-auto"
             />
-            <div className='absolute inset-0 flex flex-col justify-center items-center text-center bg-gradient-to-b from-gray-500 p-4'>
-                <div className="font-bold text-4xl md:text-8xl">{text}</div>
-                <div className="mt-4">
-                    <Button size='lg' asChild className="button w-full sm:w-auto">
-                        <Link href={sideLink}>Explore now</Link>
-                    </Button>
+            <div className='absolute inset-0 flex text-center'>
+                <Image
+                    src={url}
+                    alt="landing page"
+                    width={500}
+                    height={500}
+                    className="object-cover rounded-lg hidden md:flex"
+                />
+                <div className='bg-white/40 h-full flex items-center justify-center flex-col w-full'>
+                    <div className="font-bold text-4xl md:text-5xl">{text}</div>
+                    <div className="mt-4">
+                        <Button size='lg' asChild className="button w-full sm:w-auto">
+                            <Link href={sideLink}>Explore now</Link>
+                        </Button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -35,9 +45,24 @@ const FeatureItem: FC<FeatureProps> = ({ text, url, sideLink }) => {
 const DremableFeatures: FC = () => {
     return (
         <div className='flex flex-wrap items-center justify-evenly text-4xl'>
-            <FeatureItem text="Weeding Planners" url='https://images.pexels.com/photos/733854/pexels-photo-733854.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' sideLink='/magicians/weedingPlanners' />
-            <FeatureItem text="Photographers" url='https://images.pexels.com/photos/3379934/pexels-photo-3379934.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' sideLink='/magicians/photographers' />
-            <FeatureItem text="Makeup Artists" url='https://images.pexels.com/photos/3522732/pexels-photo-3522732.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' sideLink='/magicians/makeupArtists' />
+            <FeatureItem
+                text="Weeding Planners"
+                url='https://images.pexels.com/photos/3975586/pexels-photo-3975586.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                sideLink='/magicians/weedingPlanners'
+                side="left"
+            />
+            <FeatureItem
+                text="Photographers"
+                url='https://images.pexels.com/photos/17057198/pexels-photo-17057198/free-photo-of-close-up-of-a-viewfinder-of-a-camera-photographing-bride-and-groom.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                sideLink='/magicians/photographers'
+                side="right"
+            />
+            <FeatureItem
+                text="Makeup Artists"
+                url='https://images.pexels.com/photos/5733000/pexels-photo-5733000.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                sideLink='/magicians/makeupArtists'
+                side="left"
+            />
         </div>
     );
 };

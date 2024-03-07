@@ -13,7 +13,7 @@ interface FeatureProps {
 
 const FeatureItem: FC<FeatureProps> = ({ text, url, sideLink, side }) => {
     return (
-        <div className='h-[400px] relative my-2 rounded-lg overflow-hidden'>
+        <div className='h-[400px] relative md:my-4 rounded-lg overflow-hidden my-8'>
             <Image
                 src={url}
                 alt="landing page"

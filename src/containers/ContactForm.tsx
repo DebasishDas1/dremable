@@ -118,7 +118,7 @@ const ContactForm = () => {
                     </div>
                     <SheetFooter>
                         <SheetClose asChild>
-                            <Button onClick={handelSubmit} type="submit">Send Message</Button>
+                            <Button type="submit">Send Message</Button>
                         </SheetClose>
                     </SheetFooter>
                 </SheetContent>

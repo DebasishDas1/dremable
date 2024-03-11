@@ -30,7 +30,7 @@ const BlogPost = ({ title, description, id, date, image }: BlogPostProps) => {
         <div className="group relative flex flex-col md:min-h-[250px] max-w-[600px] overflow-hidden rounded-xl bg-white">
             <Link
                 href={`/blog/${id}`}
-                className="flex-center flex-grow bg-cover bg-center md:hidden h-[150px] relative"
+                className="flex-center flex-grow bg-cover bg-center md:hidden h-[120px] relative"
                 style={{ backgroundImage: `url(${image})` }}
             >
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>

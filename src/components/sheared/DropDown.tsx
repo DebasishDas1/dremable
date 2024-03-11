@@ -31,6 +31,14 @@ type DropDownProps = {
 }
 
 const DropDown = ({ value, onChabgeHandler }: DropDownProps) => {
+    const defaultCategories: ICatagory[] = [
+        { name: "Wedding Planning", _id: "65e9d7d6bbcda6e720c174f1" },
+        { name: "Wedding Photography", _id: "65e9d7e6bbcda6e720c174f3" },
+        { name: "Bridal Makeup", _id: "65e9d7f5bbcda6e720c174f5" },
+        { name: "Destination Wedding", _id: "65e9d803bbcda6e720c174f7" },
+        { name: "Pre Wedding", _id: "65e9d815bbcda6e720c174f9" }
+    ];
+
     const [catagories, setCatagories] = useState<ICatagory[]>([]);
     const [newCatagory, setNewCatagory] = useState('')
 
@@ -45,7 +53,6 @@ const DropDown = ({ value, onChabgeHandler }: DropDownProps) => {
     useEffect(() => {
         const getCatagories = async () => {
             const catagoriesList = await getAllCatagory();
-
             catagoriesList && setCatagories(catagoriesList as ICatagory[])
         }
         getCatagories()
@@ -57,14 +64,13 @@ const DropDown = ({ value, onChabgeHandler }: DropDownProps) => {
                 <SelectValue placeholder="Catagory" />
             </SelectTrigger>
             <SelectContent>
-                {catagories.length > 1 &&
-                    catagories.map(catagory => (
-                        <SelectItem
-                            key={catagory._id}
-                            value={catagory._id}
-                            className='select-ttem p-ragiler-14'
-                        >{catagory.name}</SelectItem>
-                    ))
+                {catagories.map(catagory => (
+                    <SelectItem
+                        key={catagory._id}
+                        value={catagory._id}
+                        className='select-ttem p-ragiler-14'
+                    >{catagory.name}</SelectItem>
+                ))
                 }
                 <AlertDialog>
                     <AlertDialogTrigger className="p-medium-14 flex w-full rounded-sm py-3 pl-8  text-primary-500 hover:bg-primary-50 focus:text-primary-500" >
@@ -75,9 +81,10 @@ const DropDown = ({ value, onChabgeHandler }: DropDownProps) => {
                             <AlertDialogTitle>New Catagory</AlertDialogTitle>
                             <AlertDialogDescription>
                                 <Input
+                                    id="catagory"
                                     type="text"
                                     placeholder="Catagory name"
-                                    className="input-field mt-3"
+                                    className="input-field"
                                     onChange={e => setNewCatagory(e.target.value)}
                                 />
                             </AlertDialogDescription>
@@ -88,7 +95,6 @@ const DropDown = ({ value, onChabgeHandler }: DropDownProps) => {
                         </AlertDialogFooter>
                     </AlertDialogContent>
                 </AlertDialog>
-
             </SelectContent>
         </Select>
 

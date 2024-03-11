@@ -12,8 +12,9 @@ export const metadata: Metadata = {
 const About = () => {
     return (
         <div className='flex flex-col items-center'>
-            <div className='flex flex-col md:w-[65%] w-[85%] items-center'>
+            <div className='flex flex-col md:w-[65%] w-[90%] items-center'>
                 <PageTitle title='Weaving threads of love' />
+                <h1 className='hidden'>Weaving threads of love</h1>
                 <div className="pb-10 text-stone-500 text-xl">
                     Unveiling India`&apos;s premier wedding orchestration platform
                 </div>

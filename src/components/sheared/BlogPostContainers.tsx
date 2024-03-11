@@ -1,38 +1,61 @@
 import BlogPost from './BlogPost';
 import { IBlog } from '@/lib/database/models/blog.model';
-import { getAllBlog } from '@/lib/actions/blog.action';
 
-const BlogPostContainers = async () => {
-    try {
-        const blogs: IBlog[] = await getAllBlog();
+type BlogPostContainersProps = {
+    data: IBlog[],
+    emptyTitle: string,
+    emptyStateSubtext: string,
+    limit: number,
+    page: number | string,
+    totalPages?: number,
+    urlParamName?: string,
+    collectionType?: 'Events_Organized' | 'My_Tickets' | 'All_Events'
+}
 
-        if (blogs.length > 0) {
-            return (
-                <div className="flex flex-col items-center gap-5">
-                    {blogs.map(blog => (
-                        <BlogPost
-                            key={blog._id}
-                            title={blog.title}
-                            description={blog.description}
-                            id={blog._id}
-                            date={blog.date}
-                            image={blog.imageUrl}
-                        />
-                    ))}
+const BlogPostContainers = ({
+    data,
+    emptyTitle,
+    emptyStateSubtext,
+    page,
+    totalPages = 0,
+    collectionType,
+    urlParamName,
+}: BlogPostContainersProps) => {
+    return (
+        <>
+            {data.length > 0 ? (
+                <div className="flex flex-col items-center gap-10">
+                    <ul className="grid w-full grid-cols-1 gap-5">
+                        {data.map((blog) => {
+                            const hasOrderLink = collectionType === 'Events_Organized';
+
+                            return (
+                                <li key={blog._id} className="flex justify-center">
+                                    <BlogPost
+                                        title={blog.title}
+                                        description={blog.description}
+                                        id={blog._id}
+                                        date={blog.date}
+                                        image={blog.imageUrl}
+                                        hasOrderLink={hasOrderLink}
+                                    />
+                                </li>
+                            )
+                        })}
+                    </ul>
+
+                    {/* {totalPages > 1 && (
+                <Pagination urlParamName={urlParamName} page={page} totalPages={totalPages} />
+              )} */}
                 </div>
-            );
-        } else {
-            return (
-                <div className='w-full bg-white flex items-center flex-col p-10 rounded-l shadow-lg'>
-                    <h1 className='p-bold-20 md:h5-bold'>No Blogs Found</h1>
-                    <p>Come back later</p>
+            ) : (
+                <div className="flex-center wrapper min-h-[200px] w-full flex-col gap-3 rounded-[14px] bg-grey-50 py-28 text-center">
+                    <h3 className="p-bold-20 md:h5-bold">{emptyTitle}</h3>
+                    <p className="p-regular-14">{emptyStateSubtext}</p>
                 </div>
-            );
-        }
-    } catch (error) {
-        console.error('Error fetching blogs:', error);
-        return null;
-    }
+            )}
+        </>
+    )
 };
 
 export default BlogPostContainers;

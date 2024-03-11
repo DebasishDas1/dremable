@@ -6,6 +6,7 @@ const CraeteBlog = () => {
         <div className='flex flex-col items-center'>
             <div className='flex flex-col md:w-[65%] w-[90%] items-center'>
                 <PageTitle title='Create Wedding Blog' />
+                <h1 className='hidden'>Create Wedding Blog</h1>
                 <BolgForm type='create' />
             </div>
         </div>

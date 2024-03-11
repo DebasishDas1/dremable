@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import NavBar from '@/containers/NvBer'
 import Footer from '@/containers/Footer'
+import { SeoOptimizationHeader, SeoOptimizationBody } from "@/components/sheared/Seo"
 import './globals.css'
 
 const poppins = Poppins({
@@ -11,11 +12,8 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Dremable',
-  description: 'celebration website',
-  icons: {
-    icon: '/assets/Medcare.svg'
-  }
+  title: 'Dremable - Your Dream Wedding starts from here ',
+  description: 'Dream of a perfect wedding? Dremable makes it real! From wedding planners & photographers to makeup artists & vendors, Find everything as you dream',
 }
 
 export default function RootLayout({
@@ -25,13 +23,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <SeoOptimizationHeader />
+      </head>
       <body className={poppins.variable} suppressHydrationWarning={true}>
-        <div className='bg-zinc-200' >
+        <SeoOptimizationBody />
+        <div className="bg-zinc-200">
           <NavBar />
           {children}
           <Footer />
         </div>
       </body>
     </html>
-  )
+  );
 }

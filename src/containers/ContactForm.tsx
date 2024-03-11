@@ -1,4 +1,5 @@
 'use client'
+
 import {
     Sheet,
     SheetClose,
@@ -12,11 +13,24 @@ import {
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { useState } from 'react'
-import { Facebook, Instagram, LinkedIn } from '@mui/icons-material';
+import { useState, FormEvent, useLayoutEffect } from 'react'
+import { Facebook, Instagram, X } from '@mui/icons-material';
 import Link from "next/link"
 
 const ContactForm = () => {
+    const [side, setSide] = useState<"bottom" | "right">("right");
+
+    useLayoutEffect(() => {
+        const updateSide = () => {
+            setSide(window.innerWidth <= 768 ? "bottom" : "right");
+        };
+        window.addEventListener("resize", updateSide);
+        updateSide();
+        return () => {
+            window.removeEventListener("resize", updateSide);
+        };
+    }, []);
+
     const [customerData, setCustomerData] = useState({
         name: '',
         email: '',
@@ -38,13 +52,24 @@ const ContactForm = () => {
         })
     }
 
+    const handelSubmit = (e: FormEvent<HTMLButtonElement>) => {
+        e.preventDefault()
+        console.log(customerData);
+
+        setCustomerData({
+            name: '',
+            email: '',
+            message: ''
+        });
+    }
+
     return (
         <div>
             <Sheet>
                 <SheetTrigger asChild>
                     <Button type="submit" className="font-bold">Contact Us</Button>
                 </SheetTrigger>
-                <SheetContent className="bg-white">
+                <SheetContent className="backdrop-blur-3xl bg-white/60 text-2xl" side={side}>
                     <SheetHeader>
                         <SheetTitle>Let`&apos;s have a talk</SheetTitle>
                         <SheetDescription>
@@ -86,6 +111,9 @@ const ContactForm = () => {
                         </Link>
                         <Link href={'https://www.instagram.com/dremablewedding?igsh=MTloaG1iaDUzMHdlNg=='} className={`cursor-pointer py-2 pl-2`} target="_blank">
                             <Instagram />
+                        </Link>
+                        <Link href={'https://twitter.com/dremablewedding'} className={`cursor-pointer py-2 pl-2`} target="_blank">
+                            <X />
                         </Link>
                     </div>
                     <SheetFooter>

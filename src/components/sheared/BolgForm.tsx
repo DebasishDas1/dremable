@@ -30,7 +30,7 @@ type BolgFormProps = {
 const formSchema = z.object({
     title: z.string().min(2, "Title must be at least 3 characters."),
     description: z.string().min(2, "Description must be at least 2 characters.")
-        .max(10000, "Description must be at most 1000 characters."),
+        .max(100000, "Description must be at most 1000 characters."),
     location: z.string().min(2, "Location must be at least 3 characters.")
         .max(400, "Location must be at most 400 characters."),
     date: z.date(),

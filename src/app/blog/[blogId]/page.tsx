@@ -5,8 +5,6 @@ import Image from 'next/image'
 import { Place, Celebration, CalendarMonth, PhoneIphone, InsertLink } from '@mui/icons-material';
 import { formatDateTime } from '@/lib/utils'
 import Link from 'next/link';
-import { text } from 'stream/consumers';
-import { error } from 'console';
 
 interface BlogDetailsPageProps {
     params: { blogId: string }
@@ -20,7 +18,10 @@ const BlogDetailsPage = async ({ params: { blogId } }: BlogDetailsPageProps) => 
     return (
         <div className='flex flex-col items-center'>
             <div className='flex flex-col md:w-[65%] w-full items-center'>
-                <PageTitle title={blogDetails.title} />
+                <div className='w-[90%]'>
+                    <PageTitle title={blogDetails.title} />
+                    <h1 className='hidden'> title={blogDetails.title}</h1>
+                </div>
                 <Image
                     src={blogDetails.imageUrl}
                     alt="hero image"

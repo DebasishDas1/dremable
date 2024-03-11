@@ -27,12 +27,16 @@ const BlogPost = ({ title, description, id, date, image }: BlogPostProps) => {
     const limitedDescription = limitDescription(description);
 
     return (
-        <div className="group relative flex flex-col md:min-h-[250px] min-h-[500px] max-w-[600px] overflow-hidden rounded-xl bg-white">
+        <div className="group relative flex flex-col md:min-h-[250px] max-w-[600px] overflow-hidden rounded-xl bg-white">
             <Link
                 href={`/blog/${id}`}
+                className="flex-center flex-grow bg-cover bg-center md:hidden h-[150px] relative"
                 style={{ backgroundImage: `url(${image})` }}
-                className="flex-center flex-grow bg-cover bg-center md:hidden blur-sm"
-            />
+            >
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
+                {/* Content inside the Link */}
+            </Link>
+
             <div className="p-4">
                 <Link href={`/blog/${id}`} >
                     <h2 className="text-2xl font-semibold mb-2">{title}</h2>

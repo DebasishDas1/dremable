@@ -5,22 +5,31 @@ import Image from 'next/image'
 import { Place, Celebration, CalendarMonth, PhoneIphone, InsertLink } from '@mui/icons-material';
 import { formatDateTime } from '@/lib/utils'
 import Link from 'next/link';
+import type { Metadata } from 'next'
 
 interface BlogDetailsPageProps {
     params: { blogId: string }
     searchParams: { [key: string]: string | string[] | undefined }
 }
 
+export async function generateMetadata({ params }: BlogDetailsPageProps): Promise<Metadata> {
+    const blogDetails = await getBlogById(params.blogId);
+    return {
+        title: blogDetails.title,
+        description: blogDetails.description.substring(0, 150) + '...',
+    };
+}
+
 const BlogDetailsPage = async ({ params: { blogId } }: BlogDetailsPageProps) => {
-    const blogDetails = await getBlogById(blogId)
-    const catagoryetails = await getCatagoryById(blogDetails.category)
+    const blogDetails = await getBlogById(blogId);
+    const categoryDetails = await getCatagoryById(blogDetails.category);
 
     return (
         <div className='flex flex-col items-center'>
             <div className='flex flex-col md:w-[65%] w-full items-center'>
                 <div className='w-[90%]'>
                     <PageTitle title={blogDetails.title} />
-                    <h1 className='hidden'> title={blogDetails.title}</h1>
+                    <h1 className='hidden'>{blogDetails.title}</h1>
                 </div>
                 <Image
                     src={blogDetails.imageUrl}
@@ -31,7 +40,7 @@ const BlogDetailsPage = async ({ params: { blogId } }: BlogDetailsPageProps) => 
                 />
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center pt-5">
                     <p className="p-bold-20 rounded-full bg-green-500/10 px-5 py-2 text-green-700 flex items-center">
-                        <Celebration className='mr-3' />{catagoryetails.name}
+                        <Celebration className='mr-3' />{categoryDetails.name}
                     </p>
                     <p className="p-medium-16 rounded-full bg-blue-500/10 px-4 py-2.5 text-violate-500 lex items-center">
                         <Place className='mr-3' />{blogDetails.location}
@@ -44,7 +53,7 @@ const BlogDetailsPage = async ({ params: { blogId } }: BlogDetailsPageProps) => 
                     {
                         blogDetails.url &&
                         <Link href={blogDetails.url} className="p-medium-16 rounded-full bg-orange-500/10 px-4 py-2.5 lex items-center text-orange-700">
-                            <InsertLink /> Ckeck it out
+                            <InsertLink /> Check it out
                         </Link>
                     }
                     {
@@ -59,7 +68,7 @@ const BlogDetailsPage = async ({ params: { blogId } }: BlogDetailsPageProps) => 
                 </div>
             </div>
         </div>
-    )
+    );
 };
 
-export default BlogDetailsPage
+export default BlogDetailsPage;

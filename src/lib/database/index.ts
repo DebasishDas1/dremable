@@ -2,19 +2,36 @@ import mongoose from 'mongoose';
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
-let cached = (global as any).mongoose || { conn: null, promise: null };
+if (!MONGODB_URI) {
+  throw new Error('MONGODB_URI is missing');
+}
 
-export const connectToDatabase = async () => {
-    if (cached.conn) return cached.conn;
+// Declare a global type to avoid TypeScript errors
+declare global {
+  var mongoose: {
+    conn: mongoose.Connection | null;
+    promise: Promise<mongoose.Connection> | null;
+  };
+}
 
-    if (!MONGODB_URI) throw new Error('MONGODB_URI is missing');
+// Check if there is a cached connection in the global scope
+let cached = global.mongoose || { conn: null, promise: null };
 
-    cached.promise = cached.promise || mongoose.connect(MONGODB_URI, {
-        dbName: 'Dremable',
-        bufferCommands: false,
-    })
+// Save the cached connection in the global scope for reuse
+global.mongoose = cached;
 
-    cached.conn = await cached.promise;
-
+export const connectToDatabase = async (): Promise<mongoose.Connection> => {
+  if (cached.conn) {
     return cached.conn;
+  }
+
+  if (!cached.promise) {
+    cached.promise = mongoose.connect(MONGODB_URI, {
+      dbName: 'Dremable',
+      bufferCommands: false,
+    }).then(mongoose => mongoose.connection);
+  }
+
+  cached.conn = await cached.promise;
+  return cached.conn;
 }

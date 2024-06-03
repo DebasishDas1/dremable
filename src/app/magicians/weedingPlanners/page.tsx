@@ -95,7 +95,7 @@ const weedingPlanners = () => {
                                 contact={provider.contact}
                                 address={provider.address}
                                 url={provider.url}
-                                reating={3}
+                                rating={Number(provider.rating)}
                             />
                         ))
                     }

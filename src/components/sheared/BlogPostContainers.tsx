@@ -2,7 +2,7 @@ import BlogPost from './BlogPost';
 import { IBlog } from '@/lib/database/models/blog.model';
 
 type BlogPostContainersProps = {
-    data: IBlog[],
+    data?: IBlog[],
     emptyTitle: string,
     emptyStateSubtext: string,
     limit: number,
@@ -13,7 +13,7 @@ type BlogPostContainersProps = {
 }
 
 const BlogPostContainers = ({
-    data,
+    data = [], // Set a default value for data
     emptyTitle,
     emptyStateSubtext,
     page,
@@ -21,14 +21,16 @@ const BlogPostContainers = ({
     collectionType,
     urlParamName,
 }: BlogPostContainersProps) => {
+    // Check if there is any data to display
+    const hasData = data.length > 0;
+
     return (
         <>
-            {data.length > 0 ? (
+            {hasData ? (
                 <div className="flex flex-col items-center gap-10">
                     <ul className="grid w-full grid-cols-1 gap-5">
                         {data.map((blog) => {
                             const hasOrderLink = collectionType === 'Events_Organized';
-
                             return (
                                 <li key={blog._id} className="flex justify-center">
                                     <BlogPost
@@ -40,13 +42,9 @@ const BlogPostContainers = ({
                                         hasOrderLink={hasOrderLink}
                                     />
                                 </li>
-                            )
+                            );
                         })}
                     </ul>
-
-                    {/* {totalPages > 1 && (
-                <Pagination urlParamName={urlParamName} page={page} totalPages={totalPages} />
-              )} */}
                 </div>
             ) : (
                 <div className="flex-center wrapper min-h-[200px] w-full flex-col gap-3 rounded-[14px] bg-grey-50 py-28 text-center">
@@ -55,7 +53,7 @@ const BlogPostContainers = ({
                 </div>
             )}
         </>
-    )
+    );
 };
 
 export default BlogPostContainers;

@@ -70,10 +70,10 @@ const MagiciansCard = ({ name, contact, address, rating, url }: Props) => {
                 <Phone />
                 <span className="pl-1"> {contact}</span>
               </div>
-              <div className="text-2xl font-bold pt-4 pb-2">
+              <div className="text-2xl font-bold pt-4 pb-2 text-center">
                 Want to get a special offer ?
               </div>
-              <div className="flex p-3 rounded-lg text-center bg-gradient-to-r from-purple-200 to-pink-200">
+              <div className="flex p-3 rounded-lg text-center bg-gradient-to-r from-purple-100 to-pink-100">
                 Wnen you call the vender must say you got this contact from
                 Dremable Platform
               </div>

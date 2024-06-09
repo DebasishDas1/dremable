@@ -8,32 +8,32 @@ import Link from 'next/link';
 import type { Metadata } from 'next'
 
 interface BlogDetailsPageProps {
-    params: { blogId: string }
+    params: { urlKey: string }
     searchParams: { [key: string]: string | string[] | undefined }
 }
 
 export async function generateMetadata({ params }: BlogDetailsPageProps): Promise<Metadata> {
-    const blogDetails = await getBlogById(params.blogId);
+    const blogDetails = await getBlogById(params.urlKey);
     return {
         title: blogDetails.title,
         description: blogDetails.description.substring(0, 150) + '...',
     };
 }
 
-const BlogDetailsPage = async ({ params: { blogId } }: BlogDetailsPageProps) => {
-    const blogDetails = await getBlogById(blogId);
+const BlogDetailsPage = async ({ params: { urlKey } }: BlogDetailsPageProps) => {
+    const blogDetails = await getBlogById(urlKey);
     const categoryDetails = await getCatagoryById(blogDetails.category);
 
     return (
         <div className='flex flex-col items-center'>
             <div className='flex flex-col md:w-[65%] w-full items-center'>
                 <div className='w-[90%]'>
-                    <PageTitle title={blogDetails.title} />
-                    <h1 className='hidden'>{blogDetails.title}</h1>
+                    <PageTitle title={blogDetails.header} />
+                    <h1 className='hidden'>{blogDetails.header}</h1>
                 </div>
                 <Image
                     src={blogDetails.imageUrl}
-                    alt="hero image"
+                    alt={blogDetails.title}
                     width={1000}
                     height={1000}
                     className="flex-center h-full min-h-[300px] bg-dark-3 flex overflow-hidden md:rounded-xl"
@@ -64,7 +64,7 @@ const BlogDetailsPage = async ({ params: { blogId } }: BlogDetailsPageProps) => 
                     }
                 </div>
                 <div className='m-4'>
-                    <div dangerouslySetInnerHTML={{ __html: blogDetails.description }} />
+                    <div dangerouslySetInnerHTML={{ __html: blogDetails.content }} />
                 </div>
             </div>
         </div>

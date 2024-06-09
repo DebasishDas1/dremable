@@ -4,6 +4,7 @@ import NavBar from '@/containers/NvBer'
 import Footer from '@/containers/Footer'
 import { SeoOptimizationHeader, SeoOptimizationBody } from "@/components/sheared/Seo"
 import './globals.css'
+import { Toaster } from "sonner"
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -33,6 +34,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </div>
+        <Toaster richColors/>
       </body>
     </html>
   );

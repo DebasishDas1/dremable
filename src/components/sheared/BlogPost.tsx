@@ -11,9 +11,10 @@ type BlogPostProps = {
     date: Date;
     image: string;
     hasOrderLink?: boolean,
+    urlKey?: string,
 }
 
-const BlogPost = ({ title, description, id, date, image }: BlogPostProps) => {
+const BlogPost = ({ title, description, id, date, image, urlKey }: BlogPostProps) => {
     // Function to limit description to 100 words
     const limitDescription = (desc: string | undefined): string | undefined => {
         if (!desc) return undefined;
@@ -27,9 +28,9 @@ const BlogPost = ({ title, description, id, date, image }: BlogPostProps) => {
     const limitedDescription = limitDescription(description);
 
     return (
-        <div className="group relative flex flex-col md:min-h-[250px] max-w-[600px] overflow-hidden rounded-xl bg-white">
+        <div className="group relative flex flex-col md:min-h-[200px] max-w-[600px] overflow-hidden rounded-xl bg-white">
             <Link
-                href={`/blog/${id}`}
+                href={`/blog/${urlKey}`}
                 className="flex-center flex-grow bg-cover bg-center md:hidden h-[120px] relative"
                 style={{ backgroundImage: `url(${image})` }}
             >
@@ -38,7 +39,7 @@ const BlogPost = ({ title, description, id, date, image }: BlogPostProps) => {
             </Link>
 
             <div className="p-4">
-                <Link href={`/blog/${id}`} >
+                <Link href={`/blog/${urlKey}`} >
                     <h2 className="text-2xl font-semibold mb-2">{title}</h2>
                 </Link>
                 <div className='flex flex-row '>

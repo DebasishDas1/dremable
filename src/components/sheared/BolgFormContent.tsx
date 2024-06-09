@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css';
 import ReactQuill, { Quill } from 'react-quill';
 
-type BolgFormDescriptionProps = {
+type BolgFormContentProps = {
     value?: string,
     onFieldChange?: (value: string) => void
 }
@@ -13,12 +13,12 @@ type BolgFormDescriptionProps = {
 // Dynamically import ReactQuill only on the client side
 const DynamicReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
-const BolgFormDescription = ({ value, onFieldChange }: BolgFormDescriptionProps) => {
+const BolgFormContent = ({ value, onFieldChange }: BolgFormContentProps) => {
     return (
         <DynamicReactQuill
             className='h-[90%]'
             theme="snow"
-            placeholder="Blog description"
+            placeholder="Blog content"
             value={value}
             onChange={(content, delta, source, editor) => {
                 // Assuming onFieldChange is expecting a string value
@@ -29,4 +29,4 @@ const BolgFormDescription = ({ value, onFieldChange }: BolgFormDescriptionProps)
     );
 }
 
-export default BolgFormDescription;
+export default BolgFormContent;

@@ -60,7 +60,7 @@ const DropDown = ({ value, onChabgeHandler }: DropDownProps) => {
 
     return (
         <Select onValueChange={onChabgeHandler} defaultValue={value}>
-            <SelectTrigger className="w-full">
+            <SelectTrigger className="select-field">
                 <SelectValue placeholder="Catagory" />
             </SelectTrigger>
             <SelectContent>

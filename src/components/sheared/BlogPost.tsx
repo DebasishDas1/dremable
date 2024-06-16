@@ -31,7 +31,7 @@ const BlogPost = ({ title, description, id, date, image, urlKey }: BlogPostProps
         <div className="group relative flex flex-col md:min-h-[200px] max-w-[600px] overflow-hidden rounded-xl bg-white">
             <Link
                 href={`/blog/${urlKey}`}
-                className="flex-center flex-grow bg-cover bg-center md:hidden h-[120px] relative"
+                className="flex-center flex-grow bg-cover bg-center md:hidden h-[120px] relative "
                 style={{ backgroundImage: `url(${image})` }}
             >
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
@@ -40,7 +40,8 @@ const BlogPost = ({ title, description, id, date, image, urlKey }: BlogPostProps
 
             <div className="p-4">
                 <Link href={`/blog/${urlKey}`} >
-                    <h2 className="text-2xl font-semibold mb-2">{title}</h2>
+                    <h2 
+                    className="text-2xl font-semibold mb-2 ">{title}</h2>
                 </Link>
                 <div className='flex flex-row '>
                     {limitedDescription && (

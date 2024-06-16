@@ -19,13 +19,15 @@ import { useState } from "react";
 import { LocationOn, CalendarMonth, Link } from "@mui/icons-material";
 import DatePicker from "react-datepicker";
 import { useUploadThing } from "@/lib/uploadthing";
-import { createBlog } from "@/lib/actions/blog.action";
+import { createBlog, updateBlog } from "@/lib/actions/blog.action";
 import "react-datepicker/dist/react-datepicker.css";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { IBlog } from "@/lib/database/models/blog.model";
 
 type BolgFormProps = {
-  type: "create" | "update";
+  type: "Create" | "Update";
+  oldBlog?: IBlog;
 };
 
 const formSchema = z.object({
@@ -50,28 +52,38 @@ const formSchema = z.object({
   categoryID: z.string(),
 });
 
-const BolgForm = ({ type }: BolgFormProps) => {
+const BolgForm = ({ type, oldBlog }: BolgFormProps) => {
   const [files, setFiles] = useState<File[]>([]);
+  const blogId = oldBlog ? oldBlog._id : "";
   const { startUpload } = useUploadThing("imageUploader");
   const router = useRouter();
 
+  const blogtDefaultValues = {
+    title: "",
+    description: "",
+    urlKey: "",
+    header: "",
+    content: "",
+    location: "",
+    date: new Date(),
+    imageUrl: "",
+    url: "",
+    categoryID: "",
+  };
+
+  const initialValues = oldBlog && type === "Update" ? {
+    ...oldBlog,
+    date: new Date(oldBlog.date)
+  } : blogtDefaultValues;
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      title: "",
-      description: "",
-      urlKey: "",
-      header: "",
-      content: "",
-      location: "",
-      date: new Date(),
-      imageUrl: "",
-      url: "",
-      categoryID: "",
-    },
+    defaultValues: initialValues,
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    toast.info("Blog data submited please wait");
+
     let uplodedImageUrl = values.imageUrl;
 
     if (files.length > 0) {
@@ -80,13 +92,33 @@ const BolgForm = ({ type }: BolgFormProps) => {
       uplodedImageUrl = uplodedImage[0].url;
     }
 
-    toast.info("Blog data submited please wait");
+    if (type === "Update") {
+      if (blogId === "") {
+        router.back()
+        return;
+      }
 
-    if (type === "create") {
+      try {
+        const updatedBlog = await updateBlog({
+          blog: { ...values, imageUrl: uplodedImageUrl, _id: blogId},
+          path: `/blog`,
+        });
+        if (updatedBlog) {
+          form.reset();
+          router.push(`/blog/${updatedBlog.urlKey}`);
+          toast.success(`Blog updated with title : ${updatedBlog.title}`);
+        }
+      } catch (error) {
+        console.log(error);
+        toast.error(`Error on updating Blog error: ${error}`);
+      }
+    }
+
+    if (type === "Create") {
       try {
         const newBlog = await createBlog({
           blog: { ...values, imageUrl: uplodedImageUrl },
-          path: "/profie",
+          path: "/blog",
         });
         if (newBlog) {
           form.reset();
@@ -195,37 +227,37 @@ const BolgForm = ({ type }: BolgFormProps) => {
             />
           </div>
           {/* <div className="flex flex-col gap-5 md:flex-row"> */}
-            <FormField
-              control={form.control}
-              name="content"
-              render={({ field }) => (
-                <FormItem className="w-full">
-                  <FormControl className="h-72">
-                    <BolgFormContent
-                      onFieldChange={field.onChange}
-                      value={field.value}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="imageUrl"
-              render={({ field }) => (
-                <FormItem className="w-full">
-                  <FormControl className="h-72">
-                    <FileUploder
-                      onFieldChange={field.onChange}
-                      imageUrl={field.value}
-                      setFiles={setFiles}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+          <FormField
+            control={form.control}
+            name="content"
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <FormControl className="h-72">
+                  <BolgFormContent
+                    onFieldChange={field.onChange}
+                    value={field.value}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="imageUrl"
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <FormControl className="h-72">
+                  <FileUploder
+                    onFieldChange={field.onChange}
+                    imageUrl={field.value}
+                    setFiles={setFiles}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           {/* </div> */}
           <div className="flex flex-col gap-5 md:flex-row">
             <FormField
@@ -234,7 +266,7 @@ const BolgForm = ({ type }: BolgFormProps) => {
               render={({ field }) => (
                 <FormItem className="w-full">
                   <FormControl>
-                    <div className="flex-center h-[55px] w-full overflow-hidden rounded-full bg-gray-50 px-4 py-2">
+                    <div className="flex-center h-[55px] w-full overflow-hidden rounded-lg bg-gray-50 px-4 py-2">
                       <LocationOn />
                       <Input
                         className="input-field"
@@ -255,7 +287,7 @@ const BolgForm = ({ type }: BolgFormProps) => {
               render={({ field }) => (
                 <FormItem className="w-full">
                   <FormControl>
-                    <div className="flex-center h-[55px] w-full overflow-hidden rounded-full bg-gray-50 px-4 py-2">
+                    <div className="flex-center h-[55px] w-full overflow-hidden rounded-lg bg-gray-50 px-4 py-2">
                       <CalendarMonth />
                       <DatePicker
                         selected={field.value}
@@ -278,7 +310,7 @@ const BolgForm = ({ type }: BolgFormProps) => {
               render={({ field }) => (
                 <FormItem className="w-full">
                   <FormControl>
-                    <div className="flex-center h-[55px] w-full overflow-hidden rounded-full bg-gray-50 px-4 py-2">
+                    <div className="flex-center h-[55px] w-full overflow-hidden rounded-lg bg-gray-50 px-4 py-2">
                       <Link />
                       <Input
                         className="input-field"
@@ -292,7 +324,7 @@ const BolgForm = ({ type }: BolgFormProps) => {
               )}
             />
           </div>
-          <Button type="submit">Submit</Button>
+          <Button type="submit">{type} event</Button>
         </form>
       </Form>
     </div>

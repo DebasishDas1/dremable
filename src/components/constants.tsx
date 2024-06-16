@@ -1,4 +1,4 @@
-import { Info, AutoFixHigh, Feed, AddAPhoto, FormatListBulleted, ColorLens } from '@mui/icons-material';
+import { Info, AutoFixHigh, Feed, AddAPhoto, FormatListBulleted, ColorLens, HowToReg } from '@mui/icons-material';
 
 export const nav_options = [
     {
@@ -20,6 +20,11 @@ export const nav_options = [
         name: 'About',
         linkUrl: '/about',
         icon: <Info />
+    },
+    {
+        name: 'Register',
+        linkUrl: '/register',
+        icon: <HowToReg />
     },
 ]
 

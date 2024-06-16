@@ -4,8 +4,9 @@ import { connectToDatabase } from "../database";
 import Blog from "@/lib/database/models/blog.model";
 import { handleError } from "@/lib/utils";
 import Category from "@/lib/database/models/category.model";
+import { revalidatePath } from 'next/cache'
 
-type CreateBlogParams = {
+type BlogParams = {
   blog: {
     _id?: string;
     title: string;
@@ -26,11 +27,16 @@ const isError = (error: unknown): error is Error => {
   return error instanceof Error;
 };
 
-export const createBlog = async ({ blog, path }: CreateBlogParams) => {
+const populateEvent = (query: any) => {
+  return query
+    .populate({ path: 'category', model: Category, select: '_id name' })
+}
+
+// create
+export const createBlog = async ({ blog, path }: BlogParams) => {
   try {
     await connectToDatabase();
 
-    // Check for required fields
     if (
       !blog.title ||
       !blog.date ||
@@ -42,13 +48,13 @@ export const createBlog = async ({ blog, path }: CreateBlogParams) => {
       throw new Error("Missing required blog fields");
     }
 
-    // Check if the category exists
     const category = await Category.findById(blog.categoryID);
     if (!category) {
       throw new Error("Category not found");
     }
 
     const newBlog = await Blog.create({ ...blog, category: blog.categoryID });
+    revalidatePath(path)
 
     return JSON.parse(JSON.stringify(newBlog));
   } catch (error) {
@@ -74,6 +80,24 @@ export const getBlogById = async (urlKey: string) => {
     handleError(error);
   }
 };
+
+// UPDATE
+export async function updateBlog({ blog, path }: BlogParams) {
+  try {
+    await connectToDatabase()
+
+    const updatedBlog = await Blog.findByIdAndUpdate(
+      blog._id,
+      { ...blog, category: blog.categoryID },
+      { new: true }
+    )
+    revalidatePath(path)
+
+    return JSON.parse(JSON.stringify(updatedBlog))
+  } catch (error) {
+    handleError(error)
+  }
+}
 
 type GetAllBlogssParams = {
   query: string;
@@ -133,5 +157,39 @@ export const getAllBlog = async ({
     };
   } catch (error) {
     handleError(error);
-  }
+  }                             
 };
+
+type getRelatedBlogByCategoryProps = {
+  categoryID: string,
+  blogID: string,
+  limit: number,
+  page: number,
+}
+
+// GET RELATED EVENTS: EVENTS WITH SAME CATEGORY
+export async function getRelatedBlogByCategory({
+  categoryID,
+  blogID,
+  limit = 3,
+  page = 1,
+}: getRelatedBlogByCategoryProps) {
+  try {
+    await connectToDatabase()
+
+    const skipAmount = (Number(page) - 1) * limit
+    const conditions = { $and: [{ category: categoryID }, { _id: { $ne: blogID } }] }
+
+    const eventsQuery = Blog.find(conditions)
+      .sort({ createdAt: 'desc' })
+      .skip(skipAmount)
+      .limit(limit)
+
+    const events = await populateEvent(eventsQuery)
+    const eventsCount = await Blog.countDocuments(conditions)
+
+    return { data: JSON.parse(JSON.stringify(events)), totalPages: Math.ceil(eventsCount / limit) }
+  } catch (error) {
+    handleError(error)
+  }
+}

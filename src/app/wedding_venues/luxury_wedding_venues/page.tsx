@@ -35,12 +35,12 @@ const LuxuryWeddingVenues = () => {
           ))}
         </div>
         <Title>
-          Dreamable: Where Luxury Meets Grandeur - Kolkata's Top Wedding Venues
+          Dreamable: Where Luxury Meets Grandeur - Kolkata&lsquo;s Top Wedding Venues
           & Hotels
         </Title>
-        Kolkata, the "City of Joy," pulsates with a captivating charm, making it
+        Kolkata, the &lsquo;City of Joy,&lsquo; pulsates with a captivating charm, making it
         a dream location for a truly unforgettable wedding. Dreamable.com
-        curates Kolkata's most luxurious wedding venues and 5-star hotels,
+        curates Kolkata&lsquo;s most luxurious wedding venues and 5-star hotels,
         transforming your vision into a reality that surpasses expectations.
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           Immerse yourselves in opulence:
@@ -49,7 +49,7 @@ const LuxuryWeddingVenues = () => {
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           5-Star Kolkata Hotels: Where Every Detail is Magnified
         </div>
-        Kolkata's 5-star havens offer a complete wedding experience,
+        Kolkata&lsquo;s 5-star havens offer a complete wedding experience,
         encompassing luxurious accommodations, world-class cuisine, and
         unparalleled event management. Dreamable allows you to explore these
         havens and discover:

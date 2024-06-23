@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: `Join Dremble's thriving Platform & connect with potential couples! Easy vendor Registration, Showcase your work & Get booked for Dream Weddings.`,
 };
 
-const Register = () => {
+const VendorRegistration = () => {
   return (
     <div className="flex flex-col items-center">
       <div className="flex flex-col md:w-[65%] w-[90%] items-center">
@@ -24,4 +24,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default VendorRegistration;

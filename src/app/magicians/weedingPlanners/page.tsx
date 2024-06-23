@@ -82,11 +82,11 @@ const youAvoid = [
 
 const weedingPlanners = () => {
     return (
-        <div className='flex flex-col items-center'>
+        <div className='flex flex-col items-center text-center'>
             <div className='flex flex-col md:w-[65%] w-[85%] items-center'>
                 <PageTitle title='Wedding Planners in Kolkata' />
                 <h1 className='hidden'>Wedding Planners in Kolkata</h1>
-                <div className='flex flex-wrap h-auto items-center justify-evenly'>
+                <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
                     {
                         plannerData.map(provider => (
                             <MagiciansCard
@@ -96,6 +96,7 @@ const weedingPlanners = () => {
                                 address={provider.address}
                                 url={provider.url}
                                 rating={Number(provider.rating)}
+                                rawImageUrl={provider.image}
                             />
                         ))
                     }

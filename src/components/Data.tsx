@@ -591,6 +591,15 @@ export const photographersData = [
 
 export const artistsData = [
   {
+    name: "Priyanka's Beauty Box",
+    contact: "7980204962",
+    address: "HA323.1st Floor, Salt lake. Sector - 3. , Kolkata 700106.",
+    url: "https://priyankasbeautybox.com/",
+    rating: "5",
+    image:
+      "https://drive.google.com/file/d/1E64DNQNoM7ZyPu0i9_ysD563k199Np91/view?usp=drive_link",
+  },
+  {
     name: "The Gargi Chakraborty Studio ",
     contact: "7044244826",
     address:
@@ -608,15 +617,6 @@ export const artistsData = [
     rating: "5",
     image:
       "https://drive.google.com/file/d/1_NIGfNH07dUAmar3jN-ox0oil0RDhgNv/view?usp=drive_link",
-  },
-  {
-    name: "Priyanka's Beauty Box",
-    contact: "7980204962",
-    address: "HA323.1st Floor, Salt lake. Sector - 3. , Kolkata 700106.",
-    url: "https://priyankasbeautybox.com/",
-    rating: "5",
-    image:
-      "https://drive.google.com/file/d/1E64DNQNoM7ZyPu0i9_ysD563k199Np91/view?usp=drive_link",
   },
   {
     name: "The Glamorous Makeover",

@@ -5,16 +5,18 @@ import Vendor from "@/lib/database/models/vendor.model";
 import { handleError } from "@/lib/utils";
 
 type CreateVendorParams = {
-    vendor: {
+  vendor: {
     _id?: string;
-    companyName: string;
-    ownerName: string;
-    yearsOfExperience?: string;
-    companyAddress?: string;
-    serviceLocation?: string;
-    portfolioImagesUrl?: string;
-    services: string;
-    whatsApp?: string;
+    vName: string;
+    vEmail: string;
+    vWhatsApp: string;
+    vExperience: string;
+    vCompanyName: string;
+    vCompanyAddress: string;
+    vService: string;
+    vServiceLocationList: string[];
+    vImagesUrlList?: string[];
+    vDetailsPdf?: string;
   };
 };
 
@@ -25,13 +27,8 @@ const isError = (error: unknown): error is Error => {
 export const createVendor = async ({ vendor }: CreateVendorParams) => {
   try {
     await connectToDatabase();
-    console.log(vendor);
-    
-    if (
-      !vendor.companyName ||
-      !vendor.companyAddress ||
-      !vendor.services
-    ) {
+
+    if (!vendor.vCompanyName || !vendor.vCompanyAddress || !vendor.vService) {
       throw new Error("Missing required vendor fields");
     }
 
@@ -41,7 +38,7 @@ export const createVendor = async ({ vendor }: CreateVendorParams) => {
   } catch (error) {
     handleError(error);
     if (isError(error)) {
-      throw new Error(`Error creating blog: ${error.message}`);
+      throw new Error(`Error creating vendor: ${error.message}`);
     } else {
       throw new Error("Unknown error occurred");
     }

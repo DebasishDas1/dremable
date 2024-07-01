@@ -13,7 +13,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import DropDown from "./DropDown";
-import FileUploder from "./FileUploder";
+import {FileUploder} from "./FileUploder";
 import BolgFormContent from "./BolgFormContent";
 import { useState } from "react";
 import { LocationOn, CalendarMonth, Link } from "@mui/icons-material";
@@ -248,10 +248,9 @@ const BolgForm = ({ type, oldBlog }: BolgFormProps) => {
             render={({ field }) => (
               <FormItem className="w-full">
                 <FormControl className="h-72">
-                  <FileUploder
-                    onFieldChange={field.onChange}
-                    imageUrl={field.value}
-                    setFiles={setFiles}
+                  <FileUploder 
+                    onFieldChange= {field.onChange}
+                    fileList={field.value}
                   />
                 </FormControl>
                 <FormMessage />

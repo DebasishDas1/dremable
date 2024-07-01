@@ -6,14 +6,11 @@ import { useState } from "react";
 import Image from "next/image";
 
 type FileUploadDropzoneProps = {
-  onFieldChange: (imageUrl: string) => void;
-  fileList: string;
-};
+  onFieldChange: (imageUrl: string[]) => void;
+  fileList: string[];
+}
 
-export const FileUploder = ({
-  onFieldChange,
-  fileList,
-}: FileUploadDropzoneProps) => {
+export const FileUploadDropzone = ({onFieldChange, fileList}: FileUploadDropzoneProps) => {
   const [selectedImageList, setSelectedImageList] = useState<string[]>([]);
 
   return (
@@ -22,8 +19,8 @@ export const FileUploder = ({
         endpoint="imageUploader"
         onClientUploadComplete={(res) => {
           setSelectedImageList([]);
-          const uploadedFiles = res.map((file) => file.url);
-          onFieldChange(uploadedFiles[0]);
+          const uploadedFiles = res.map((file) => file.url)
+          onFieldChange([...fileList, ...uploadedFiles] );
         }}
         onUploadError={(error: Error) => {
           alert(`ERROR! ${error.message}`);
@@ -40,25 +37,26 @@ export const FileUploder = ({
       {selectedImageList.length > 0 && (
         <div className="flex flex-wrap">
           {selectedImageList.map((image, index) => (
-            <div
-              key={index}
-              className="bg-black text-white p-2 m-2 rounded-lg px-4"
-            >
+            <div key={index} className="bg-black text-white p-2 m-2 rounded-lg px-4">
               {image}
             </div>
           ))}
         </div>
       )}
-      {fileList && (
-        <div className="p-2 m-2 rounded-lg h-[500px]">
-          <Image
-            src={fileList}
-            alt={`Uploaded image ${fileList}`}
-            width={500}
-            height={500}
-            unoptimized
-            className="rounded-lg overflow-hidden h-full w-full object-cover"
-          />
+      {fileList.length > 0 && (
+        <div className="flex flex-wrap">
+          {fileList.map((image, index) => (
+            <div key={index} className="p-2 m-2 rounded-lg h-[100px]">
+              <Image
+                src={image}
+                alt={`Uploaded image ${index}`}
+                width={500}
+                height={500}
+                unoptimized
+                className="rounded-lg overflow-hidden h-full w-full object-cover"
+              />
+            </div>
+          ))}
         </div>
       )}
     </>

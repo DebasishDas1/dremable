@@ -1,5 +1,3 @@
-import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
-
 export const SeoOptimizationHeader: React.FC = () => {
     const CorporationSchema = {
         "@context": "https://schema.org",
@@ -42,6 +40,7 @@ export const SeoOptimizationHeader: React.FC = () => {
         }]
     }
 
+
     return (
         <>
             {/* Corporation Schema */}
@@ -57,8 +56,6 @@ export const SeoOptimizationHeader: React.FC = () => {
             />
 
             {/* Google Tag Manager */}
-            {/* <GoogleTagManager gtmId="GTM-NDR7CP7Z" /> */}
-            
             <script
                 dangerouslySetInnerHTML={{
                     __html: `
@@ -71,9 +68,7 @@ export const SeoOptimizationHeader: React.FC = () => {
                 }}
             />
 
-            {/* Google Analytics */}
-            {/* <GoogleAnalytics gaId="G-8ES0Q9KN1N" /> */}
-
+            {/* Google Analytics gtag */}
             <script
                 async
                 src={`https://www.googletagmanager.com/gtag/js?id=G-8ES0Q9KN1N`}
@@ -90,7 +85,6 @@ export const SeoOptimizationHeader: React.FC = () => {
                     `,
                 }}
             />
-
         </>
     );
 };

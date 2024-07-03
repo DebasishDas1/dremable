@@ -98,7 +98,6 @@ const VendorContactDetails = () => {
             </FormItem>
           )}
         />
-        <span className="text-sm ml-3">Press "Enter" to select a location</span>
       </div>
     </>
   );

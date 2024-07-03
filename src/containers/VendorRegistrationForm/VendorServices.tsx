@@ -79,8 +79,12 @@ const VendorServices = () => {
                   <SelectItem value="Wedding Planning">
                     Wedding Planning
                   </SelectItem>
-                  <SelectItem value="Photography">Wedding Photography</SelectItem>
-                  <SelectItem value="Makeup Artists">Wedding Makeup Artists</SelectItem>
+                  <SelectItem value="Photography">
+                    Wedding Photography
+                  </SelectItem>
+                  <SelectItem value="Makeup Artists">
+                    Wedding Makeup Artists
+                  </SelectItem>
                   <SelectItem value="Wedding vanues">Wedding venues</SelectItem>
                 </SelectContent>
               </Select>
@@ -106,7 +110,10 @@ const VendorServices = () => {
               <FormMessage className="pl-3" />
             </FormItem>
           )}
-        />
+        />{" "}
+        <span className="text-sm ml-3">
+          Press &ldquo;Enter&ldquo; to select a location
+        </span>
       </div>
     </>
   );

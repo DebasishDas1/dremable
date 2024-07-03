@@ -57,9 +57,9 @@ export const SeoOptimizationHeader: React.FC = () => {
             />
 
             {/* Google Tag Manager */}
-            <GoogleTagManager gtmId="GTM-NDR7CP7Z" />
+            {/* <GoogleTagManager gtmId="GTM-NDR7CP7Z" /> */}
             
-            {/* <script
+            <script
                 dangerouslySetInnerHTML={{
                     __html: `
                         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -69,12 +69,12 @@ export const SeoOptimizationHeader: React.FC = () => {
                         })(window,document,'script','dataLayer','GTM-NDR7CP7Z');
                     `,
                 }}
-            /> */}
+            />
 
             {/* Google Analytics */}
-            <GoogleAnalytics gaId="G-8ES0Q9KN1N" />
+            {/* <GoogleAnalytics gaId="G-8ES0Q9KN1N" /> */}
 
-            {/* <script
+            <script
                 async
                 src={`https://www.googletagmanager.com/gtag/js?id=G-8ES0Q9KN1N`}
             />
@@ -89,7 +89,7 @@ export const SeoOptimizationHeader: React.FC = () => {
                         });
                     `,
                 }}
-            /> */}
+            />
 
         </>
     );

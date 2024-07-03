@@ -33,11 +33,11 @@ const LocationListInput = ({
         {vServiceLocationList.map((t, i) => (
           <div
             key={i}
-            className="bg-black rounded-lg p-3 m-1 flex text-white"
+            className=" bg-gray-300 rounded-lg p-2 px-4 m-1 flex"
             onClick={() => deleteLocation(t)}
           >
             <span>{t}</span>
-            <Close className="bg-red-500 ml-2 rounded-full p-1 text-white cursor-pointer" />
+            <Close className="ml-2 rounded-full cursor-pointer" />
           </div>
         ))}
       </div>

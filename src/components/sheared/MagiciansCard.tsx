@@ -24,11 +24,6 @@ type Props = {
   rawImageUrl?: string;
 };
 
-type stateProp = {
-  value: string;
-  copied: boolean;
-};
-
 const MagiciansCard = ({
   name,
   contact,
@@ -76,7 +71,7 @@ const MagiciansCard = ({
         </div>
         <AlertDialog>
           <AlertDialogTrigger>
-            <Button>Contact</Button>
+            <div className="bg-black text-white font-bold p-2 px-4 rounded-xl">Contact</div>
           </AlertDialogTrigger>
           <AlertDialogContent className="bg-white">
             <AlertDialogDescription className="flex flex-col items-center text-black">
@@ -84,23 +79,23 @@ const MagiciansCard = ({
               <span className="text-2xl font-bold pb-2 pt-6 text-center">
                 {name}
               </span>
-              <div className="text-2xl font-bold pb-6">
+              <span className="text-2xl font-bold pb-6">
                 <Phone />
                 <span className="pl-1"> {contact}</span>
-              </div>
-              <div className="text-2xl font-bold pt-4 pb-2 text-center">
+              </span>
+              <span className="text-2xl font-bold pt-4 pb-2 text-center">
                 Want to get a special offer ?
-              </div>
-              <div className="flex p-3 rounded-lg text-center bg-gradient-to-r from-purple-100 to-pink-100">
+              </span>
+              <span className="flex p-3 rounded-lg text-center bg-gradient-to-r from-purple-100 to-pink-100">
                 Wnen you call the vender must say you got this contact from
                 Dremable Platform
-              </div>
-              <div className="w-[250px] flex justify-between pt-6">
+              </span>
+              <span className="w-[250px] flex justify-between pt-6">
                 <AlertDialogCancel>Cancel</AlertDialogCancel>
                 <AlertDialogAction onClick={() => copy(contact)}>
                   Copy contact
                 </AlertDialogAction>
-              </div>
+              </span>
             </AlertDialogDescription>
           </AlertDialogContent>
         </AlertDialog>

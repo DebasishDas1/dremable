@@ -23,7 +23,7 @@ export const FileUploadDropzone = ({onFieldChange, fileList}: FileUploadDropzone
           onFieldChange([...fileList, ...uploadedFiles] );
         }}
         onUploadError={(error: Error) => {
-          alert(`ERROR! ${error.message}`);
+          alert(`Try another file. This file is more then 4mb`);
         }}
         onUploadBegin={(name) => {
           console.log("Uploading: ", name);
@@ -33,11 +33,11 @@ export const FileUploadDropzone = ({onFieldChange, fileList}: FileUploadDropzone
           const droppedFiles = acceptedFiles.map((file) => file.name);
           setSelectedImageList(droppedFiles);
         }}
-      />
+      /> 
       {selectedImageList.length > 0 && (
         <div className="flex flex-wrap">
           {selectedImageList.map((image, index) => (
-            <div key={index} className="bg-black text-white p-2 m-2 rounded-lg px-4">
+            <div key={index} className="bg-gray-300 p-2 m-2 rounded-lg px-4">
               {image}
             </div>
           ))}

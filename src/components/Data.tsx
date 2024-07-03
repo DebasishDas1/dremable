@@ -1127,3 +1127,108 @@ export const luxuryWeddingVenues = [
       "https://drive.google.com/file/d/11FfdNzuZp17co-CQN6BCg7sb5lhSUojT/view?usp=drive_link",
   },
 ];
+
+export const wedding_resorts_data = [
+  {
+    name: "Aquatica Banquet Resort",
+    contact: "93315 55220",
+    address:
+      "Kouchpukur, P.O Hathgachia, near Rajarhat, Dhapa Manpur kolkata 700156",
+    rating: "4",
+    image:
+      "https://drive.google.com/file/d/1r4Q8rKefetO4Uy-U22rIt7w_dw0l2ZyC/view?usp=drive_link",
+  },
+  {
+    name: "Ibiza The Fern Resort & Spa",
+    contact: "033  6655 5555",
+    address:
+      " Merlin Greens, Kriparampur P.S: Bishnupur, Diamond Harbour Road, Kolkata  743503, ",
+    rating: "4",
+    image:
+      "https://drive.google.com/file/d/1zuhkeXPlsMAT8ghR4U5fAWc1AF6uVUEY/view?usp=drive_link",
+  },
+  {
+    name: "Ekante Cottage, Eco Park",
+    contact: "83340 65345",
+    address:
+      "Major Arterial Road(South-East), Action Area II New Town, Kolkata, 700156",
+    rating: "4",
+    image:
+      "https://drive.google.com/file/d/1xprHBXEZHV5qB0dEXsI9mv3GcueHhjnh/view?usp=drive_link",
+  },
+  {
+    name: "Vedic Village Spa Resort",
+    contact: "033  6622 9900",
+    address: "Shikharpur P.O, Bagu, Newtown, Sikharpur , kolkata  700135",
+    rating: "4",
+    image:
+      "https://drive.google.com/file/d/1DjFaBk6ZcgbF7jYTHf5ifHJMT7OWnCr2/view?usp=drive_link",
+  },
+  {
+    name: "Lake Land Country Club",
+    contact: "98304  71644",
+    address:
+      "Post Office Kona Expy, Munshidanga, Garfa, Howrah, Kolkata 711403",
+    rating: "4",
+    image:
+      "https://drive.google.com/file/d/16pxcvqSmVCJvwxmRuFBStMf_kZ6-OP2G/view?usp=drive_link",
+  },
+  {
+    name: "Raichak On Ganges",
+    contact: "033  4040 4040",
+    address: "Raichak (Singhalgunjabad), South 24 Parganas, Kolkata 743368",
+    rating: "4",
+    image:
+      "https://drive.google.com/file/d/1tIrVFkXWp96GGV-evR_uQNtTrX4h0dgk/view?usp=drive_link",
+  },
+  {
+    name: "The Creek Club",
+    contact: "90510  97755",
+    address: " Daulatpur, Pailan, Kolkata 700104",
+    rating: "4",
+    image:
+      "https://drive.google.com/file/d/14EQ0RYvvu7fQ1YNzL2I4jDSItPG7jts4/view?usp=drive_link",
+  },
+  {
+    name: "Polo Floatel Kolkata",
+    contact: "86979  71672",
+    address: "9/10, Kolkata Jetty, Strand Road, B.B.D. Bagh, Kolkata, 700001 ",
+    rating: "4",
+    image:
+      "https://drive.google.com/file/d/13MtCFtlsALW1rhrWcdi98M8CwNhpehn6/view?usp=drive_link",
+  },
+  {
+    name: "Country Roads Resort",
+    contact: "98362  83339",
+    address:
+      "Opp Raghudevpur Gram Panchayat Office, Domjur - Bauria Rd, Raghudevpur, Kolkata 711322",
+    rating: "4",
+    image:
+      "https://drive.google.com/file/d/18w9bUW4gPKbnFb33ieYyFDTiGJ_QQubo/view?usp=drive_link",
+  },
+  {
+    name: "Palli Bangla Resort & Spa",
+    contact: "62910  99447",
+    address: "1908 Madurdaha, Anandapur, Kolkata: 700107",
+    rating: "4",
+    image:
+      "https://drive.google.com/file/d/1NjC6Hhl90OC9pJ9lf-5jp5fD7C-oDfO4/view?usp=drive_link",
+  },
+  {
+    name: "Raajkutir Kolkata",
+    contact: "82740  27110",
+    address:
+      "89C, Narkeldanga Main Rd, Phool Bagan, Kankurgachi, Kolkata, 700054",
+    rating: "4",
+    image:
+      "https://drive.google.com/file/d/1IK53d-dH-K__F0iiUQKH3NcFm34gqPGb/view?usp=drive_link",
+  },
+  {
+    name: "Megh Bari Eco Resort",
+    contact: "70297  11653",
+    address: "PO, Vill, Jagadispur, Dighra, Kolkata  741222",
+    rating: "4",
+    image:
+      "https://drive.google.com/file/d/1d2FYtHI3kRs5eXTeLtKlbu5ME0zCPo_D/view?usp=drive_link",
+  },
+];

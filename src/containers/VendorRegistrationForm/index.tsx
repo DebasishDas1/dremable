@@ -18,6 +18,8 @@ import {
   KeyboardArrowLeft,
   CheckCircleOutline,
 } from "@mui/icons-material";
+import LandingPopup from "./LandingPopup";
+import SucessPopup from "./SucessPopup";
 
 // Define the form schema using zod
 const formSchema = z.object({
@@ -58,6 +60,8 @@ type FormData = z.infer<typeof formSchema>;
 
 const VendorRegistrationForm = () => {
   const [step, setStep] = useState(0);
+  const [isSubmited, setIsSubmited] = useState(false);
+  const [name, setName] = useState("");
 
   const methods = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -125,7 +129,6 @@ const VendorRegistrationForm = () => {
 
   const onSubmit: SubmitHandler<FormData> = async (values) => {
     toast.info(`Thanks ${values.vName} for filling the form`);
-    console.log(values);
 
     // Filter out undefined values from vImagesUrlList
     const filteredValues = {
@@ -139,7 +142,10 @@ const VendorRegistrationForm = () => {
       const newVendor = await createVendor({ vendor: filteredValues });
       if (newVendor) {
         methods.reset();
-        toast.success(`Thanks ${newVendor.ownerName} entry added successfully`);
+        setStep(0);
+        toast.success(`Thanks ${newVendor.vName} entry added successfully`);
+        setName(newVendor.vName);
+        setIsSubmited(true);
       }
     } catch (error) {
       console.error(error);
@@ -150,6 +156,8 @@ const VendorRegistrationForm = () => {
   return (
     <div className="pt-10 w-full">
       <VendorStepper currentStep={step} />
+      <LandingPopup />
+      <SucessPopup name={name} isOpen={isSubmited} onClose={setIsSubmited} />
 
       <Form {...methods}>
         <form
@@ -161,36 +169,30 @@ const VendorRegistrationForm = () => {
             {step === 1 && <VendorServices />}
             {step === 2 && <VendorFiles />}
           </div>
-          <div className="flex justify-between pt-8 w-[90%]">
-            {step > 0 && (
-              <Button
-                className="text-xl rounded-full p-6 w-[180px]"
-                onClick={prevStep}
-              >
-                <KeyboardArrowLeft className="mr-2" />
-                Previous
-              </Button>
-            )}
-            {step < 2 ? (
-              <Button
-                className="text-xl rounded-full p-6 w-[180px]"
-                onClick={nextStep}
-              >
-                Next
-                <ChevronRight className="ml-2" />
-              </Button>
-            ) : (
-              <Button
-                className="text-xl rounded-full p-6 w-[180px]"
-                type="submit"
-                onClick={methods.handleSubmit(onSubmit)}
-              >
-                Submit <CheckCircleOutline className="ml-2" />
-              </Button>
-            )}
-          </div>
         </form>
       </Form>
+      <div className="flex justify-between pt-8 w-full">
+        {step > 0 && (
+          <Button className="rounded-full p-4" onClick={prevStep}>
+            <KeyboardArrowLeft className="mr-2" />
+            Previous
+          </Button>
+        )}
+        {step < 2 ? (
+          <Button className="rounded-full p-4" onClick={nextStep}>
+            Next
+            <ChevronRight className="ml-2" />
+          </Button>
+        ) : (
+          <Button
+            className="rounded-full p-4"
+            type="submit"
+            onClick={methods.handleSubmit(onSubmit)}
+          >
+            Submit <CheckCircleOutline className="ml-2" />
+          </Button>
+        )}
+      </div>
     </div>
   );
 };

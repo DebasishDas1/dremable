@@ -79,8 +79,9 @@ const VendorServices = () => {
                   <SelectItem value="Wedding Planning">
                     Wedding Planning
                   </SelectItem>
-                  <SelectItem value="Photography">Photography</SelectItem>
-                  <SelectItem value="Makeup Artists">Makeup Artists</SelectItem>
+                  <SelectItem value="Photography">Wedding Photography</SelectItem>
+                  <SelectItem value="Makeup Artists">Wedding Makeup Artists</SelectItem>
+                  <SelectItem value="Wedding vanues">Wedding venues</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage className="pl-3" />

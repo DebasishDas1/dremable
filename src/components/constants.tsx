@@ -7,18 +7,19 @@ import {
   ColorLens,
   Place,
   CorporateFare,
-  Deck
+  Deck,
+  CameraswitchSharp
 } from "@mui/icons-material";
 
 export const nav_options = [
   {
     name: "Magicians",
-    linkUrl: "/magicians/weedingPlanners",
+    linkUrl: "/magicians/india/kolkata/wedding_planners",
     icon: <AutoFixHigh />,
   },
   {
     name: "Wedding_Venues",
-    linkUrl: "/wedding_venues/banquet_halls",
+    linkUrl: "/wedding_venues/india/kolkata/banquet_halls",
     icon: <Place />,
   },
   {
@@ -35,18 +36,18 @@ export const nav_options = [
 
 export const magicians_options = [
   {
-    name: "Weeding Planners",
-    linkUrl: "/magicians/weedingPlanners",
+    name: "Wedding Planners",
+    linkUrl: "/magicians/india/kolkata/wedding_planners",
     icon: <FormatListBulleted />,
   },
   {
     name: "Photographers",
-    linkUrl: "/magicians/photographers",
+    linkUrl: "/magicians/india/kolkata/photographers",
     icon: <AddAPhoto />,
   },
   {
     name: "Makeup Artists",
-    linkUrl: "/magicians/makeupArtists",
+    linkUrl: "/magicians/india/kolkata/makeup_artists",
     icon: <ColorLens />,
   },
 ];
@@ -54,12 +55,17 @@ export const magicians_options = [
 export const vendor_options = [
   {
     name: "Banquet_Halls",
-    linkUrl: "/wedding_venues/banquet_halls",
+    linkUrl: "/wedding_venues/india/kolkata/banquet_halls",
     icon: <CorporateFare />,
   },
   {
     name: "luxury_wedding_venues",
-    linkUrl: "/wedding_venues/luxury_wedding_venues",
+    linkUrl: "/wedding_venues/india/kolkata/luxury_wedding_venues",
+    icon: <CameraswitchSharp />,
+  },
+  {
+    name: "wedding_resorts",
+    linkUrl: "/wedding_venues/india/kolkata/wedding_resorts",
     icon: <Deck />,
   },
 ];

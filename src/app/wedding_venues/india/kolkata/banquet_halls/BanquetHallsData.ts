@@ -9,7 +9,7 @@ export const collectionOfWeddingVenues = [
     },
     {
         banifitsTitle: "Unique Kolkata Venues",
-        banifitsDescribe: "Step beyond the conventional and embark on an extraordinary journey with Dreamable's collection of unique wedding venues in Kolkata.",
+        banifitsDescribe: "Step beyond the conventional and embark on an extraordinary journey with Dremable's collection of unique wedding venues in Kolkata.",
     },
     {
         banifitsTitle: "Rooftop Restaurants",
@@ -51,15 +51,15 @@ export const dreamableAdvantage = [
     },
     {
         banifitsTitle: "Planning Resources",
-        banifitsDescribe: "Dedicate a section to Dreamable's wedding planning resources. Mention downloadable checklists, vendor recommendations, and blog posts with helpful tips for budgeting, décor ideas, and navigating Kolkata's wedding scene.",
+        banifitsDescribe: "Dedicate a section to Dremable's wedding planning resources. Mention downloadable checklists, vendor recommendations, and blog posts with helpful tips for budgeting, décor ideas, and navigating Kolkata's wedding scene.",
     },
     {
-        banifitsTitle: "The Dreamable Experience",
-        banifitsDescribe: "Showcase the human touch behind Dreamable. Briefly introduce your dedicated wedding venue specialists and their expertise in matching couples with their dream venues. Offer testimonials from satisfied couples who used Dreamable for their wedding planning journey.",
+        banifitsTitle: "The Dremable Experience",
+        banifitsDescribe: "Showcase the human touch behind Dremable. Briefly introduce your dedicated wedding venue specialists and their expertise in matching couples with their dream venues. Offer testimonials from satisfied couples who used Dremable for their wedding planning journey.",
     },
     {
         banifitsTitle: "Kolkata Wedding Inspiration",
-        banifitsDescribe: " Create a section featuring curated wedding photo galleries showcasing real weddings held at different Kolkata venues. This will provide visual inspiration for couples and demonstrate the versatility of the venues listed on Dreamable.com.",
+        banifitsDescribe: " Create a section featuring curated wedding photo galleries showcasing real weddings held at different Kolkata venues. This will provide visual inspiration for couples and demonstrate the versatility of the venues listed on Dremable.com.",
     },
     {
         banifitsTitle: "Seasonal Considerations",

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import RegisterForm from "@/components/sheared/RegisterForm"
+import VendorRegistrationForm from "@/containers/VendorRegistrationForm"
 
 export const metadata: Metadata = {
   title: `Grow Your Wedding Business faster : Register as a Vendor -Dremable`,
@@ -9,16 +9,14 @@ export const metadata: Metadata = {
 const VendorRegistration = () => {
   return (
     <div className="flex flex-col items-center">
-      <div className="flex flex-col md:w-[65%] w-[90%] items-center">
-        <div className="flex bg-white w-[90vw] md:w-[60vw] items-center rounded-xl mt-8 flex-col p-4 shadow-lg">
-          <div className="text-4xl font-bold mb-4 text-center">
-            Personalize your experience
-          </div>
-          <div className="text-xl text-center">
-            Start by telling us about you
-          </div>
-          <RegisterForm />
+      <div className="flex flex-col md:w-[65%] w-[90%] items-center mt-16">
+        <div className="md:text-6xl text-3xl font-bold mb-4 text-center">
+          Dremable Wedding Partners Registration
         </div>
+        <div className="text-lg text-center">
+          Farest growing wedding platform to connect you with the couples
+        </div>
+        <VendorRegistrationForm />
       </div>
     </div>
   );

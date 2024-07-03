@@ -46,7 +46,7 @@ const DremableFeatures: FC = () => {
     return (
         <div className='flex flex-wrap items-center justify-evenly text-4xl'>
             <FeatureItem
-                text="Weeding Planners"
+                text="Wedding Planners"
                 url='https://images.pexels.com/photos/3975586/pexels-photo-3975586.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
                 sideLink='/magicians/weedingPlanners'
                 side="left"

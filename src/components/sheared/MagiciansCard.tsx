@@ -1,7 +1,6 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { Star, StarOutline } from "@mui/icons-material";
 
+import { Star } from "@mui/icons-material";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -32,7 +31,6 @@ const MagiciansCard = ({
   url,
   rawImageUrl,
 }: Props) => {
-  let plannerRating = [];
   let imageUrl;
   if (rawImageUrl) {
     const googleDriveImageData = rawImageUrl.split("/");
@@ -40,7 +38,7 @@ const MagiciansCard = ({
   }
 
   return (
-    <div className="group relative flex flex-col justify-between md:min-h-[200px] max-w-[600px] bg-white hover:shadow-2xl shadow-lg rounded-xl">
+    <div className="group relative md:min-h-[200px] max-w-[600px] bg-white hover:shadow-2xl shadow-lg rounded-xl">
       <div className="h-[280px] w-[100] relative">
         <Image
           src={imageUrl ? imageUrl : logo}
@@ -51,8 +49,8 @@ const MagiciansCard = ({
         />
       </div>
 
-      <div className="m-4 mb-6">
-        <div className="text-balance text-3xl font-black pb-4">
+      <div className="m-4 flex flex-col justify-between md:h-[42%]">
+        <div className="text-3xl font-black pb-4">
           {name}
           {/* <br />
           <span className="text-xs bg-green-300 py-1 px-3 rounded-full ml-3">
@@ -67,7 +65,7 @@ const MagiciansCard = ({
         </div>
         <AlertDialog>
           <AlertDialogTrigger>
-            <div className="bg-black text-white font-bold p-2 px-4 rounded-xl">
+            <div className="bg-black text-white font-bold p-2 px-6 rounded-xl">
               Contact
             </div>
           </AlertDialogTrigger>

@@ -47,8 +47,8 @@ const MobileNav: React.FC = () => {
         href={option.linkUrl}
         className={`flex regular-16  py-4 ${
           pathname
-            .map((item) => item.toLowerCase().replace(/\s+/g, ""))
-            .includes(option.name.toLowerCase().replace(/\s+/g, ""))
+            .map((item) => item.toLowerCase().replaceAll("_", " "))
+            .includes(option.name.toLowerCase().replaceAll("_", " "))
             ? "font-black"
             : "font-light"
         }`}
@@ -115,7 +115,7 @@ const MobileNav: React.FC = () => {
           </div>
           {nav_options
             .filter((option) => option.name !== "Magicians")
-            .filter((option) => option.name !== "Wedding_Venues")
+            .filter((option) => option.name !== "Wedding Venues")
             .map(renderNavItem)}
 
           {/* vendor registration */}

@@ -8,9 +8,12 @@ import Image from "next/image";
 type FileUploadDropzoneProps = {
   onFieldChange: (imageUrl: string[]) => void;
   fileList: string[];
-}
+};
 
-export const FileUploadDropzone = ({onFieldChange, fileList}: FileUploadDropzoneProps) => {
+export const FileUploadDropzone = ({
+  onFieldChange,
+  fileList,
+}: FileUploadDropzoneProps) => {
   const [selectedImageList, setSelectedImageList] = useState<string[]>([]);
 
   return (
@@ -19,8 +22,8 @@ export const FileUploadDropzone = ({onFieldChange, fileList}: FileUploadDropzone
         endpoint="imageUploader"
         onClientUploadComplete={(res) => {
           setSelectedImageList([]);
-          const uploadedFiles = res.map((file) => file.url)
-          onFieldChange([...fileList, ...uploadedFiles] );
+          const uploadedFiles = res.map((file) => file.url);
+          onFieldChange([...fileList, ...uploadedFiles]);
         }}
         onUploadError={(error: Error) => {
           alert(`Try another file. This file is more then 4mb`);
@@ -33,7 +36,7 @@ export const FileUploadDropzone = ({onFieldChange, fileList}: FileUploadDropzone
           const droppedFiles = acceptedFiles.map((file) => file.name);
           setSelectedImageList(droppedFiles);
         }}
-      /> 
+      />
       {selectedImageList.length > 0 && (
         <div className="flex flex-wrap">
           {selectedImageList.map((image, index) => (

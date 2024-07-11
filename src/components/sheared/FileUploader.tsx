@@ -10,7 +10,7 @@ type FileUploadDropzoneProps = {
   fileList: string;
 };
 
-export const FileUploder = ({
+export const FileUploader = ({
   onFieldChange,
   fileList,
 }: FileUploadDropzoneProps) => {

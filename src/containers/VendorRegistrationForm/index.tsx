@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { useState } from "react";
 import { toast } from "sonner";
-import { createVendor } from "@/lib/actions/vendor.action";
+import { createVendor } from "@/actions/vendor.action";
 import VendorContactDetails from "./VendorContactDetails";
 import VendorServices from "./VendorServices";
 import VendorFiles from "./VendorFiles";
@@ -19,7 +19,7 @@ import {
   CheckCircleOutline,
 } from "@mui/icons-material";
 import LandingPopup from "./LandingPopup";
-import SucessPopup from "./SucessPopup";
+import SuccessPopup from "./SuccessPopup";
 
 // Define the form schema using zod
 const formSchema = z.object({
@@ -44,7 +44,9 @@ const formSchema = z.object({
     .string()
     .min(10, "Company name must be at least 10 characters."),
   vService: z.string(),
-  vServiceLocationList: z.array(z.string()),
+  vServiceLocationList: z
+    .array(z.string())
+    .min(1, "At least one service location must be selected."),
   vImagesUrlList: z.array(z.string().optional().or(z.literal(""))),
   vDetailsPdf: z
     .string()
@@ -60,7 +62,7 @@ type FormData = z.infer<typeof formSchema>;
 
 const VendorRegistrationForm = () => {
   const [step, setStep] = useState(0);
-  const [isSubmited, setIsSubmited] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [name, setName] = useState("");
 
   const methods = useForm<FormData>({
@@ -145,11 +147,30 @@ const VendorRegistrationForm = () => {
         setStep(0);
         toast.success(`Thanks ${newVendor.vName} entry added successfully`);
         setName(newVendor.vName);
-        setIsSubmited(true);
+        setIsSubmitted(true);
+
+        const mailResponse = await fetch("/api/mail", {
+          method: "POST",
+          body: JSON.stringify({
+            name: newVendor.vName,
+            email: newVendor.vEmail,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (!mailResponse.ok) {
+          const errorData = await mailResponse.json();
+          console.error("Error sending email:", errorData);
+          toast.error(`Error sending email: ${errorData.error}`);
+        } else {
+          console.log("Email sent successfully");
+        }
       }
     } catch (error) {
       console.error(error);
-      toast.error(`Error on creating entry: ${error}`);
+      toast.error(`Error while submitting form`);
     }
   };
 
@@ -157,7 +178,7 @@ const VendorRegistrationForm = () => {
     <div className="pt-10 w-full">
       <VendorStepper currentStep={step} />
       <LandingPopup />
-      <SucessPopup name={name} isOpen={isSubmited} onClose={setIsSubmited} />
+      <SuccessPopup name={name} isOpen={isSubmitted} onClose={setIsSubmitted} />
 
       <Form {...methods}>
         <form

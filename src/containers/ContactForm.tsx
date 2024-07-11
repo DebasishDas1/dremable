@@ -14,10 +14,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState, useLayoutEffect } from "react";
-import { Facebook, Instagram, X } from "@mui/icons-material";
+import { Facebook, Instagram, X, WhatsApp } from "@mui/icons-material";
 import Link from "next/link";
 import * as z from "zod";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
@@ -25,9 +25,10 @@ import {
   FormField,
   FormItem,
   FormMessage,
+  FormLabel,
 } from "@/components/ui/form";
-import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
+import { asdContactUsEntry } from "@/actions/contactUs.action";
 
 const ContactForm = () => {
   const [side, setSide] = useState<"bottom" | "right">("right");
@@ -56,7 +57,10 @@ const ContactForm = () => {
     subject: z.string().min(3, "Subject must be at least 3 characters."),
   });
 
-  const form = useForm<z.infer<typeof formSchema>>({
+  // Infer the form data type from the schema
+  type FormData = z.infer<typeof formSchema>;
+
+  const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
@@ -66,11 +70,21 @@ const ContactForm = () => {
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    toast.success(
-      `Thanks ${values.name}, we appreciate you getting in touch with us.`
-    );
-  }
+  const onSubmit: SubmitHandler<FormData> = async (values) => {
+    toast.info(`Thanks ${values.name}, for filling out the form.`);
+
+    try {
+      const newEntry = await asdContactUsEntry({ entry: values });
+      if (newEntry) {
+        toast.success(
+          `${values.name} form submitted, we appreciate you getting in touch with us.`
+        );
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error(`Error while submitting form`);
+    }
+  };
 
   return (
     <div>
@@ -102,15 +116,13 @@ const ContactForm = () => {
                 name="name"
                 render={({ field }) => (
                   <FormItem className="w-full">
+                    <FormLabel>Name</FormLabel>
                     <FormControl>
-                      <>
-                        <Label htmlFor="name">Name</Label>
-                        <Input
-                          id="name"
-                          placeholder="Debasish Das"
-                          {...field}
-                        />
-                      </>
+                      <Input
+                        className="input-field"
+                        placeholder="Debasish Das"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -121,15 +133,14 @@ const ContactForm = () => {
                 name="email"
                 render={({ field }) => (
                   <FormItem className="w-full">
+                    <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <>
-                        <Label htmlFor="email">Email</Label>
-                        <Input
-                          id="email"
-                          placeholder="abc@gmail.com"
-                          {...field}
-                        />
-                      </>
+                      <Input
+                        className="input-field"
+                        placeholder="dremablewedding@gmail.com"
+                        type="email"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -140,11 +151,13 @@ const ContactForm = () => {
                 name="subject"
                 render={({ field }) => (
                   <FormItem className="w-full">
+                    <FormLabel>Subject</FormLabel>
                     <FormControl>
-                      <>
-                        <Label htmlFor="subject">Subject</Label>
-                        <Input id="subject" placeholder="Subject" {...field} />
-                      </>
+                      <Input
+                        className="input-field"
+                        placeholder="Subject"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -155,15 +168,13 @@ const ContactForm = () => {
                 name="message"
                 render={({ field }) => (
                   <FormItem className="w-full">
+                    <FormLabel>Message</FormLabel>
                     <FormControl>
-                      <>
-                        <Label htmlFor="message">Message</Label>
-                        <Textarea
-                          id="message"
-                          placeholder="abc@gmail.com"
-                          {...field}
-                        />
-                      </>
+                      <Textarea
+                        className="textarea"
+                        placeholder="Please feel free to share your opinions."
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -201,6 +212,13 @@ const ContactForm = () => {
               target="_blank"
             >
               <X />
+            </Link>
+            <Link
+              href={"https://wa.me/918777790641"}
+              className={`cursor-pointer py-2 pl-2`}
+              target="_blank"
+            >
+              <WhatsApp />
             </Link>
           </div>
         </SheetContent>

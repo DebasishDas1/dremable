@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import anime from "animejs";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import logo from "../../../public/Business_deal_cuate.png";
+import logo from "../../../public/assets/business_deal_create.png";
 
 const LandingPopup: React.FC = () => {
   const router = useRouter();

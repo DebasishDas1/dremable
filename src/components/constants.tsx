@@ -8,7 +8,7 @@ import {
   Place,
   CorporateFare,
   Deck,
-  CameraswitchSharp
+  CameraswitchSharp,
 } from "@mui/icons-material";
 
 export const nav_options = [
@@ -18,7 +18,7 @@ export const nav_options = [
     icon: <AutoFixHigh />,
   },
   {
-    name: "Wedding_Venues",
+    name: "Wedding Venues",
     linkUrl: "/wedding_venues/india/kolkata/banquet_halls",
     icon: <Place />,
   },
@@ -54,17 +54,17 @@ export const magicians_options = [
 
 export const vendor_options = [
   {
-    name: "Banquet_Halls",
+    name: "Banquet Halls",
     linkUrl: "/wedding_venues/india/kolkata/banquet_halls",
     icon: <CorporateFare />,
   },
   {
-    name: "luxury_wedding_venues",
+    name: "luxury wedding venues",
     linkUrl: "/wedding_venues/india/kolkata/luxury_wedding_venues",
     icon: <CameraswitchSharp />,
   },
   {
-    name: "wedding_resorts",
+    name: "wedding resorts",
     linkUrl: "/wedding_venues/india/kolkata/wedding_resorts",
     icon: <Deck />,
   },

@@ -1,7 +1,7 @@
 import PageTitle from "@/components/sheared/PageTitle";
 import BlogPostContainers from "@/components/sheared/BlogPostContainers";
 import type { Metadata } from "next";
-import { getAllBlog } from "@/lib/actions/blog.action";
+import { getAllBlog } from "@/actions/blog.action";
 import Search from "@/components/sheared/Search";
 import CategoryFilter from "@/components/sheared/CategoryFilter";
 

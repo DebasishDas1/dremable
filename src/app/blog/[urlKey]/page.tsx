@@ -1,6 +1,9 @@
 import PageTitle from "@/components/sheared/PageTitle";
-import { getBlogById, getRelatedBlogByCategory } from "@/lib/actions/blog.action";
-import { getCatagoryById } from "@/lib/actions/catagory.action";
+import {
+  getBlogByUrlKey,
+  getRelatedBlogByCategory,
+} from "@/actions/blog.action";
+import { getCategoryById } from "@/actions/category.action";
 import Image from "next/image";
 import {
   Place,
@@ -22,7 +25,7 @@ interface BlogDetailsPageProps {
 export async function generateMetadata({
   params,
 }: BlogDetailsPageProps): Promise<Metadata> {
-  const blogDetails = await getBlogById(params.urlKey);
+  const blogDetails = await getBlogByUrlKey(params.urlKey);
   return {
     title: blogDetails.title,
     description: blogDetails.description.substring(0, 150) + "...",
@@ -32,15 +35,15 @@ export async function generateMetadata({
 const BlogDetailsPage = async ({
   params: { urlKey },
 }: BlogDetailsPageProps) => {
-  const blogDetails = await getBlogById(urlKey);
-  const categoryDetails = await getCatagoryById(blogDetails.category);
+  const blogDetails = await getBlogByUrlKey(urlKey);
+  const categoryDetails = await getCategoryById(blogDetails.category);
 
   const relatedBlogs = await getRelatedBlogByCategory({
     categoryID: blogDetails.category,
     blogID: blogDetails._id,
     limit: 3,
     page: 1,
-  })
+  });
 
   return (
     <div className="flex flex-col items-center">
@@ -49,6 +52,7 @@ const BlogDetailsPage = async ({
           <PageTitle title={blogDetails.header} />
           <h1 className="hidden">{blogDetails.header}</h1>
         </div>
+         ̰
         <Image
           src={blogDetails.imageUrl}
           alt={blogDetails.title}

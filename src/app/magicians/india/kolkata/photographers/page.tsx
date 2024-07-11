@@ -2,7 +2,7 @@ import { photographersData } from "@/components/Data";
 import PageTitle from "@/components/sheared/PageTitle";
 import MagiciansCard from "@/components/sheared/MagiciansCard";
 import type { Metadata } from "next";
-import PageBnifitOptions from "@/components/sheared/PageBnifitOptions";
+import PageBenefitOptions from "@/components/sheared/PageBenefitOptions";
 import Title from "@/components/sheared/Title";
 import {
   toDoPhotographer,
@@ -50,15 +50,15 @@ const Photographers = () => {
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           How to Find Your Perfect Wedding Photographer
         </div>
-        <PageBnifitOptions banifits={findPhotographer} />
+        <PageBenefitOptions benefits={findPhotographer} />
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           Dremable Makes Finding Your Dream Photographer Easier
         </div>
-        <PageBnifitOptions banifits={dreamPhotographer} />
+        <PageBenefitOptions benefits={dreamPhotographer} />
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           Before You Say &quot;I Do&quot; to a Photographer
         </div>
-        <PageBnifitOptions banifits={toDoPhotographer} />
+        <PageBenefitOptions benefits={toDoPhotographer} />
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           Start Your Dream Today
         </div>

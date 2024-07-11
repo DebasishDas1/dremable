@@ -1,13 +1,13 @@
 import MagiciansCard from "@/components/sheared/MagiciansCard";
 import PageTitle from "@/components/sheared/PageTitle";
 import type { Metadata } from "next";
-import { bamquet } from "@/components/Data";
+import { banquet } from "@/components/Data";
 import Title from "@/components/sheared/Title";
-import PageBnifitOptions from "@/components/sheared/PageBnifitOptions";
+import PageBenefitOptions from "@/components/sheared/PageBenefitOptions";
 import {
   collectionOfWeddingVenues,
   effortlessPlanning,
-  dreamableAdvantage,
+  dremableAdvantage,
 } from "./BanquetHallsData";
 
 export const metadata: Metadata = {
@@ -20,10 +20,10 @@ const BanquetHalls = () => {
   return (
     <div className="flex flex-col items-center text-center">
       <div className="flex flex-col md:w-[65%] w-[85%] items-center">
-        <PageTitle title="Best wedding vanues & Banquet Halls in kolkata" />
+        <PageTitle title="Best wedding venues & Banquet Halls in kolkata" />
         <h1 className="hidden">Banquet Halls in kolkata</h1>
         <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
-          {bamquet.map((provider) => (
+          {banquet.map((provider) => (
             <MagiciansCard
               key={provider.name}
               name={provider.name}
@@ -53,18 +53,19 @@ const BanquetHalls = () => {
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           Unveiling a Collection of Wedding Venues in Kolkata:
         </div>
-        <PageBnifitOptions banifits={collectionOfWeddingVenues} />
+        <PageBenefitOptions benefits={collectionOfWeddingVenues} />
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           Effortless Planning for Your Dream Kolkata Wedding:
         </div>
         Dremable.com goes beyond showcasing stunning venues. We empower you to
         plan your dream wedding with ease and confidence:
-        <PageBnifitOptions banifits={effortlessPlanning} />
+        <PageBenefitOptions benefits={effortlessPlanning} />
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           The Dremable Advantage: Transforming Dreams into Reality
         </div>
-        Dremable.com sets itself apart by offering a multitude of benefits that go beyond simply showcasing wedding venues:
-        <PageBnifitOptions banifits={dreamableAdvantage} />
+        Dremable.com sets itself apart by offering a multitude of benefits that
+        go beyond simply showcasing wedding venues:
+        <PageBenefitOptions benefits={dremableAdvantage} />
       </div>
     </div>
   );

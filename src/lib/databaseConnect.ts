@@ -1,9 +1,9 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
 if (!MONGODB_URI) {
-  throw new Error('MONGODB_URI is missing');
+  throw new Error("MONGODB_URI is missing");
 }
 
 // Declare a global type to avoid TypeScript errors
@@ -26,12 +26,14 @@ export const connectToDatabase = async (): Promise<mongoose.Connection> => {
   }
 
   if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI, {
-      dbName: 'Dremable',
-      bufferCommands: false,
-    }).then(mongoose => mongoose.connection);
+    cached.promise = mongoose
+      .connect(MONGODB_URI, {
+        dbName: "Dremable",
+        bufferCommands: false,
+      })
+      .then((mongoose) => mongoose.connection);
   }
 
   cached.conn = await cached.promise;
   return cached.conn;
-}
+};

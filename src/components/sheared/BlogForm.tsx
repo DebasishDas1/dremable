@@ -13,19 +13,19 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import DropDown from "./DropDown";
-import {FileUploder} from "./FileUploder";
-import BolgFormContent from "./BolgFormContent";
-import { useState } from "react";
+import { FileUploader } from "./FileUploader";
+import BlogFormContent from "./BlogFormContent";
+// import { useState } from "react";
 import { LocationOn, CalendarMonth, Link } from "@mui/icons-material";
 import DatePicker from "react-datepicker";
-import { useUploadThing } from "@/lib/uploadthing";
-import { createBlog, updateBlog } from "@/lib/actions/blog.action";
+// import { useUploadThing } from "@/lib/uploadthing";
+import { createBlog, updateBlog } from "@/actions/blog.action";
 import "react-datepicker/dist/react-datepicker.css";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { IBlog } from "@/lib/database/models/blog.model";
+import { IBlog } from "@/models";
 
-type BolgFormProps = {
+type BlogFormProps = {
   type: "Create" | "Update";
   oldBlog?: IBlog;
 };
@@ -52,13 +52,14 @@ const formSchema = z.object({
   categoryID: z.string(),
 });
 
-const BolgForm = ({ type, oldBlog }: BolgFormProps) => {
-  const [files, setFiles] = useState<File[]>([]);
+const BlogForm = ({ type, oldBlog }: BlogFormProps) => {
+  // const [files, setFiles] = useState<File[]>([]);
+  // const { startUpload } = useUploadThing("imageUploader");
+
   const blogId = oldBlog ? oldBlog._id : "";
-  const { startUpload } = useUploadThing("imageUploader");
   const router = useRouter();
 
-  const blogtDefaultValues = {
+  const blogDefaultValues = {
     title: "",
     description: "",
     urlKey: "",
@@ -71,10 +72,13 @@ const BolgForm = ({ type, oldBlog }: BolgFormProps) => {
     categoryID: "",
   };
 
-  const initialValues = oldBlog && type === "Update" ? {
-    ...oldBlog,
-    date: new Date(oldBlog.date)
-  } : blogtDefaultValues;
+  const initialValues =
+    oldBlog && type === "Update"
+      ? {
+          ...oldBlog,
+          date: new Date(oldBlog.date),
+        }
+      : blogDefaultValues;
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -82,25 +86,25 @@ const BolgForm = ({ type, oldBlog }: BolgFormProps) => {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    toast.info("Blog data submited please wait");
+    toast.info("Blog data submitted please wait");
 
-    let uplodedImageUrl = values.imageUrl;
+    let uploadedImageUrl = values.imageUrl;
 
-    if (files.length > 0) {
-      const uplodedImage = await startUpload(files);
-      if (!uplodedImage) return;
-      uplodedImageUrl = uplodedImage[0].url;
-    }
+    // if (files.length > 0) {
+    //   const uploadedImage = await startUpload(files);
+    //   if (!uploadedImage) return;
+    //   uploadedImageUrl = uploadedImage[0].url;
+    // }
 
     if (type === "Update") {
       if (blogId === "") {
-        router.back()
+        router.back();
         return;
       }
 
       try {
         const updatedBlog = await updateBlog({
-          blog: { ...values, imageUrl: uplodedImageUrl, _id: blogId},
+          blog: { ...values, imageUrl: uploadedImageUrl, _id: blogId },
           path: `/blog`,
         });
         if (updatedBlog) {
@@ -117,7 +121,7 @@ const BolgForm = ({ type, oldBlog }: BolgFormProps) => {
     if (type === "Create") {
       try {
         const newBlog = await createBlog({
-          blog: { ...values, imageUrl: uplodedImageUrl },
+          blog: { ...values, imageUrl: uploadedImageUrl },
           path: "/blog",
         });
         if (newBlog) {
@@ -217,7 +221,7 @@ const BolgForm = ({ type, oldBlog }: BolgFormProps) => {
                 <FormItem className="w-full">
                   <FormControl>
                     <DropDown
-                      onChabgeHandler={field.onChange}
+                      onChangeHandler={field.onChange}
                       value={field.value}
                     />
                   </FormControl>
@@ -233,7 +237,7 @@ const BolgForm = ({ type, oldBlog }: BolgFormProps) => {
             render={({ field }) => (
               <FormItem className="w-full">
                 <FormControl className="h-72">
-                  <BolgFormContent
+                  <BlogFormContent
                     onFieldChange={field.onChange}
                     value={field.value}
                   />
@@ -248,8 +252,8 @@ const BolgForm = ({ type, oldBlog }: BolgFormProps) => {
             render={({ field }) => (
               <FormItem className="w-full">
                 <FormControl className="h-72">
-                  <FileUploder 
-                    onFieldChange= {field.onChange}
+                  <FileUploader
+                    onFieldChange={field.onChange}
                     fileList={field.value}
                   />
                 </FormControl>
@@ -269,7 +273,7 @@ const BolgForm = ({ type, oldBlog }: BolgFormProps) => {
                       <LocationOn />
                       <Input
                         className="input-field"
-                        placeholder="Blog loaction"
+                        placeholder="Blog location"
                         {...field}
                       />
                     </div>
@@ -330,4 +334,4 @@ const BolgForm = ({ type, oldBlog }: BolgFormProps) => {
   );
 };
 
-export default BolgForm;
+export default BlogForm;

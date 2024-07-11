@@ -55,8 +55,9 @@ const SuccessPopup = ({ name, isOpen, onClose }: SuccessPopupProp) => {
         >
           <h2 className="text-2xl font-bold text-green-600">
             Wellcome
-            <div className="text-black" >{name}</div>
-            to the <br />Dremable Family
+            <div className="text-black">{name}</div>
+            to the <br />
+            Dremable Family
           </h2>
           <Image
             src={SuccessPopupImage}

@@ -1,10 +1,10 @@
 import { plannerData } from "@/components/Data";
 import PageTitle from "@/components/sheared/PageTitle";
 import MagiciansCard from "@/components/sheared/MagiciansCard";
-import PageBnifitOptions from "@/components/sheared/PageBnifitOptions";
+import PageBenefitOptions from "@/components/sheared/PageBenefitOptions";
 import Title from "@/components/sheared/Title";
 import type { Metadata } from "next";
-import { youAvoid, chooseDreamable, rightPlanner } from "./weedingPlannersData";
+import { youAvoid, chooseDremable, rightPlanner } from "./weedingPlannersData";
 
 export const metadata: Metadata = {
   title: "Wedding Planners in Kolkata |Get Best Wedding Planner-Dremable",
@@ -41,17 +41,17 @@ const weddingPlanners = () => {
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           Why Choose Dremable ?
         </div>
-        <PageBnifitOptions banifits={chooseDreamable} />
+        <PageBenefitOptions benefits={chooseDremable} />
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           Say &quot;I Do&quot; to the Right Planner
         </div>
         Wondering how to choose the best Marriage planner in Kolkata? We&apos;ve
         got you covered! Ask these crucial questions
-        <PageBnifitOptions banifits={rightPlanner} />
+        <PageBenefitOptions benefits={rightPlanner} />
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           Mistakes a Marriage Planner Helps You Avoid
         </div>
-        <PageBnifitOptions banifits={youAvoid} />
+        <PageBenefitOptions benefits={youAvoid} />
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           Start Your Dream Today
         </div>

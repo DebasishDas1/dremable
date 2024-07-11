@@ -14,6 +14,7 @@ const VendorFiles = () => {
 
   return (
     <>
+      <div className="md:text-4xl text-2xl font-bold mb-4 p-2">File upload</div>
       <FormField
         control={control}
         name="vImagesUrlList"
@@ -36,10 +37,7 @@ const VendorFiles = () => {
           <FormItem className="w-full">
             <FormLabel className="pl-2">Vendor Details PDF</FormLabel>
             <FormControl>
-              <Input
-                type="file"
-                className="input-field"
-              />
+              <Input type="file" className="input-field" />
             </FormControl>
             <FormMessage />
           </FormItem>

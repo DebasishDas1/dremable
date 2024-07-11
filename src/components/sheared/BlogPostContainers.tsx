@@ -1,7 +1,7 @@
 import BlogPost from "./BlogPost";
-import { IBlog } from "@/lib/database/models/blog.model";
-import MoodBadIcon from '@mui/icons-material/MoodBad';
-import Pagination from './Pagination'
+import { IBlog } from "@/models/blog.model";
+import MoodBadIcon from "@mui/icons-material/MoodBad";
+import Pagination from "./Pagination";
 
 type BlogPostContainersProps = {
   data?: IBlog[];
@@ -16,7 +16,7 @@ type BlogPostContainersProps = {
 
 const BlogPostContainers = ({
   data = [],
-  emptyTitle, 
+  emptyTitle,
   emptyStateSubtext,
   page,
   totalPages = 0,
@@ -48,12 +48,16 @@ const BlogPostContainers = ({
             })}
           </ul>
           {totalPages > 1 && (
-            <Pagination urlParamName={urlParamName} page={page} totalPages={totalPages} />
+            <Pagination
+              urlParamName={urlParamName}
+              page={page}
+              totalPages={totalPages}
+            />
           )}
         </div>
       ) : (
         <div className="flex-center wrapper min-h-[300px] w-full flex-col gap-3 rounded-2xl bg-white py-50 text-center m-10">
-          <MoodBadIcon sx={{ fontSize: 100 }}/>
+          <MoodBadIcon sx={{ fontSize: 100 }} />
           <h3 className="p-bold-20 md:h5-bold">{emptyTitle}</h3>
           <p className="p-regular-14">{emptyStateSubtext}</p>
         </div>

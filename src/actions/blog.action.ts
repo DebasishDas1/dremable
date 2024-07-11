@@ -1,10 +1,9 @@
 "use server";
 
-import { connectToDatabase } from "../database";
-import Blog from "@/lib/database/models/blog.model";
+import { connectToDatabase } from "@/lib/databaseConnect";
+import { Blog, Category } from "@/models";
 import { handleError } from "@/lib/utils";
-import Category from "@/lib/database/models/category.model";
-import { revalidatePath } from 'next/cache'
+import { revalidatePath } from "next/cache";
 
 type BlogParams = {
   blog: {
@@ -28,9 +27,12 @@ const isError = (error: unknown): error is Error => {
 };
 
 const populateEvent = (query: any) => {
-  return query
-    .populate({ path: 'category', model: Category, select: '_id name' })
-}
+  return query.populate({
+    path: "category",
+    model: Category,
+    select: "_id name",
+  });
+};
 
 // create
 export const createBlog = async ({ blog, path }: BlogParams) => {
@@ -54,7 +56,7 @@ export const createBlog = async ({ blog, path }: BlogParams) => {
     }
 
     const newBlog = await Blog.create({ ...blog, category: blog.categoryID });
-    revalidatePath(path)
+    revalidatePath(path);
 
     return JSON.parse(JSON.stringify(newBlog));
   } catch (error) {
@@ -67,7 +69,7 @@ export const createBlog = async ({ blog, path }: BlogParams) => {
   }
 };
 
-export const getBlogById = async (urlKey: string) => {
+export const getBlogByUrlKey = async (urlKey: string) => {
   try {
     await connectToDatabase();
 
@@ -84,22 +86,22 @@ export const getBlogById = async (urlKey: string) => {
 // UPDATE
 export async function updateBlog({ blog, path }: BlogParams) {
   try {
-    await connectToDatabase()
+    await connectToDatabase();
 
     const updatedBlog = await Blog.findByIdAndUpdate(
       blog._id,
       { ...blog, category: blog.categoryID },
       { new: true }
-    )
-    revalidatePath(path)
+    );
+    revalidatePath(path);
 
-    return JSON.parse(JSON.stringify(updatedBlog))
+    return JSON.parse(JSON.stringify(updatedBlog));
   } catch (error) {
-    handleError(error)
+    handleError(error);
   }
 }
 
-type GetAllBlogssParams = {
+type GetAllBlogsParams = {
   query: string;
   category: string;
   limit: number;
@@ -124,7 +126,7 @@ export const getAllBlog = async ({
   limit = 6,
   page,
   category,
-}: GetAllBlogssParams) => {
+}: GetAllBlogsParams) => {
   try {
     await connectToDatabase();
 
@@ -148,7 +150,7 @@ export const getAllBlog = async ({
       .limit(limit);
 
     const events = await populateBlog(blogQuery);
-    
+
     const blogCount = await Blog.countDocuments(conditions);
 
     return {
@@ -157,15 +159,15 @@ export const getAllBlog = async ({
     };
   } catch (error) {
     handleError(error);
-  }                             
+  }
 };
 
 type getRelatedBlogByCategoryProps = {
-  categoryID: string,
-  blogID: string,
-  limit: number,
-  page: number,
-}
+  categoryID: string;
+  blogID: string;
+  limit: number;
+  page: number;
+};
 
 // GET RELATED EVENTS: EVENTS WITH SAME CATEGORY
 export async function getRelatedBlogByCategory({
@@ -175,21 +177,26 @@ export async function getRelatedBlogByCategory({
   page = 1,
 }: getRelatedBlogByCategoryProps) {
   try {
-    await connectToDatabase()
+    await connectToDatabase();
 
-    const skipAmount = (Number(page) - 1) * limit
-    const conditions = { $and: [{ category: categoryID }, { _id: { $ne: blogID } }] }
+    const skipAmount = (Number(page) - 1) * limit;
+    const conditions = {
+      $and: [{ category: categoryID }, { _id: { $ne: blogID } }],
+    };
 
     const eventsQuery = Blog.find(conditions)
-      .sort({ createdAt: 'desc' })
+      .sort({ createdAt: "desc" })
       .skip(skipAmount)
-      .limit(limit)
+      .limit(limit);
 
-    const events = await populateEvent(eventsQuery)
-    const eventsCount = await Blog.countDocuments(conditions)
+    const events = await populateEvent(eventsQuery);
+    const eventsCount = await Blog.countDocuments(conditions);
 
-    return { data: JSON.parse(JSON.stringify(events)), totalPages: Math.ceil(eventsCount / limit) }
+    return {
+      data: JSON.parse(JSON.stringify(events)),
+      totalPages: Math.ceil(eventsCount / limit),
+    };
   } catch (error) {
-    handleError(error)
+    handleError(error);
   }
 }

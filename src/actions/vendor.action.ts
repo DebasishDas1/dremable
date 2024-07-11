@@ -1,7 +1,7 @@
 "use server";
 
-import { connectToDatabase } from "../database";
-import Vendor from "@/lib/database/models/vendor.model";
+import { connectToDatabase } from "@/lib/databaseConnect";
+import { Vendor } from "@/models";
 import { handleError } from "@/lib/utils";
 
 type CreateVendorParams = {

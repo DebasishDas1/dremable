@@ -6,30 +6,28 @@ import {
   Heading,
   Html,
   Img,
-  Link,
   Preview,
   Text,
   Tailwind,
   Section,
+  Button,
 } from "@react-email/components";
 
 interface VercelInviteUserEmailProps {
-  username?: string;
-  invitedByUsername?: string;
+  userName?: string;
 }
 
-const VendoeRormEmail = ({
-  username,
-  invitedByUsername,
+const VendorFormCompletionEmail = ({
+  userName,
 }: VercelInviteUserEmailProps) => {
-  const previewText = `Join ${invitedByUsername} on Vercel`;
+  const previewText = `Thanks for joining Team Dremable.`;
   return (
     <Html>
       <Head />
       <Preview>{previewText}</Preview>
       <Tailwind>
         <Body className="bg-white my-auto mx-auto font-sans px-2">
-          <Container className="rounded-lg my-[40px] mx-auto p-[20px] max-w-[465px] shadow-lg">
+          <Container className="bg-white rounded-lg my-[40px] mx-auto p-[20px] max-w-[465px]">
             <Section className="mt-[32px]">
               <Img
                 src={`https://lh3.googleusercontent.com/a/ACg8ocJRCUC6ZELFx1x5lK5awb4YQvBYtOHpaZWxhdfrYLPAlppULF0=s192-c-rg-br100`}
@@ -40,47 +38,51 @@ const VendoeRormEmail = ({
               />
             </Section>
             <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
-              Wellcome to team <strong>Dremable</strong>
+              Welcome to team <strong>Dremable</strong>
             </Heading>
             <Text className="text-black text-[14px] leading-[24px]">
-              Hello {username}, 👋🏽
+              Hello {userName},
             </Text>
 
             <Text className="text-[14px] leading-[24px] pt-4">
-              We&lsquo;re excited to have you on board. Your registration has been
+              We are excited to have you on board. Your registration has been
               submitted successfully, 🎉
             </Text>
 
             <Text className="text-[14px] leading-[24px] pt-4">
               Our team will review it shortly. and assist you with further
-              Procedures
+              Procedures.In the meantime, feel free to explore our website
+            </Text>
+
+            <Button
+              className="bg-black text-white px-4 py-2 rounded-md font-bold"
+              href="www.dremable.com"
+            >
+              Dremable
+            </Button>
+
+            <Text className="text-[14px] leading-[24px] pt-4">
+              If you have any questions or need assistance, please do not
+              hesitate to reach out to us, Directly through 👇
+            </Text>
+
+            <Button
+              className="bg-green-300 text-black font-bold px-4 py-2"
+              href="www.dremable.com"
+            >
+              Whatsapp
+            </Button>
+
+            <Text className="text-[14px] leading-[24px]">
+              Please do not respond to this email.
             </Text>
 
             <Text className="text-[14px] leading-[24px] pt-4">
-              In the meantime, feel free to explore our website
-              <Link
-                href={`www.dremable.com`}
-                className="text-blue-600 no-underline"
-              >
-                Dremable
-              </Link>
-              .<br />
-              If you have any questions or need assistance, please don&lsquo;t
-              hesitate to reach out to us, Just reply to this mail or Directly
-              WhatsApp us:
-              <Link
-                href={`www.dremable.com`}
-                className="text-blue-600 no-underline"
-              >
-                Dremable
-              </Link>
+              Thank you for choosing us; we look forward to working with you!{" "}
+              <br />
             </Text>
 
-            <Text className="text-[14px] leading-[24px] pt-4">
-              Thank you for choosing us; we look forward to working with you!
-            </Text>
-
-            <Text className="text-black text-[14px] leading-[24px]">
+            <Text className="text-[14px] leading-[24px]">
               Best regards,
               <br />
               <strong>Team Dremable</strong>
@@ -92,4 +94,4 @@ const VendoeRormEmail = ({
   );
 };
 
-export default VendoeRormEmail;
+export default VendorFormCompletionEmail;

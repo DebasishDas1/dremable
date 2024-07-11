@@ -3,11 +3,11 @@ import PageTitle from "@/components/sheared/PageTitle";
 import type { Metadata } from "next";
 import { luxuryWeddingVenues } from "@/components/Data";
 import Title from "@/components/sheared/Title";
-import PageBnifitOptions from "@/components/sheared/PageBnifitOptions";
+import PageBenefitOptions from "@/components/sheared/PageBenefitOptions";
 import {
   immerseYourselves,
   magnified,
-  chooseDreamable,
+  chooseDremable,
 } from "./LuxuryWeddingVenuesData";
 
 export const metadata: Metadata = {
@@ -35,17 +35,18 @@ const LuxuryWeddingVenues = () => {
           ))}
         </div>
         <Title>
-          Dremable: Where Luxury Meets Grandeur - Kolkata&lsquo;s Top Wedding Venues
-          & Hotels
+          Dremable: Where Luxury Meets Grandeur - Kolkata&lsquo;s Top Wedding
+          Venues & Hotels
         </Title>
-        Kolkata, the &lsquo;City of Joy,&lsquo; pulsates with a captivating charm, making it
-        a dream location for a truly unforgettable wedding. Dremable.com
-        curates Kolkata&lsquo;s most luxurious wedding venues and 5-star hotels,
-        transforming your vision into a reality that surpasses expectations.
+        Kolkata, the &lsquo;City of Joy,&lsquo; pulsates with a captivating
+        charm, making it a dream location for a truly unforgettable wedding.
+        Dremable.com curates Kolkata&lsquo;s most luxurious wedding venues and
+        5-star hotels, transforming your vision into a reality that surpasses
+        expectations.
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           Immerse yourselves in opulence:
         </div>
-        <PageBnifitOptions banifits={immerseYourselves} />
+        <PageBenefitOptions benefits={immerseYourselves} />
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           5-Star Kolkata Hotels: Where Every Detail is Magnified
         </div>
@@ -53,12 +54,12 @@ const LuxuryWeddingVenues = () => {
         encompassing luxurious accommodations, world-class cuisine, and
         unparalleled event management. Dremable allows you to explore these
         havens and discover:
-        <PageBnifitOptions banifits={magnified} />
+        <PageBenefitOptions benefits={magnified} />
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           Why Choose Dremable for Your Kolkata Wedding ?
         </div>
         Dremable simplifies your wedding planning by offering:
-        <PageBnifitOptions banifits={chooseDreamable} />
+        <PageBenefitOptions benefits={chooseDremable} />
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           Start planning your dream Kolkata wedding today!
         </div>

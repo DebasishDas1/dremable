@@ -855,7 +855,7 @@ export const artistsData = [
   },
 ];
 
-export const bamquet = [
+export const banquet = [
   {
     name: "Lotus Banquet",
     contact: "98309 99901",

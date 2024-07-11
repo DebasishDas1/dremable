@@ -2,7 +2,7 @@ import { artistsData } from "@/components/Data";
 import PageTitle from "@/components/sheared/PageTitle";
 import MagiciansCard from "@/components/sheared/MagiciansCard";
 import type { Metadata } from "next";
-import PageBnifitOptions from "@/components/sheared/PageBnifitOptions";
+import PageBenefitOptions from "@/components/sheared/PageBenefitOptions";
 import Title from "@/components/sheared/Title";
 import {
   choseDremable,
@@ -50,23 +50,23 @@ const makeupArtists = () => {
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           Why Choose Dremable
         </div>
-        <PageBnifitOptions banifits={choseDremable} />
+        <PageBenefitOptions benefits={choseDremable} />
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           Finding Your Perfect Kolkata Bridal Makeup Artist
         </div>
-        <PageBnifitOptions banifits={makeupArtist} />
+        <PageBenefitOptions benefits={makeupArtist} />
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           Dremable Makes Finding Your Dream Makeup Artist Easier
         </div>
-        <PageBnifitOptions banifits={artistEasier} />
+        <PageBenefitOptions benefits={artistEasier} />
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           Before You Say &quot;I Do&quot; to a Makeup Artist
         </div>
-        <PageBnifitOptions banifits={iDoArtist} />
+        <PageBenefitOptions benefits={iDoArtist} />
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           Tips for a Successful Collaboration
         </div>
-        <PageBnifitOptions banifits={collaboration} />
+        <PageBenefitOptions benefits={collaboration} />
         <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
           Start Your Dream Today
         </div>

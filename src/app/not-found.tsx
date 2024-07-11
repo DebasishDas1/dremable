@@ -2,16 +2,17 @@
 
 import React from "react";
 import Link from "next/link";
-import CrisisAlertIcon from "@mui/icons-material/CrisisAlert";
+import Image from "next/image";
+import errorPage from "../../public/assets/404_error_page.png"
 
 const Custom404: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[70vh] py-6 text-center">
-      <CrisisAlertIcon sx={{ fontSize: 80 }} />
-      <h1 className="text-2xl font-bold text-gray-800 mb-4 pt-5">
-        Oops!
-        <br /> Page Not Found
-      </h1>
+    <div className="flex flex-col items-center justify-center min-h-[70vh] py-6 text-center mb-20">
+      <Image 
+      src={errorPage}
+      alt="Error"
+      style={{height: "400px", width: "400px"}}
+      />
       <p className="text-lg text-gray-600 mb-8 text-center">
         It seems like you&apos;ve stumbled upon a page that doesn&apos;t exist.
       </p>

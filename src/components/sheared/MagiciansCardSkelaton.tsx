@@ -1,4 +1,4 @@
-const MagiciansCardSkelaton = () => {
+const MagiciansCardSkelton = () => {
   return (
     <div className="border bg-white shadow rounded-xl p-4 w-full mx-auto md:min-h-[500px] max-w-[354px]">
       <div className="animate-pulse flex space-x-4">
@@ -21,4 +21,4 @@ const MagiciansCardSkelaton = () => {
   );
 };
 
-export default MagiciansCardSkelaton;
+export default MagiciansCardSkelton;

@@ -38,7 +38,7 @@ const MagiciansCard = ({
   }
 
   return (
-    <div className="group relative md:min-h-[200px] max-w-[600px] bg-white hover:shadow-2xl shadow-lg rounded-xl">
+    <div className="group flex flex-col relative md:min-h-[200px] max-w-[600px] bg-white hover:shadow-2xl shadow-lg rounded-xl">
       <div className="h-[280px] w-[100] relative">
         <Image
           src={imageUrl ? imageUrl : logo}
@@ -49,7 +49,7 @@ const MagiciansCard = ({
         />
       </div>
 
-      <div className="m-4 flex flex-col justify-between md:h-[42%]">
+      <div className="m-4 flex flex-col flex-1 justify-between p-1">
         <div className="text-3xl font-black pb-4">
           {name}
           {/* <br />

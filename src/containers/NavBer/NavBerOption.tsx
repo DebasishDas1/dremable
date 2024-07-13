@@ -19,7 +19,7 @@ const NavBerOption = () => {
   const pathname = usePathname().split("/");
 
   return (
-    <NavigationMenu className="text-center">
+    <NavigationMenu className="text-center hidden md:flex">
       <NavigationMenuList>
         <NavigationMenuItem className="px-1">
           <NavigationMenuTrigger

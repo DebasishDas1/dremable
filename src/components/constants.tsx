@@ -70,6 +70,24 @@ export const vendor_options = [
   },
 ];
 
+export const goa_options = [
+  {
+    name: "Wedding Planners",
+    linkUrl: "/magicians/india/goa/wedding_planners",
+    icon: <FormatListBulleted />,
+  },
+  {
+    name: "Photographers",
+    linkUrl: "/magicians/india/goa/photographers",
+    icon: <AddAPhoto />,
+  },
+  {
+    name: "Makeup Artists",
+    linkUrl: "/magicians/india/goa/makeup_artists",
+    icon: <ColorLens />,
+  },
+];
+
 export const benefits = [
   {
     title: "Browse by category",

@@ -91,7 +91,7 @@ const MobileNav: React.FC = () => {
             <div className="mr-2">
               <AutoFixHigh />
             </div>
-            Magicians
+            Kolkata
             <ArrowDropDown />
           </div>
           <div className="bg-white/40 rounded-lg">
@@ -99,24 +99,6 @@ const MobileNav: React.FC = () => {
               <div>
                 {magicians_options.map((option) => renderNavItem(option))}
               </div>
-            )}
-          </div>
-
-          <div
-            className={`flex regular-16 flexCenter cursor-pointer pb-5 items-center pt-2 font-bold ${
-              showVendors ? "font-black" : "font-light"
-            }`}
-            onClick={handleVendorsButton}
-          >
-            <div className="mr-2">
-              <Place />
-            </div>
-            Wedding Venues
-            <ArrowDropDown />
-          </div>
-          <div className="bg-white/40 rounded-lg">
-            {showVendors && (
-              <div>{vendor_options.map((option) => renderNavItem(option))}</div>
             )}
           </div>
 
@@ -135,6 +117,24 @@ const MobileNav: React.FC = () => {
           <div className="bg-white/40 rounded-lg">
             {showGoa && (
               <div>{goa_options.map((option) => renderNavItem(option))}</div>
+            )}
+          </div>
+
+          <div
+            className={`flex regular-16 flexCenter cursor-pointer pb-5 items-center pt-2 font-bold ${
+              showVendors ? "font-black" : "font-light"
+            }`}
+            onClick={handleVendorsButton}
+          >
+            <div className="mr-2">
+              <Place />
+            </div>
+            Wedding Venues
+            <ArrowDropDown />
+          </div>
+          <div className="bg-white/40 rounded-lg">
+            {showVendors && (
+              <div>{vendor_options.map((option) => renderNavItem(option))}</div>
             )}
           </div>
 

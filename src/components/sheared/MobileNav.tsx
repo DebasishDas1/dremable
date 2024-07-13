@@ -3,6 +3,7 @@ import {
   nav_options,
   magicians_options,
   vendor_options,
+  goa_options,
 } from "@/components/constants";
 import {
   Sheet,
@@ -31,6 +32,7 @@ interface NavOption {
 const MobileNav: React.FC = () => {
   const [showMagicians, setShowMagicians] = useState<boolean>(false);
   const [showVendors, setShowVendors] = useState<boolean>(false);
+  const [showGoa, setShowGoa] = useState<boolean>(false);
   const pathname: string[] = usePathname().split("/");
 
   const handleMagiciansButton = (): void => {
@@ -39,6 +41,10 @@ const MobileNav: React.FC = () => {
 
   const handleVendorsButton = (): void => {
     setShowVendors((prevState: boolean) => !prevState);
+  };
+
+  const handleGoaButton = (): void => {
+    setShowGoa((prevState: boolean) => !prevState);
   };
 
   const renderNavItem = (option: NavOption): JSX.Element => (
@@ -113,6 +119,25 @@ const MobileNav: React.FC = () => {
               <div>{vendor_options.map((option) => renderNavItem(option))}</div>
             )}
           </div>
+
+          <div
+            className={`flex regular-16 flexCenter cursor-pointer pb-5 items-center pt-2 font-bold ${
+              showVendors ? "font-black" : "font-light"
+            }`}
+            onClick={handleGoaButton}
+          >
+            <div className="mr-2">
+              <AutoFixHigh />
+            </div>
+            Goa
+            <ArrowDropDown />
+          </div>
+          <div className="bg-white/40 rounded-lg">
+            {showGoa && (
+              <div>{goa_options.map((option) => renderNavItem(option))}</div>
+            )}
+          </div>
+
           {nav_options
             .filter((option) => option.name !== "Magicians")
             .filter((option) => option.name !== "Wedding Venues")

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import NavBar from "@/containers/NvBer";
+import NavBar from "@/containers/NavBer";
 import Footer from "@/containers/Footer";
 import {
   SeoOptimizationHeader,

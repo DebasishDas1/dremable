@@ -5,7 +5,7 @@ type Props = {
 const PageTitle = ({ title }: Props) => {
   return (
     <div className="md:text-6xl text-4xl font-bold py-16 text-center">
-      {title}
+      <h1> {title}</h1>
     </div>
   );
 };

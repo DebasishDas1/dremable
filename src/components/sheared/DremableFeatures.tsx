@@ -47,19 +47,19 @@ const DremableFeatures: FC = () => {
       <FeatureItem
         text="Wedding Planners"
         url="https://images.pexels.com/photos/3975586/pexels-photo-3975586.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        sideLink="/magicians/weedingPlanners"
+        sideLink="/wedding_magicians/kolkata/wedding_planners"
         side="left"
       />
       <FeatureItem
         text="Photographers"
         url="https://images.pexels.com/photos/17057198/pexels-photo-17057198/free-photo-of-close-up-of-a-viewfinder-of-a-camera-photographing-bride-and-groom.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        sideLink="/magicians/photographers"
+        sideLink="/wedding_magicians/kolkata/photographers"
         side="right"
       />
       <FeatureItem
         text="Makeup Artists"
         url="https://images.pexels.com/photos/5733000/pexels-photo-5733000.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        sideLink="/magicians/makeupArtists"
+        sideLink="/wedding_magicians/kolkata/makeup_artists"
         side="left"
       />
     </div>

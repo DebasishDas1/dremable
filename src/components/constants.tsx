@@ -14,7 +14,7 @@ import {
 export const nav_options = [
   {
     name: "Magicians",
-    linkUrl: "/magicians/india/kolkata/wedding_planners",
+    linkUrl: "/wedding_magicians/kolkata/wedding_planners",
     icon: <AutoFixHigh />,
   },
   {
@@ -37,17 +37,17 @@ export const nav_options = [
 export const magicians_options = [
   {
     name: "Wedding Planners",
-    linkUrl: "/magicians/india/kolkata/wedding_planners",
+    linkUrl: "/wedding_magicians/kolkata/wedding_planners",
     icon: <FormatListBulleted />,
   },
   {
     name: "Photographers",
-    linkUrl: "/magicians/india/kolkata/photographers",
+    linkUrl: "/wedding_magicians/kolkata/photographers",
     icon: <AddAPhoto />,
   },
   {
     name: "Makeup Artists",
-    linkUrl: "/magicians/india/kolkata/makeup_artists",
+    linkUrl: "/wedding_magicians/kolkata/makeup_artists",
     icon: <ColorLens />,
   },
 ];
@@ -55,17 +55,17 @@ export const magicians_options = [
 export const vendor_options = [
   {
     name: "Banquet Halls",
-    linkUrl: "/wedding_venues/india/kolkata/banquet_halls",
+    linkUrl: "/wedding_venues/kolkata/banquet_halls",
     icon: <CorporateFare />,
   },
   {
     name: "luxury wedding venues",
-    linkUrl: "/wedding_venues/india/kolkata/luxury_wedding_venues",
+    linkUrl: "/wedding_venues/kolkata/luxury_wedding_venues",
     icon: <CameraswitchSharp />,
   },
   {
     name: "wedding resorts",
-    linkUrl: "/wedding_venues/india/kolkata/wedding_resorts",
+    linkUrl: "/wedding_venues/kolkata/wedding_resorts",
     icon: <Deck />,
   },
 ];
@@ -73,17 +73,17 @@ export const vendor_options = [
 export const goa_options = [
   {
     name: "Wedding Planners",
-    linkUrl: "/magicians/india/goa/wedding_planners",
+    linkUrl: "/wedding_magicians/goa/wedding_planners",
     icon: <FormatListBulleted />,
   },
   {
     name: "Photographers",
-    linkUrl: "/magicians/india/goa/photographers",
+    linkUrl: "/wedding_magicians/goa/photographers",
     icon: <AddAPhoto />,
   },
   {
     name: "Makeup Artists",
-    linkUrl: "/magicians/india/goa/makeup_artists",
+    linkUrl: "/wedding_magicians/goa/makeup_artists",
     icon: <ColorLens />,
   },
 ];

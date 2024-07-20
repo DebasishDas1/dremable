@@ -11,14 +11,7 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
-import {
-  Home,
-  ArrowDropDown,
-  Menu,
-  AutoFixHigh,
-  Place,
-  Paragliding,
-} from "@mui/icons-material";
+import { ArrowDropDown, Menu } from "@mui/icons-material";
 import ContactForm from "@/containers/ContactForm";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -26,12 +19,12 @@ import { usePathname } from "next/navigation";
 interface NavOption {
   name: string;
   linkUrl: string;
-  icon: JSX.Element;
 }
 
 const MobileNav: React.FC = () => {
   const [showMagicians, setShowMagicians] = useState<boolean>(false);
   const [showVendors, setShowVendors] = useState<boolean>(false);
+  const [showKolkata, setShowKolkata] = useState<boolean>(false);
   const [showGoa, setShowGoa] = useState<boolean>(false);
   const pathname: string[] = usePathname().split("/");
 
@@ -41,6 +34,10 @@ const MobileNav: React.FC = () => {
 
   const handleVendorsButton = (): void => {
     setShowVendors((prevState: boolean) => !prevState);
+  };
+
+  const handleKolkataButton = (): void => {
+    setShowKolkata((prevState: boolean) => !prevState);
   };
 
   const handleGoaButton = (): void => {
@@ -60,7 +57,6 @@ const MobileNav: React.FC = () => {
         }`}
       >
         <button type="submit" className="outline-none flex items-center ">
-          <span className="mr-2 mb-1">{option.icon}</span>
           <span>{option.name.replaceAll("_", " ")}</span>
         </button>
       </Link>
@@ -71,52 +67,63 @@ const MobileNav: React.FC = () => {
     <div className="md:hidden">
       <Sheet>
         <SheetTrigger asChild>
-          <Menu className="inline-block cursor-pointer lg:hidden" />
+          <Menu className="inline-block cursor-pointer lg:hidden mr-6" />
         </SheetTrigger>
         <SheetContent
-          className="backdrop-blur-3xl bg-white/30 text-2xl"
+          className="backdrop-blur-3xl bg-white/40 text-2xl"
           side="top"
         >
           {renderNavItem({
             name: "Home",
             linkUrl: "/",
-            icon: <Home />,
           })}
+
           <div
-            className={`flex regular-16 flexCenter cursor-pointer pb-5 items-center pt-2 font-bold ${
+            className={`flex regular-16 flexCenter cursor-pointer pb-5 items-center py-2 font-bold ${
               showMagicians ? "font-black" : "font-light"
             }`}
             onClick={handleMagiciansButton}
           >
-            <div className="mr-2">
-              <AutoFixHigh />
-            </div>
-            Kolkata
+            Wedding Magicians
             <ArrowDropDown />
           </div>
-          <div className="bg-white/40 rounded-lg">
+          <div className="bg-white/20 rounded-lg">
             {showMagicians && (
-              <div>
-                {magicians_options.map((option) => renderNavItem(option))}
-              </div>
-            )}
-          </div>
+              <>
+                <div
+                  className={`flex regular-16 flexCenter cursor-pointer py-3 items-center font-bold rounded-xl pl-3 ${
+                    showKolkata ? "font-black" : "font-light"
+                  }`}
+                  onClick={handleKolkataButton}
+                >
+                  Kolkata
+                  <ArrowDropDown />
+                </div>
+                <div className="bg-white/30 rounded-lg pl-3 mx-4">
+                  {showKolkata && (
+                    <div>
+                      {magicians_options.map((option) => renderNavItem(option))}
+                    </div>
+                  )}
+                </div>
 
-          <div
-            className={`flex regular-16 flexCenter cursor-pointer pb-5 items-center pt-2 font-bold ${
-              showVendors ? "font-black" : "font-light"
-            }`}
-            onClick={handleGoaButton}
-          >
-            <div className="mr-2">
-              <AutoFixHigh />
-            </div>
-            Goa
-            <ArrowDropDown />
-          </div>
-          <div className="bg-white/40 rounded-lg">
-            {showGoa && (
-              <div>{goa_options.map((option) => renderNavItem(option))}</div>
+                <div
+                  className={`flex regular-16 flexCenter cursor-pointer py-3 items-center font-bold rounded-xl pl-3  ${
+                    showGoa ? "font-black" : "font-light"
+                  }`}
+                  onClick={handleGoaButton}
+                >
+                  Goa
+                  <ArrowDropDown />
+                </div>
+                <div className="bg-white/30 rounded-lg pl-3 mx-4">
+                  {showGoa && (
+                    <div>
+                      {goa_options.map((option) => renderNavItem(option))}
+                    </div>
+                  )}
+                </div>
+              </>
             )}
           </div>
 
@@ -126,9 +133,6 @@ const MobileNav: React.FC = () => {
             }`}
             onClick={handleVendorsButton}
           >
-            <div className="mr-2">
-              <Place />
-            </div>
             Wedding Venues
             <ArrowDropDown />
           </div>
@@ -147,10 +151,10 @@ const MobileNav: React.FC = () => {
           {renderNavItem({
             name: "Vendor Registration",
             linkUrl: "/vendor_registration",
-            icon: <Paragliding />,
           })}
-
-          <ContactForm />
+          <div className="pt-4">
+            <ContactForm />
+          </div>
         </SheetContent>
       </Sheet>
     </div>

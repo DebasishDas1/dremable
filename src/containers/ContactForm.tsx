@@ -90,9 +90,8 @@ const ContactForm = () => {
     <div>
       <Sheet>
         <SheetTrigger asChild>
-          <Button type="submit" className="font-bold">
-            Contact Us
-          </Button>
+          {/* <Button type="submit">Contact Us</Button> */}
+          <button className="hover:font-bold">Contact Us</button>
         </SheetTrigger>
         <SheetContent
           className="backdrop-blur-3xl bg-white/60 text-2xl"

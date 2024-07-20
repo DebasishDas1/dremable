@@ -12,6 +12,15 @@ export const blogData = [
 
 export const plannerData = [
   {
+    name: "Subha Muhurat",
+    contact: "90075 39686",
+    address: "ground floor, 2, 109B, Baghajatin Rd, Sree Colony Kolkata 700092",
+    url: "",
+    rating: "4.9",
+    image:
+      "https://drive.google.com/file/d/1-B9h7OG0P0mo1IBOTYXWyTkdvmb-yNtv/view?usp=drive_link",
+  },
+  {
     name: " Yuvik Weddings and Events ",
     contact: "90079 96697",
     address: ", Sector 3, Bidhannagar, Kolkata 700106",
@@ -172,15 +181,6 @@ export const plannerData = [
     rating: "4.5",
     image:
       "https://drive.google.com/file/d/1xYhr5Bt_24XBwK9u-pvGmunAWjPqUsm9/view?usp=drive_link",
-  },
-  {
-    name: "Subha Muhurat",
-    contact: "90075 39686",
-    address: "ground floor, 2, 109B, Baghajatin Rd, Sree Colony Kolkata 700092",
-    url: "",
-    rating: "4.9",
-    image:
-      "https://drive.google.com/file/d/1-B9h7OG0P0mo1IBOTYXWyTkdvmb-yNtv/view?usp=drive_link",
   },
   {
     name: "Swastik wedding planner",
@@ -693,14 +693,13 @@ export const photographersData = [
 
 export const artistsData = [
   {
-    name: "The Gargi Chakraborty Studio ",
-    contact: "7044244826",
-    address:
-      "Merlin Isand 209, Picnic Garden Rd, Kata Pukur, Kustia, Kolkata,700039",
-    url: "https://thegargichakraborty.com/",
-    rating: "4.7",
+    name: "Jas Makeover ",
+    contact: "8296636475",
+    address: "133, chaltabagan, Vivekananda Rd, Manicktala, Kolkata, 700006",
+    url: "",
+    rating: "4.8",
     image:
-      "https://drive.google.com/file/d/1cXjgGsRjrYOMhdIwtIBddzznlFvZQJel/view?usp=drive_link",
+      "https://drive.google.com/file/d/1USi9B-rgl89097KNoqnT-QBPPKV-7VYx/view?usp=drive_link",
   },
   {
     name: "Debi's Premier Makeup Artist",
@@ -738,6 +737,16 @@ export const artistsData = [
     rating: "4.7",
     image:
       "https://drive.google.com/file/d/1py1e8Qr2Lym89oHRtkl31mpxo0dqb3u8/view?usp=drive_link",
+  },
+  {
+    name: "The Gargi Chakraborty Studio ",
+    contact: "7044244826",
+    address:
+      "Merlin Isand 209, Picnic Garden Rd, Kata Pukur, Kustia, Kolkata,700039",
+    url: "https://thegargichakraborty.com/",
+    rating: "4.7",
+    image:
+      "https://drive.google.com/file/d/1cXjgGsRjrYOMhdIwtIBddzznlFvZQJel/view?usp=drive_link",
   },
   {
     name: "Riya Ghosh Makeup Artist",
@@ -795,15 +804,6 @@ export const artistsData = [
     rating: "4.6",
     image:
       "https://drive.google.com/file/d/1Trun2CvVQEcoX3VJBAQjDKggcakKYRhG/view?usp=drive_link",
-  },
-  {
-    name: "Jas Makeover ",
-    contact: "8296636475",
-    address: "133, chaltabagan, Vivekananda Rd, Manicktala, Kolkata, 700006",
-    url: "",
-    rating: "4.8",
-    image:
-      "https://drive.google.com/file/d/1USi9B-rgl89097KNoqnT-QBPPKV-7VYx/view?usp=drive_link",
   },
   {
     name: "Swapna's Makeover",
@@ -967,7 +967,7 @@ export const banquet = [
       "https://drive.google.com/file/d/14XZftgslwlHJZ-X4G5CJnOCFZmgFIW2X/view?usp=drive_link",
   },
   {
-    name: "“The Villa”",
+    name: "The Villa",
     contact: "98360 07999",
     address: "8, Mandeville Gardens, Ekdalia, Ballygunge, Kolkata, 700019",
     rating: "4.8",
@@ -1532,6 +1532,16 @@ export const goaPlannerData = [
 
 export const goaPhotographersData = [
   {
+    name: "The Goan Photography ",
+    contact: "83085  55875",
+    address:
+      "Calangute - Baga Rd, near club tao, Khobra Waddo, Calangute, Goa 403516",
+    url: "",
+    rating: "4.8",
+    image:
+      "https://drive.google.com/file/d/1J46nDCFMUMZuTZ5VwbOXbbPizM5_0hyF/view?usp=drive_link",
+  },
+  {
     name: "Photography Thakur",
     contact: "85529  70423",
     address:
@@ -1608,16 +1618,6 @@ export const goaPhotographersData = [
     rating: "4.7",
     image:
       "https://drive.google.com/file/d/1IrMc0cQrxu8Loz_TG8ThTINJ3Q6pPJXk/view?usp=drive_link",
-  },
-  {
-    name: "The Goan Photography ",
-    contact: "83085  55875",
-    address:
-      "Calangute - Baga Rd, near club tao, Khobra Waddo, Calangute, Goa 403516",
-    url: "",
-    rating: "4.8",
-    image:
-      "https://drive.google.com/file/d/1J46nDCFMUMZuTZ5VwbOXbbPizM5_0hyF/view?usp=drive_link",
   },
   {
     name: "Darius N Fernandes",
@@ -1714,7 +1714,8 @@ export const goaArtistsData = [
     address: "Goa , India",
     url: "",
     rating: "4.9",
-    image: "",
+    image:
+      "https://drive.google.com/file/d/19guK6AeUcWo2mYx7RQdQXMBetYHf6HZl/view?usp=drive_link",
   },
   {
     name: "Makeup  Artist  Hazira",
@@ -1722,7 +1723,8 @@ export const goaArtistsData = [
     address: "Per seravalim colva, Madgaon, Goa 403708",
     url: "",
     rating: "4.9",
-    image: "",
+    image:
+      "https://drive.google.com/file/d/15ksiQQA4J26AVtR9oMRkddbtJJ-M1Csf/view?usp=drive_link",
   },
   {
     name: "Glittering",
@@ -1730,7 +1732,8 @@ export const goaArtistsData = [
     address: "Aura salon H. No.764/1-B at Malwara, Panaji, Goa 403203",
     url: "",
     rating: "4.9",
-    image: "",
+    image:
+      "https://drive.google.com/file/d/1CXUYk_Au_DN3iNfksSBYOmfdqoqSXi5u/view?usp=drive_link",
   },
   {
     name: "Tracy",
@@ -1738,7 +1741,8 @@ export const goaArtistsData = [
     address: "Ekta Nagar, ganeshpuri, Mapusa, Goa 403507",
     url: "",
     rating: "4.9",
-    image: "",
+    image:
+      "https://drive.google.com/file/d/1tQLHJS2JYlj3CWjybt_cPeaTeFviwmAA/view?usp=drive_link",
   },
   {
     name: "Sumaiya's Beauty Studio",
@@ -1747,7 +1751,8 @@ export const goaArtistsData = [
       "below The Fern Residency MarineDrive, Caranzalem, Panaji, Goa 403002",
     url: "",
     rating: "4.9",
-    image: "",
+    image:
+      "https://drive.google.com/file/d/1u8C_RCBR9fyKOHr3wPoBF64shuGwfTng/view?usp=drive_link",
   },
   {
     name: "Tejal Mahambre  Makeup ",
@@ -1756,7 +1761,8 @@ export const goaArtistsData = [
       "Milroc Kadamba Cooperative Housing Society, 29/302, Baingini, Goa 403402",
     url: "",
     rating: "4.9",
-    image: "",
+    image:
+      "https://drive.google.com/file/d/1H-hqXk4tQxlCy-oMTI2O0WX0y-Cqik1P/view?usp=drive_link",
   },
   {
     name: "Puja Makeover",
@@ -1764,7 +1770,8 @@ export const goaArtistsData = [
     address: "Goa , India",
     url: "",
     rating: "4.9",
-    image: "",
+    image:
+      "https://drive.google.com/file/d/1bIZ5jrp1I-rgxQRNm9-vMMdEvDZv775F/view?usp=drive_link",
   },
   {
     name: "Divya Chaudhary",
@@ -1772,7 +1779,8 @@ export const goaArtistsData = [
     address: "Chogm Rd, opposite Mochi, Porvorim, Aradi Socorro, Goa 403501",
     url: "",
     rating: "4.9",
-    image: "",
+    image:
+      "https://drive.google.com/file/d/1wltv2KaMvCuozXkBLN8Ch_ZNYs00IEkN/view?usp=drive_link",
   },
   {
     name: "Madhavi Makeover",
@@ -1780,7 +1788,8 @@ export const goaArtistsData = [
     address: "Murdi, Vasco Da Gama, Consua, Goa 403712",
     url: "",
     rating: "4.8",
-    image: "",
+    image:
+      "https://drive.google.com/file/d/10vfSoDAWQK76NV9B6YGiU1t0wfaHb-Ka/view?usp=drive_link",
   },
   {
     name: "Cinzia Fernandes",
@@ -1788,7 +1797,8 @@ export const goaArtistsData = [
     address: "Goa , India",
     url: "",
     rating: "4.8",
-    image: "",
+    image:
+      "https://drive.google.com/file/d/1c97KFI4cBRybXEmHf0AhWtK-9e2F6cRV/view?usp=drive_link",
   },
   {
     name: "Ankita Makeupartist",
@@ -1796,7 +1806,8 @@ export const goaArtistsData = [
     address: "Grand chivar nr. Bharat petrol pump anjuna, Mapusa, Goa 403509",
     url: "",
     rating: "4.8",
-    image: "",
+    image:
+      "https://drive.google.com/file/d/1MjbWstHBYlmB_0RGrRcWTpG6Rcc0FMeT/view?usp=drive_link",
   },
   {
     name: "Ayesha Make Up",
@@ -1805,7 +1816,8 @@ export const goaArtistsData = [
       "AFF/08, Housing Board Colony, Alto Porvorim, Penha de Franc, Goa 403521",
     url: "",
     rating: "4.8",
-    image: "",
+    image:
+      "https://drive.google.com/file/d/1Xx5-jNHAoxhboDQowlCxy6Ut4k7iHyVH/view?usp=drive_link",
   },
   {
     name: "Makeup by Sayli",
@@ -1813,7 +1825,8 @@ export const goaArtistsData = [
     address: "La Shangrila, Miramar, Panaji, Goa 403001",
     url: "",
     rating: "4.9",
-    image: "",
+    image:
+      "https://drive.google.com/file/d/1lK4pHEfm3EaWFFTHoURP4xyKjH1PWUkx/view?usp=drive_link",
   },
   {
     name: "Fivedot Makeover by neha ",
@@ -1821,7 +1834,8 @@ export const goaArtistsData = [
     address: "Gawali vado duler mapusa bardez goa, Mapusa, India, Goa",
     url: "",
     rating: "4.7",
-    image: "",
+    image:
+      "https://drive.google.com/file/d/1ANEdW06sXmNCp9ObUrbmei2qdX4ffYlM/view?usp=drive_link",
   },
   {
     name: "Bina Punjani Studio",
@@ -1829,7 +1843,8 @@ export const goaArtistsData = [
     address: "Ground Floor, Horizons Square, Chogm Rd,  Porvorim, Goa 403521",
     url: "",
     rating: "4.7",
-    image: "",
+    image:
+      "https://drive.google.com/file/d/1AEMStu_97vALsF_oKhKeFV7KUDAKD_60/view?usp=drive_link",
   },
   {
     name: "Parveen's Beauty Touch",
@@ -1838,7 +1853,8 @@ export const goaArtistsData = [
       "H.no 923/72 Village panchayat, Porvorim, Aradi Socorro, Goa 403501",
     url: "",
     rating: "4.7",
-    image: "",
+    image:
+      "https://drive.google.com/file/d/1oZepkx4a8_YUjrBzHm-X4OMDbBLSz3nG/view?usp=drive_link",
   },
   {
     name: "Janice G",
@@ -1846,7 +1862,8 @@ export const goaArtistsData = [
     address: "Maddem Rd, Urli, Goa 403724",
     url: "",
     rating: "4.7",
-    image: "",
+    image:
+      "https://drive.google.com/file/d/1wmpUJXF6LIbd0xLWa3ze-n0tRveHLEGy/view?usp=drive_link",
   },
   {
     name: "Meghla's Makeover",
@@ -1855,7 +1872,8 @@ export const goaArtistsData = [
       "Forever 18 Salon, Dreamz Plaza, 40/9, Jairam Nagar, Dabolim, Ijorshi, Goa 403711",
     url: "",
     rating: "4.9",
-    image: "",
+    image:
+      "https://drive.google.com/file/d/191EUOyffz5KmRtyfDOpQJ_zy5muL7dsD/view?usp=drive_link",
   },
   {
     name: "The Black Palette",
@@ -1864,6 +1882,7 @@ export const goaArtistsData = [
       "15/16  Kamat Marao Keny Complex, Circle, Caranzalem, Taleigao, Goa 403002",
     url: "",
     rating: "4.9",
-    image: "",
+    image:
+      "https://drive.google.com/file/d/1ubCRezwVag6SUzpvZ8jyaDzfLP1h5jct/view?usp=drive_link",
   },
 ];

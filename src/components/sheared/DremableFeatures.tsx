@@ -1,68 +1,147 @@
-import { FC } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import Title from "@/components/sheared/Title";
+import { getAllBlog } from "@/actions/blog.action";
+import BlogPostContainers from "@/components/sheared/BlogPostContainers";
+import { Suspense } from "react";
 
 interface FeatureProps {
-  text: string;
-  url: string;
-  sideLink: string;
-  side: string;
+  title: string;
+  subtitle: string;
+  link: string;
+  imageUrl: string;
+  gradientFrom: string;
+  gradientTo: string;
+  reverse: boolean;
 }
 
-const FeatureItem: FC<FeatureProps> = ({ text, url, sideLink, side }) => {
-  return (
-    <div className="h-[400px] relative md:my-4 rounded-lg overflow-hidden my-8">
-      <Image
-        src={url}
-        alt="landing page"
-        width={1500}
-        height={1500}
-        className="object-cover md:blur-3xl my-auto"
-      />
-      <div className="absolute inset-0 flex text-center">
-        <Image
-          src={url}
-          alt="landing page"
-          width={500}
-          height={500}
-          className="object-cover rounded-lg hidden md:flex"
-        />
-        <div className="bg-white/40 h-full flex items-center justify-center flex-col w-full">
-          <div className="font-bold text-4xl md:text-5xl">{text}</div>
-          <div className="mt-4">
-            <Button size="lg" asChild className="button w-full sm:w-auto">
-              <Link href={sideLink}>Explore now</Link>
-            </Button>
-          </div>
-        </div>
+const Feature = ({
+  title,
+  subtitle,
+  link,
+  imageUrl,
+  gradientFrom,
+  gradientTo,
+  reverse,
+}: FeatureProps) => (
+  <div
+    className={`relative text-center font-bold md:flex w-full flex-1 my-10 md:bg-transparent bg-white rounded-3xl shadow-2xl md:shadow-none ${
+      reverse ? "flex-row-reverse" : ""
+    }`}
+  >
+    <div className="flex-1 flex justify-center items-center flex-col p-4">
+      <div
+        className={`py-3 bg-gradient-to-r ${gradientFrom} ${gradientTo} text-transparent bg-clip-text md:text-6xl text-4xl`}
+      >
+        {title}
       </div>
+      <div>{subtitle}</div>
+      <Button className="mt-3">
+        <Link href={link}>Explore now</Link>
+      </Button>
     </div>
-  );
-};
+    <Image
+      src={imageUrl}
+      width={1000}
+      height={1000}
+      alt={title}
+      className="rounded-3xl overflow-hidden h-[500px] w-full object-cover flex-1"
+    />
+  </div>
+);
 
-const DremableFeatures: FC = () => {
+const DremableFeatures = async () => {
+  const vendor = [
+    {
+      title: "Wedding Planners",
+      subtitle: "Organizing Made Simple",
+      link: "/wedding_magicians/kolkata/wedding_planners",
+      imageUrl:
+        "https://images.pexels.com/photos/7034449/pexels-photo-7034449.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      gradientFrom: "from-emerald-500",
+      gradientTo: "to-cyan-500",
+    },
+    {
+      title: "Photographers",
+      subtitle: "Creating memories with every click",
+      link: "/wedding_magicians/kolkata/photographers",
+      imageUrl:
+        "https://images.pexels.com/photos/7322582/pexels-photo-7322582.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      gradientFrom: "from-red-300",
+      gradientTo: "to-red-600",
+    },
+    {
+      title: "Makeup Artists",
+      subtitle: "Embrace the beauty within.",
+      link: "/wedding_magicians/kolkata/makeup_artists",
+      imageUrl:
+        "https://images.pexels.com/photos/5733000/pexels-photo-5733000.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      gradientFrom: "from-amber-500",
+      gradientTo: "to-amber-900",
+    },
+  ];
+
+  const venue = [
+    {
+      title: "Banquet Halls",
+      subtitle: "Finding banquet halls has never been this easy.",
+      link: "/wedding_venues/kolkata/banquet_halls",
+      imageUrl:
+        "https://images.pexels.com/photos/53464/sheraton-palace-hotel-lobby-architecture-san-francisco-53464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      gradientFrom: "from-amber-600",
+      gradientTo: "to-yellow-500",
+    },
+    {
+      title: "Luxury wedding venues",
+      subtitle: "Most popular Luxury venues.",
+      link: "/wedding_venues/kolkata/luxury_wedding_venues",
+      imageUrl:
+        "https://images.pexels.com/photos/22735411/pexels-photo-22735411/free-photo-of-newlywed-couple-among-chairs.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      gradientFrom: "from-amber-500",
+      gradientTo: "to-pink-500",
+    },
+    {
+      title: "Wedding resorts",
+      subtitle: "The collection of best resorts.",
+      link: "/wedding_venues/kolkata/wedding_resorts",
+      imageUrl:
+        "https://images.pexels.com/photos/5993374/pexels-photo-5993374.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      gradientFrom: "from-teal-400",
+      gradientTo: "to-yellow-800",
+    },
+  ];
+
+  const blogs = await getAllBlog({
+    query: "",
+    category: "",
+    page: 1,
+    limit: 2,
+  });
+
   return (
-    <div className="flex flex-wrap items-center justify-evenly text-4xl">
-      <FeatureItem
-        text="Wedding Planners"
-        url="https://images.pexels.com/photos/3975586/pexels-photo-3975586.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        sideLink="/wedding_magicians/kolkata/wedding_planners"
-        side="left"
-      />
-      <FeatureItem
-        text="Photographers"
-        url="https://images.pexels.com/photos/17057198/pexels-photo-17057198/free-photo-of-close-up-of-a-viewfinder-of-a-camera-photographing-bride-and-groom.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        sideLink="/wedding_magicians/kolkata/photographers"
-        side="right"
-      />
-      <FeatureItem
-        text="Makeup Artists"
-        url="https://images.pexels.com/photos/5733000/pexels-photo-5733000.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        sideLink="/wedding_magicians/kolkata/makeup_artists"
-        side="left"
-      />
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className="text-center w-full">
+        <Title>Popular vendor Searches</Title>
+        {vendor.map((feature, index) => (
+          <Feature key={index} {...feature} reverse={index % 2 !== 0} />
+        ))}
+        <Title>Popular Venue Searches</Title>
+        {venue.map((feature, index) => (
+          <Feature key={index} {...feature} reverse={index % 2 === 0} />
+        ))}
+        <Title>Latest Blogs</Title>
+        <BlogPostContainers
+          data={blogs?.data}
+          emptyTitle="No Blog Found"
+          emptyStateSubtext="try searching for a different blog"
+          collectionType="All_Events"
+          limit={6}
+          page={1}
+          totalPages={blogs?.totalPages}
+        />
+      </div>
+    </Suspense>
   );
 };
 

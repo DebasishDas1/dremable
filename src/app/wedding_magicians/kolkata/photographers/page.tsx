@@ -8,7 +8,7 @@ import {
   toDoPhotographer,
   findPhotographer,
   dreamPhotographer,
-} from "./photographersData";
+} from "@/lib/pageData/wedding_magicians_kolkata_photographers";
 import SubNavBar from "@/components/sheared/SubNavBar";
 
 export const metadata: Metadata = {
@@ -34,7 +34,6 @@ const Photographers = () => {
       <div className="flex flex-col items-center text-center">
         <div className="flex flex-col w-[85%] items-center">
           <PageTitle title="Wedding Photographers in Kolkata" />
-          <h1 className="hidden">Wedding Photographers in Kolkata</h1>
           <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
             {photographersData.map((provider) => (
               <MagiciansCard

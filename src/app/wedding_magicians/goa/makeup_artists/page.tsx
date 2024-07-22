@@ -5,10 +5,17 @@ import type { Metadata } from "next";
 import PageBenefitOptions from "@/components/sheared/PageBenefitOptions";
 import Title from "@/components/sheared/Title";
 import SubNavBar from "@/components/sheared/SubNavBar";
+import {
+  makeup_artist_in_goa,
+  goa_bridal_makeup_artist,
+  FaqSectionData,
+} from "@/lib/pageData/wedding_magicians_goa_makeup_artists";
+import FaqSection from "@/components/sheared/FaqSection";
 
 export const metadata: Metadata = {
-  title: "Bridal Makeup Artist in Goa |Best Makeup near me-Dremable",
-  description: `Dream of picture-perfect Wedding glow? Dremable connects you with Goa's best bridal makeup artists  Discover best makeup artists with top Ratings`,
+  title:
+    "20 Best Wedding Makeup Artists in Goa | Bridal Makeup for You-Dremable",
+  description: `Unveil your bridal glow with Goa's top-rated makeup artists! Dremable connects you with experts for flawless, long-lasting looks.`,
 };
 
 const makeupArtists_SubNavBar = [
@@ -28,8 +35,7 @@ const makeupArtists = () => {
       <SubNavBar SubNavBarItemList={makeupArtists_SubNavBar} />
       <div className="flex flex-col items-center text-center">
         <div className="flex flex-col w-[85%] items-center">
-          <PageTitle title="Bridal makeup artists in Goa" />
-          <h1 className="hidden">Bridal makeup artists in Goa</h1>
+          <PageTitle title="Wedding Artists in Goa" />
           <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
             {goaArtistsData.map((provider) => (
               <MagiciansCard
@@ -44,9 +50,29 @@ const makeupArtists = () => {
             ))}
           </div>
           <Title>
-            Dremable: Radiate Confidence on Your Wedding Day with Your Perfect
-            Bridal Makeup Artist in Goa
+            Top Bridal Makeup Artists in Goa: Radiate Your Inner Glow
           </Title>
+          Goa, a paradise of sun, sand, and serenity, is the perfect backdrop
+          for your dream wedding. To enhance your natural beauty on this special
+          day, selecting the right bridal makeup artist is crucial. With the
+          right expert, you can radiate confidence and elegance as you walk down
+          the aisle.
+          <Title>Why Hire a Professional Bridal Makeup Artist in Goa?</Title>
+          <PageBenefitOptions benefits={makeup_artist_in_goa} />
+          <Title>Finding Your Perfect Bridal Makeup Artist with Dremable</Title>
+          Choosing the perfect makeup artist can be overwhelming, but Dremable
+          simplifies the process. Our platform connects you with a curated
+          selection of talented Goa-based makeup artists who specialize in
+          bridal makeup. With Dremable, you can easily compare portfolios, read
+          reviews, and book your dream makeup artist with just a few clicks.
+          <Title>What to Look for in a Goa Bridal Makeup Artist</Title>
+          <PageBenefitOptions benefits={goa_bridal_makeup_artist} />
+          <Title>FAQs About Bridal Makeup in Goa</Title>
+          <FaqSection list={FaqSectionData} />
+          Finding the perfect bridal makeup artist in Goa is essential for
+          creating a stunning look that complements your wedding day. With
+          Dremable, you can easily find the ideal artist to enhance your natural
+          beauty and make you feel confident on your special day.
         </div>
       </div>
     </>

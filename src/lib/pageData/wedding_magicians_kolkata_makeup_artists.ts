@@ -1,6 +1,6 @@
 export const choseDremable = [
   {
-     benefitTitle: `Stress-Free Planning`,
+    benefitTitle: `Stress-Free Planning`,
     benefitDescribe:
       " Leave the makeup worries to us! Explore profiles, compare artistry, and book confidently, knowing all our artists are vetted for professionalism and talent.",
   },

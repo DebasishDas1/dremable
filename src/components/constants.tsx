@@ -1,36 +1,19 @@
-import {
-  Info,
-  AutoFixHigh,
-  Feed,
-  AddAPhoto,
-  FormatListBulleted,
-  ColorLens,
-  Place,
-  CorporateFare,
-  Deck,
-  CameraswitchSharp,
-} from "@mui/icons-material";
-
 export const nav_options = [
   {
     name: "Magicians",
     linkUrl: "/wedding_magicians/kolkata/wedding_planners",
-    icon: <AutoFixHigh />,
   },
   {
     name: "Wedding Venues",
     linkUrl: "/wedding_venues/india/kolkata/banquet_halls",
-    icon: <Place />,
   },
   {
     name: "Blog",
     linkUrl: "/blog",
-    icon: <Feed />,
   },
   {
     name: "About",
     linkUrl: "/about",
-    icon: <Info />,
   },
 ];
 
@@ -38,17 +21,14 @@ export const magicians_options = [
   {
     name: "Wedding Planners",
     linkUrl: "/wedding_magicians/kolkata/wedding_planners",
-    icon: <FormatListBulleted />,
   },
   {
     name: "Photographers",
     linkUrl: "/wedding_magicians/kolkata/photographers",
-    icon: <AddAPhoto />,
   },
   {
     name: "Makeup Artists",
     linkUrl: "/wedding_magicians/kolkata/makeup_artists",
-    icon: <ColorLens />,
   },
 ];
 
@@ -56,17 +36,14 @@ export const vendor_options = [
   {
     name: "Banquet Halls",
     linkUrl: "/wedding_venues/kolkata/banquet_halls",
-    icon: <CorporateFare />,
   },
   {
     name: "luxury wedding venues",
     linkUrl: "/wedding_venues/kolkata/luxury_wedding_venues",
-    icon: <CameraswitchSharp />,
   },
   {
     name: "wedding resorts",
     linkUrl: "/wedding_venues/kolkata/wedding_resorts",
-    icon: <Deck />,
   },
 ];
 
@@ -74,17 +51,14 @@ export const goa_options = [
   {
     name: "Wedding Planners",
     linkUrl: "/wedding_magicians/goa/wedding_planners",
-    icon: <FormatListBulleted />,
   },
   {
     name: "Photographers",
     linkUrl: "/wedding_magicians/goa/photographers",
-    icon: <AddAPhoto />,
   },
   {
     name: "Makeup Artists",
     linkUrl: "/wedding_magicians/goa/makeup_artists",
-    icon: <ColorLens />,
   },
 ];
 

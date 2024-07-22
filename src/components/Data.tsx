@@ -1886,3 +1886,229 @@ export const goaArtistsData = [
       "https://drive.google.com/file/d/1ubCRezwVag6SUzpvZ8jyaDzfLP1h5jct/view?usp=drive_link",
   },
 ];
+
+export const goaBanquet = [
+  {
+    name: "Golden Orchid",
+    contact: "88887 00444",
+    address: "Near Severina, Duler Ground Rd, Mapusa, Goa 403507",
+    url: "",
+    rating: "4.9",
+    image:
+      "https://drive.google.com/file/d/1JOu1g_WuOdOCkT_ztzlQFsXGoPr3sjB3/view?usp=drive_link",
+  },
+  {
+    name: "Aanantya  Banquet",
+    contact: "86051 16400",
+    address: "behind JMB Capitol, Ximer, Khorlim, Mapusa, Goa 403507",
+    url: "",
+    rating: "4.8",
+    image:
+      "https://drive.google.com/file/d/1j5QdDnmxVIelkw_wt2-Hvbv7uyuK6e_V/view?usp=drive_link",
+  },
+  {
+    name: "Grand Celebrations Banquet",
+    contact: "83789 72573",
+    address: "E Block Ponda Agri Bazar Complex, Ponda, Goa 403401",
+    url: "",
+    rating: "4.8",
+    image:
+      "https://drive.google.com/file/d/1fiqMkvGIioXkRgZwGKxeCUsIoNAIRBwv/view?usp=drive_link",
+  },
+  {
+    name: "Quatro Banquets ",
+    contact: "98231 34426",
+    address: "NH 17 Bypass, Verna, Lotli, Goa 403722",
+    url: "",
+    rating: "4.7",
+    image:
+      "https://drive.google.com/file/d/10TLYblUqJAHNMr_mv_9UPatCwSaryLaX/view?usp=drive_link",
+  },
+  {
+    name: "Salle 59 Banquet ",
+    contact: "90219 02982",
+    address: "NH - 4A Panaji-Old Goa Bypass Road, Chimbel, Panaji, Goa 403006",
+    url: "",
+    rating: "4.7",
+    image:
+      "https://drive.google.com/file/d/11_Uv9DP7YsJ1-JnySrw8M8X7Vk1PFdcw/view?usp=drive_link",
+  },
+  {
+    name: "The White House",
+    contact: "83295 73762",
+    address: " Behind Livrament Chapel Arlem- Raia, goa, Goa 403720",
+    url: "",
+    rating: "4.7",
+    image:
+      "https://drive.google.com/file/d/14slx6Ri4_vgg3IVumvFbosDC4Rqsw81B/view?usp=drive_link",
+  },
+  {
+    name: "Daivadnya Bhavan",
+    contact: "83227 15577",
+    address: "Quepem Rd, Calconda, Sanscar Society, Madgaon, Goa 403707",
+    url: "",
+    rating: "4.7",
+    image:
+      "https://drive.google.com/file/d/1nWH2nxKP1GAnvaZt0LPowmKrehdv2Lnp/view?usp=drive_link",
+  },
+  {
+    name: "Silver Bells",
+    contact: "98221 81222",
+    address: "Auchit Waddo, Sangolda,Bardez, Goa,P.O. Saligao 403507.",
+    url: "",
+    rating: "4.8",
+    image:
+      "https://drive.google.com/file/d/1LVthPFMldRflfxlk6d5kqcoXM_GN2FnL/view?usp=drive_link",
+  },
+  {
+    name: "Sneh Banquet ",
+    contact: "98221 32023",
+    address:
+      "Pritam Arcade, abv RBL Bank, Porvorim, Penha de Franc, Goa 403521",
+    url: "",
+    rating: "4.7",
+    image:
+      "https://drive.google.com/file/d/1y1CHB2Wqjc7f9SG7MvADSJGMffalKK_r/view?usp=drive_link",
+  },
+];
+
+export const goaLuxuryWeddingVenues = [
+  {
+    name: "Grand Hyatt Goa",
+    contact: "83266 41234",
+    address: "Goa University Road, Aldeia de Goa, Bambolim, Goa 403206",
+    url: "",
+    rating: "4.9",
+    image:
+      "https://drive.google.com/file/d/19WcNalQ9AgnfqMZ260lbRPDDdC86QNiX/view?usp=drive_link",
+  },
+  {
+    name: "Taj Cidade de Goa Horizon",
+    contact: "83266 59234",
+    address: "Dona Paula, Vainguinim Plateau, Panaji, Goa 403004",
+    url: "",
+    rating: "5",
+    image:
+      "https://drive.google.com/file/d/1FAFN5ZANEzx2LMTeYABB8FXfZtsgcs5V/view?usp=drive_link",
+  },
+  {
+    name: "ITC Grand Goa",
+    contact: "83227 21234",
+    address: " Arossim Beach Rd, Arosim, Goa 403712",
+    url: "",
+    rating: "5",
+    image:
+      "https://drive.google.com/file/d/1mISMYGoXghWs_v3uiKO7wiIcWWzvQx-D/view?usp=drive_link",
+  },
+  {
+    name: "Le Méridien Goa",
+    contact: "83267 47447",
+    address: "Aguada - Siolim Rd, Gauravaddo, Calangute, Goa 403516",
+    url: "",
+    rating: "4.8",
+    image:
+      "https://drive.google.com/file/d/1CL6mSsILlsE3CcIlKtmtVFQJEc-z448U/view?usp=drive_link",
+  },
+  {
+    name: "JW Marriott Goa",
+    contact: "83267 49800",
+    address: "Bardez, Vagator Beach Rd, Vagator, Goa 403509",
+    url: "",
+    rating: "5",
+    image:
+      "https://drive.google.com/file/d/1uayXkmboGG4Yc7atoU6bH0oZzW5OzIkd/view?usp=drive_link",
+  },
+  {
+    name: "Radisson Blu",
+    contact: "83267 26666",
+    address: "Cavelossim, Beach, Mobor Beach, Goa 403731",
+    url: "",
+    rating: "4.8",
+    image:
+      "https://drive.google.com/file/d/1yTggaGXGLDjzl13_gHC9Lq_mYkQ9Tytj/view?usp=drive_link",
+  },
+];
+
+export const goaWeddingResorts = [
+  {
+    name: "Caravela Beach Resort",
+    contact: "83266 95000",
+    address: "Varca Beach, Salcete, Goa 403721",
+    url: "",
+    rating: "4.9",
+    image:
+      "https://drive.google.com/file/d/16v30diMOdxpoSEmDkGywj0KpICcuE8uZ/view?usp=drive_link",
+  },
+  {
+    name: "Royal Orchid Beach Resort",
+    contact: "83266 22222",
+    address: "Utorda Beach Rd, Utarda, Goa 403713",
+    url: "",
+    rating: "4.9",
+    image:
+      "https://drive.google.com/file/d/1snAFVsBku5MVFNTvqtcAVLzAAxyj5SiV/view?usp=drive_link",
+  },
+  {
+    name: "Holiday Inn Resort",
+    contact: "83266 26000",
+    address: "Mobor Beach, Cavelossim, Goa, 403731",
+    url: "",
+    rating: "5",
+    image:
+      "https://drive.google.com/file/d/1Vcu3b2b5lcY6p8X8zZlc3VDjNwbMRVNj/view?usp=drive_link",
+  },
+  {
+    name: "The LaLiT Golf & Spa Resort",
+    contact: "83226 67777",
+    address: "Raj Baga, Palolem, Canacona, Goa 403702",
+    url: "",
+    rating: "4.9",
+    image:
+      "https://drive.google.com/file/d/1rjMRI6AWtQqGJVeBCknyGfIdvL3ObwM_/view?usp=drive_link",
+  },
+  {
+    name: "The Zuri White Sands",
+    contact: "83266 87272",
+    address: " Pedda, Varca, Goa 403721",
+    url: "",
+    rating: "4.9",
+    image:
+      "https://drive.google.com/file/d/1gkAhGLUcaay_MY7qa_LLIOlpuYLn2Smw/view?usp=drive_link",
+  },
+  {
+    name: "Taj Exotica Resort & Spa",
+    contact: "18001 11825",
+    address: " Calwaddo, Benaulim, Goa 403716",
+    url: "",
+    rating: "5",
+    image:
+      "https://drive.google.com/file/d/1JyNxnv9fpGEs49VqW3iw7gVVCI-eUEe4/view?usp=drive_link",
+  },
+  {
+    name: "Planet Hollywood Beach Resort",
+    contact: "88067 51000",
+    address: "30/3, Acsona Waddo, Uttorda Beach, Utarda, Goa 403713",
+    url: "",
+    rating: "4.9",
+    image:
+      "https://drive.google.com/file/d/1c39TOtqxc_kK4ZDV1XnTPwSwdiqEKBqj/view?usp=drive_link",
+  },
+  {
+    name: "The St. Regis Goa Resort",
+    contact: "83266 21234",
+    address: " Mobor, Cavelossim, Goa, 403731",
+    url: "",
+    rating: "4.8",
+    image:
+      "https://drive.google.com/file/d/1Uc4ZbkLHygLCzOHFzEH-9QG_bKxsJ1bQ/view?usp=drive_link",
+  },
+  {
+    name: "Hilton Goa Resort",
+    contact: "83266 49800",
+    address: "Pilerne-Candolim Rd, Saipem, Candolim, Marra, Goa 403515",
+    url: "",
+    rating: "4.9",
+    image:
+      "https://drive.google.com/file/d/1UceF31CTfM2rwsgIe7nh-wYA_TqszFnp/view?usp=drive_link",
+  },
+];

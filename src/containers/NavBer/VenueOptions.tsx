@@ -6,11 +6,11 @@ const magicians_options_data = [
     linkUrl: "/wedding_venues/kolkata/banquet_halls",
   },
   {
-    name: "Luxury wedding venues",
+    name: "Luxury Wedding Venues",
     linkUrl: "/wedding_venues/kolkata/luxury_wedding_venues",
   },
   {
-    name: "Wedding resorts",
+    name: "Wedding Resorts",
     linkUrl: "/wedding_venues/kolkata/wedding_resorts",
   },
 ];

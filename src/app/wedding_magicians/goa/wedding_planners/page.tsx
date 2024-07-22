@@ -5,11 +5,17 @@ import PageBenefitOptions from "@/components/sheared/PageBenefitOptions";
 import Title from "@/components/sheared/Title";
 import type { Metadata } from "next";
 import SubNavBar from "@/components/sheared/SubNavBar";
+import {
+  hire_wedding_planner,
+  destination_wedding,
+  FaqSectionData,
+} from "@/lib/pageData/wedding_magicians_goa_wedding_planners";
+import FaqSection from "@/components/sheared/FaqSection";
 
 export const metadata: Metadata = {
-  title: "Wedding Planners in Goa |Get Best Wedding Planner-Dremable",
+  title: "Get 20 Best Destination Wedding Planners In Goa for You - Dremable",
   description:
-    "Searching for the Best Wedding Planner in Goa ? Dremable connects you with top Marriage planners in Goa, making your dream wedding a reality.",
+    "Plan your dream Destination wedding in Goa with Dremable! Find top wedding planners in Goa. Stress-free One Stop planning for an unforgettable wedding awaits.",
 };
 
 const weddingPlanners_SubNavBar = [
@@ -44,6 +50,34 @@ const weddingPlanners = () => {
               />
             ))}
           </div>
+          <Title>Best Wedding Planners in Goa: Your Dream Wedding Awaits</Title>
+          Goa, with its pristine beaches, vibrant culture, and luxurious
+          resorts, is a dream destination for couples seeking a magical wedding.
+          However, planning a destination wedding can be overwhelming. This is
+          where a professional wedding planner comes in. Let&apos;s explore why
+          you need one and how to find the perfect planner for your Goa wedding.
+          <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
+            Why Do You Need to Hire a Wedding Planner?
+          </div>
+          <PageBenefitOptions benefits={hire_wedding_planner} />
+          <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
+            How Much Does a Wedding Planner Cost for a Goa Destination Wedding?
+          </div>
+          The cost of a wedding planner in Goa varies depending on the services
+          included, the scale of the wedding, and the planner&apos;s experience.
+          Generally, you can expect to pay anywhere from 10% to 20% of your
+          total wedding budget. However, it&apos;s essential to discuss pricing
+          and packages with different planners to find the best fit for your
+          needs.
+          <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
+            What to Keep in Mind Before Hiring a Wedding Planner for a Goa
+            Destination Wedding?
+          </div>
+          <PageBenefitOptions benefits={destination_wedding} />
+          <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
+            FAQs Related to Goa Destination Wedding Planning
+          </div>
+          <FaqSection list={FaqSectionData} />
         </div>
       </div>
     </>

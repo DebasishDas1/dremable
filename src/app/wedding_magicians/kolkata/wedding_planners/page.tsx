@@ -4,7 +4,11 @@ import MagiciansCard from "@/components/sheared/MagiciansCard";
 import PageBenefitOptions from "@/components/sheared/PageBenefitOptions";
 import Title from "@/components/sheared/Title";
 import type { Metadata } from "next";
-import { youAvoid, chooseDremable, rightPlanner } from "./weedingPlannersData";
+import {
+  youAvoid,
+  chooseDremable,
+  rightPlanner,
+} from "@/lib/pageData/wedding_magicians_kolkata_wedding_planners";
 import SubNavBar from "@/components/sheared/SubNavBar";
 
 export const metadata: Metadata = {
@@ -31,7 +35,6 @@ const weddingPlanners = () => {
       <div className="flex flex-col items-center text-center">
         <div className="flex flex-col w-[85%] items-center">
           <PageTitle title="Wedding Planners in Kolkata" />
-          <h1 className="hidden">Wedding Planners in Kolkata</h1>
           <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
             {plannerData.map((provider) => (
               <MagiciansCard

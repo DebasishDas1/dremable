@@ -3,7 +3,6 @@ import {
   nav_options,
   magicians_options,
   vendor_options,
-  goa_options,
 } from "@/components/constants";
 import {
   Sheet,
@@ -24,8 +23,6 @@ interface NavOption {
 const MobileNav: React.FC = () => {
   const [showMagicians, setShowMagicians] = useState<boolean>(false);
   const [showVendors, setShowVendors] = useState<boolean>(false);
-  const [showKolkata, setShowKolkata] = useState<boolean>(false);
-  const [showGoa, setShowGoa] = useState<boolean>(false);
   const pathname: string[] = usePathname().split("/");
 
   const handleMagiciansButton = (): void => {
@@ -34,14 +31,6 @@ const MobileNav: React.FC = () => {
 
   const handleVendorsButton = (): void => {
     setShowVendors((prevState: boolean) => !prevState);
-  };
-
-  const handleKolkataButton = (): void => {
-    setShowKolkata((prevState: boolean) => !prevState);
-  };
-
-  const handleGoaButton = (): void => {
-    setShowGoa((prevState: boolean) => !prevState);
   };
 
   const renderNavItem = (option: NavOption): JSX.Element => (
@@ -79,7 +68,7 @@ const MobileNav: React.FC = () => {
           })}
 
           <div
-            className={`flex regular-16 flexCenter cursor-pointer pb-5 items-center py-2 font-bold ${
+            className={`flex regular-16 flexCenter cursor-pointer py-4 items-center font-bold ${
               showMagicians ? "font-black" : "font-light"
             }`}
             onClick={handleMagiciansButton}
@@ -87,48 +76,16 @@ const MobileNav: React.FC = () => {
             Wedding Magicians
             <ArrowDropDown />
           </div>
-          <div className="bg-white/20 rounded-lg">
+          <div className="bg-white/20 rounded-lg pl-3">
             {showMagicians && (
-              <>
-                <div
-                  className={`flex regular-16 flexCenter cursor-pointer py-3 items-center font-bold rounded-xl pl-3 ${
-                    showKolkata ? "font-black" : "font-light"
-                  }`}
-                  onClick={handleKolkataButton}
-                >
-                  Kolkata
-                  <ArrowDropDown />
-                </div>
-                <div className="bg-white/30 rounded-lg pl-3 mx-4">
-                  {showKolkata && (
-                    <div>
-                      {magicians_options.map((option) => renderNavItem(option))}
-                    </div>
-                  )}
-                </div>
-
-                <div
-                  className={`flex regular-16 flexCenter cursor-pointer py-3 items-center font-bold rounded-xl pl-3  ${
-                    showGoa ? "font-black" : "font-light"
-                  }`}
-                  onClick={handleGoaButton}
-                >
-                  Goa
-                  <ArrowDropDown />
-                </div>
-                <div className="bg-white/30 rounded-lg pl-3 mx-4">
-                  {showGoa && (
-                    <div>
-                      {goa_options.map((option) => renderNavItem(option))}
-                    </div>
-                  )}
-                </div>
-              </>
+              <div>
+                {magicians_options.map((option) => renderNavItem(option))}
+              </div>
             )}
           </div>
 
           <div
-            className={`flex regular-16 flexCenter cursor-pointer pb-5 items-center pt-2 font-bold ${
+            className={`flex regular-16 flexCenter cursor-pointer py-4 items-center font-bold ${
               showVendors ? "font-black" : "font-light"
             }`}
             onClick={handleVendorsButton}
@@ -136,7 +93,7 @@ const MobileNav: React.FC = () => {
             Wedding Venues
             <ArrowDropDown />
           </div>
-          <div className="bg-white/40 rounded-lg">
+          <div className="bg-white/20 rounded-lg pl-3">
             {showVendors && (
               <div>{vendor_options.map((option) => renderNavItem(option))}</div>
             )}

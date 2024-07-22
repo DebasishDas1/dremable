@@ -18,7 +18,7 @@ type SubNavBarProps = {
 const SubNavBar = ({ SubNavBarItemList }: SubNavBarProps) => {
   const pathname = usePathname().split("/");
   return (
-    <div className="backdrop-blur-3xl items-center justify-center pt-4 md:flex hidden ">
+    <div className="backdrop-blur-3xl items-center justify-center pt-4 flex">
       {SubNavBarItemList.map(({ url, title }, index) => (
         <Link
           key={index}

@@ -5,10 +5,15 @@ import type { Metadata } from "next";
 import PageBenefitOptions from "@/components/sheared/PageBenefitOptions";
 import Title from "@/components/sheared/Title";
 import SubNavBar from "@/components/sheared/SubNavBar";
+import {
+  goa_wedding_photographer,
+  FaqSectionData,
+} from "@/lib/pageData/wedding_magicians_goa_photographers";
+import FaqSection from "@/components/sheared/FaqSection";
 
 export const metadata: Metadata = {
-  title: "Best Wedding Photographers in Goa near me - Dremable",
-  description: `Looking for Best Wedding Photographers in Goa? Dremable connects you with Goa's top Photographers expert in pre wedding & candid photography`,
+  title: "Top 20 Destination Wedding Photographers in Goa -Dremable",
+  description: `Capture memories that last a lifetime! Find Goa's top destination wedding photographers on Dremable. Stunning beach weddings, vibrant celebrations`,
 };
 
 const Photographers_SubNavBar = [
@@ -44,9 +49,46 @@ const Photographers = () => {
             ))}
           </div>
           <Title>
-            Dremable: Capture Timeless Memories with Your Perfect Wedding
-            Photographer!
+            Goa&apos;s Golden Moments: Capture Your Love Story with the Best
+            Photographers
           </Title>
+          Goa, a tropical paradise renowned for its sun-kissed beaches, vibrant
+          culture, and luxurious resorts, is the epitome of romance. As you
+          embark on this magical journey to tie the knot, choosing the right
+          photographer becomes paramount. Your wedding day is a
+          once-in-a-lifetime event, and capturing its essence requires a skilled
+          artist with an eye for detail.
+          <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
+            Why a Goa-Based Photographer is Your Perfect Match
+          </div>
+          Goa&apos;s unique charm demands a photographer who intimately
+          understands its landscape, light, and atmosphere. Local photographers
+          possess an unparalleled knowledge of hidden gems, ideal shooting
+          locations, and the best times of day to capture breathtaking shots.
+          With their deep-rooted connection to Goa, they effortlessly blend your
+          love story with the destination&apos;s allure, creating timeless
+          images that reflect the spirit of your special day.
+          <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
+            Finding Your Perfect Photographer with Dremable
+          </div>
+          Searching for the perfect wedding photographer can be overwhelming,
+          but Dremable simplifies the process. Our platform connects you with a
+          curated selection of talented Goa-based photographers who specialize
+          in capturing the magic of destination weddings. With Dremable, you can
+          easily compare portfolios, read reviews, and book your dream
+          photographer with just a few clicks.
+          <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
+            What to Look for in a Goa Wedding Photographer
+          </div>
+          <PageBenefitOptions benefits={goa_wedding_photographer} />
+          <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
+            FAQs About Goa Wedding Photography
+          </div>
+          <FaqSection list={FaqSectionData} />
+          Your wedding day is a masterpiece waiting to be captured. By choosing
+          a talented Goa-based photographer through Dremable, you&apos;ll create
+          a stunning visual narrative that will be cherished for generations to
+          come.
         </div>
       </div>
     </>

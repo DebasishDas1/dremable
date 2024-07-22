@@ -10,7 +10,7 @@ import {
   artistEasier,
   iDoArtist,
   collaboration,
-} from "./makeupArtistsData";
+} from "@/lib/pageData/wedding_magicians_kolkata_makeup_artists";
 import SubNavBar from "@/components/sheared/SubNavBar";
 
 export const metadata: Metadata = {
@@ -36,7 +36,6 @@ const makeupArtists = () => {
       <div className="flex flex-col items-center text-center">
         <div className="flex flex-col w-[85%] items-center">
           <PageTitle title="Bridal makeup artists in kolkata" />
-          <h1 className="hidden">Bridal makeup artists in kolkata</h1>
           <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
             {artistsData.map((provider) => (
               <MagiciansCard

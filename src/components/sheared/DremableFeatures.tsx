@@ -89,8 +89,8 @@ const DremableFeatures = async () => {
       link: "/wedding_venues/kolkata/banquet_halls",
       imageUrl:
         "https://images.pexels.com/photos/53464/sheraton-palace-hotel-lobby-architecture-san-francisco-53464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      gradientFrom: "from-amber-600",
-      gradientTo: "to-yellow-500",
+      gradientFrom: "from-amber-500",
+      gradientTo: "to-emerald-500",
     },
     {
       title: "Luxury wedding venues",

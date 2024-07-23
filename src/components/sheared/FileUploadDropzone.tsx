@@ -55,7 +55,6 @@ export const FileUploadDropzone = ({
                 alt={`Uploaded image ${index}`}
                 width={500}
                 height={500}
-                unoptimized
                 className="rounded-lg overflow-hidden h-full w-full object-cover"
               />
             </div>

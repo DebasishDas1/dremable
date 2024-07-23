@@ -41,13 +41,15 @@ const Feature = ({
         <Link href={link}>Explore now</Link>
       </Button>
     </div>
-    <Image
-      src={imageUrl}
-      width={1000}
-      height={1000}
-      alt={title}
-      className="rounded-3xl overflow-hidden h-[500px] w-full object-cover flex-1"
-    />
+    <div className="h-[500px] md:h-[600px] w-full relative mb-4 rounded-3xl overflow-hidden flex-1">
+      <Image
+        src={imageUrl}
+        fill
+        alt={title}
+        className="object-cover"
+        sizes="(min-width: 1140px) 45vw, (min-width: 780px) calc(82.65vw - 438px), 90vw"
+      />
+    </div>
   </div>
 );
 

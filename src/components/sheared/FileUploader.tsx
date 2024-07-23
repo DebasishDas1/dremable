@@ -56,7 +56,6 @@ export const FileUploader = ({
             alt={`Uploaded image ${fileList}`}
             width={500}
             height={500}
-            unoptimized
             className="rounded-lg overflow-hidden h-full w-full object-cover"
           />
         </div>

@@ -47,19 +47,19 @@ const BlogDetailsPage = async ({
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex flex-col md:w-[65%] w-full items-center">
-        <div className="w-[90%]">
-          <PageTitle title={blogDetails.header} />
-          <h1 className="hidden">{blogDetails.header}</h1>
+      <div className="flex flex-col md:w-[70%] w-full items-center">
+        <PageTitle title={blogDetails.header} />
+        <div className="h-[300px] md:h-[600px] w-full relative mb-4 md:rounded-xl overflow-hidden ">
+          <Image
+            src={blogDetails.imageUrl}
+            alt={blogDetails.title}
+            fill
+            priority
+            className="object-cover"
+            sizes="(min-width: 780px) 70vw, 100vw"
+          />
         </div>
-         ̰
-        <Image
-          src={blogDetails.imageUrl}
-          alt={blogDetails.title}
-          width={1000}
-          height={1000}
-          className="flex-center h-full min-h-[300px] bg-dark-3 flex overflow-hidden md:rounded-xl"
-        />
+
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center pt-5">
           <p className="p-bold-20 rounded-full bg-green-500/10 px-5 py-2 text-green-700 flex items-center">
             <Celebration className="mr-3" />

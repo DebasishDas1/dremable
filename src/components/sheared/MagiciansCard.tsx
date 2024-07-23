@@ -39,13 +39,13 @@ const MagiciansCard = ({
 
   return (
     <div className="group flex flex-col relative md:min-h-[200px] max-w-[600px] bg-white hover:shadow-2xl shadow-lg rounded-xl">
-      <div className="h-[280px] w-[100] relative">
+      <div className="h-[280px] w-[100] relative rounded-lg overflow-hidden">
         <Image
           src={imageUrl ? imageUrl : logo}
-          width={500}
-          height={500}
+          fill
           alt={name}
-          className="rounded-lg overflow-hidden h-full w-full object-cover"
+          className="object-cover"
+          sizes="(min-width: 2300px) 600px, (min-width: 1040px) 25.89vw, (min-width: 760px) 600px, calc(78.41vw + 20px)"
         />
       </div>
 
@@ -71,7 +71,15 @@ const MagiciansCard = ({
           </AlertDialogTrigger>
           <AlertDialogContent className="bg-white">
             <AlertDialogDescription className="flex flex-col items-center text-black">
-              <Image src={logo} alt="logo" width={150} height={60} />
+              <div className="h-[120px] w-[150px] relative overflow-hidden">
+                <Image
+                  src={logo}
+                  alt="logo"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 780px) 70vw, 100vw"
+                />
+              </div>
               <span className="text-2xl font-bold pb-2 pt-6 text-center">
                 {name}
               </span>

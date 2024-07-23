@@ -30,7 +30,15 @@ const NavBer = () => {
     >
       <div className="flex items-center md:justify-center justify-between">
         <Link href="/" className="flex-shrink-0 mx-6">
-          <Image src={logo} alt="logo" width={140} height={60} />
+          <div className="h-11 w-32 relative overflow-hidden">
+            <Image
+              src={logo}
+              alt="logo"
+              fill
+              className="object-cover"
+              sizes="(min-width: 769px) 100vw, 1200px"
+            />
+          </div>
         </Link>
         <ul className="md:flex hidden">
           {navItems.map(({ text, url }) => (

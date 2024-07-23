@@ -35,7 +35,7 @@ const LandingPopup: React.FC = () => {
             exit="exit"
             variants={popupVariants}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="bg-white p-6 rounded-lg shadow-lg w-[300px] flex flex-col text-center"
+            className="bg-white p-6 rounded-lg shadow-lg w-[340px] flex flex-col text-center"
           >
             <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
               Are you a Wedding Vendor ?

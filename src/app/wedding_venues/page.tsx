@@ -104,13 +104,13 @@ type VenueOptionsNavProp = {
 const VenueOptionsNav = ({ name, url, imageUrl }: VenueOptionsNavProp) => {
   return (
     <Link className="py-2 text-3xl font-bold" href={url}>
-      <div className="h-[280px] w-[100] relative mb-4">
+      <div className="h-[280px] w-[100] relative mb-4 rounded-xl overflow-hidden ">
         <Image
           src={imageUrl}
-          width={500}
-          height={500}
+          fill
           alt={name}
-          className="rounded-xl overflow-hidden h-full w-full object-cover"
+          className="object-cover"
+          sizes="(min-width: 1040px) calc(21.63vw - 26px), (min-width: 780px) 65vw, 85vw"
         />
       </div>
       {name}

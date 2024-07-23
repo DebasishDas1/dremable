@@ -56,13 +56,13 @@ const BlogPost = ({
             </div>
           )}
           {image && (
-            <div className="basis-1/4 md:flex items-center blur-sm hidden">
+            <div className="basis-1/4 md:flex items-center blur-sm hidden relative overflow-hidden ">
               <Image
                 src={image}
                 alt="image"
-                width={250}
-                height={250}
-                className="w-full object-cover object-center"
+                fill
+                className="object-cover"
+                sizes="140px"
               />
             </div>
           )}

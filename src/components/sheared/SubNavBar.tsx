@@ -27,13 +27,12 @@ const SubNavBar = ({ SubNavBarItemList }: SubNavBarProps) => {
           ${pathname.includes(title.toLowerCase()) ? "bg-white" : "bg-white/30"}
           `}
         >
-          <div className="h-[60px] w-[60] relative p-2">
+          <div className="h-[40px] md:h-[70px] w-[30px] md:w-[70px] relative p-2 overflow-hidden ">
             <Image
               src={title === "Kolkata" ? Kolkata : Goa}
               alt={title}
-              width={80}
-              height={60}
-              className="overflow-hidden h-full w-full object-cover"
+              fill
+              className="object-cover"
             />
           </div>
           <div className="ml-2 font-light">{title}</div>

@@ -35,6 +35,7 @@ const NavBer = () => {
               src={logo}
               alt="logo"
               fill
+              priority
               className="object-cover"
               sizes="(min-width: 769px) 100vw, 1200px"
             />

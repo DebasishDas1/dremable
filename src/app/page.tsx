@@ -45,10 +45,9 @@ export default function Home() {
           joy.
         </div>
       </div>
-      {/* Testimonial Section */}
+
       <Title>Testimonial</Title>
       <Testimonial />
-      {/* FAQ Section */}
     </main>
   );
 }

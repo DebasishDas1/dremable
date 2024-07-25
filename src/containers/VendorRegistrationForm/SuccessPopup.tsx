@@ -51,6 +51,7 @@ const SuccessPopup = ({ name, isOpen, onClose }: SuccessPopupProp) => {
               width={300}
               height={300}
               alt={"vendor"}
+              priority
             />
             <div>
               We will look over your message and get back to you. In the

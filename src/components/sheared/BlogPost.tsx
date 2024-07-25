@@ -40,6 +40,7 @@ const BlogPost = ({
         href={`/blog/${urlKey}`}
         className="flex-center flex-grow bg-cover bg-center md:hidden h-[120px] relative "
         style={{ backgroundImage: `url(${image})` }}
+        aria-label={title}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
         {/* Content inside the Link */}

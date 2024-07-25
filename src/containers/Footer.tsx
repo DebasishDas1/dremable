@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="wrapper text-stone-500 md:w-[75%]">
+    <footer className="wrapper text-stone-600  md:w-[75%] font-thin">
       <div className="pb-4">
         Celebrate love with Dremable, your partner in crafting dream weddings.
         From fairytale weddings to the romance of Darjeeling and soirées in the
@@ -24,6 +24,7 @@ const Footer = () => {
           }
           className={`cursor-pointer py-1 pl-1`}
           target="_blank"
+          aria-label="Facebook"
         >
           <Facebook />
         </Link>
@@ -33,6 +34,7 @@ const Footer = () => {
           }
           className={`cursor-pointer py-1 pl-1`}
           target="_blank"
+          aria-label="Instagram"
         >
           <Instagram />
         </Link>
@@ -40,6 +42,7 @@ const Footer = () => {
           href={"https://twitter.com/dremablewedding"}
           className={`cursor-pointer py-1 pl-1`}
           target="_blank"
+          aria-label="X"
         >
           <X />
         </Link>
@@ -47,6 +50,7 @@ const Footer = () => {
           href={"https://wa.me/918777790641"}
           className={`cursor-pointer py-1 pl-1`}
           target="_blank"
+          aria-label="WhatsApp"
         >
           <WhatsApp />
         </Link>

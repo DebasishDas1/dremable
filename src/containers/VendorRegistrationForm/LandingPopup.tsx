@@ -40,16 +40,22 @@ const LandingPopup: React.FC = () => {
             <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
               Are you a Wedding Vendor ?
             </h2>
-            <Image src={logo} width={500} height={500} alt={"vendor"} />
+            <Image
+              src={logo}
+              width={500}
+              height={500}
+              alt={"vendor"}
+              priority
+            />
             <div className="flex justify-around mt-4 text-lg">
               <Button
-                className="rounded-xl p-4"
+                className="rounded-xl w-[40%]"
                 onClick={() => router.push("/")}
                 variant="outline"
               >
                 No
               </Button>
-              <Button className="rounded-xl p-4" onClick={closePopup}>
+              <Button className="rounded-xl w-[40%]" onClick={closePopup}>
                 Yes
               </Button>
             </div>

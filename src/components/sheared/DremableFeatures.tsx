@@ -37,7 +37,7 @@ const Feature = ({
         {title}
       </div>
       <div>{subtitle}</div>
-      <Button className="mt-3">
+      <Button size="lg" asChild className="button w-fit mt-4">
         <Link href={link}>Explore now</Link>
       </Button>
     </div>

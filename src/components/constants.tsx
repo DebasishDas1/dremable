@@ -38,11 +38,11 @@ export const vendor_options = [
     linkUrl: "/wedding_venues/kolkata/banquet_halls",
   },
   {
-    name: "luxury wedding venues",
+    name: "Luxury Wedding Venues",
     linkUrl: "/wedding_venues/kolkata/luxury_wedding_venues",
   },
   {
-    name: "wedding resorts",
+    name: "Wedding Resorts",
     linkUrl: "/wedding_venues/kolkata/wedding_resorts",
   },
 ];

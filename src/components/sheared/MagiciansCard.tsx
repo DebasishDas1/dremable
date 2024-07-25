@@ -76,6 +76,7 @@ const MagiciansCard = ({
                   src={logo}
                   alt="logo"
                   fill
+                  priority
                   className="object-cover"
                   sizes="(min-width: 780px) 70vw, 100vw"
                 />

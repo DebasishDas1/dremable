@@ -15,9 +15,18 @@ export interface IVendor extends Document {
 }
 
 const VendorSchema = new Schema({
-  vName: { type: String, required: true },
-  vEmail: { type: String, required: true },
-  vWhatsApp: { type: String, required: true },
+  vName: {
+    type: String,
+    required: [true, "Name is required"],
+    trim: true,
+    unique: true,
+  },
+  vEmail: { type: String, required: [true, "Email is required"], unique: true },
+  vWhatsApp: {
+    type: String,
+    required: [true, "Email is required"],
+    unique: true,
+  },
   vExperience: { type: String, required: true },
   vCompanyName: { type: String, required: true },
   vCompanyAddress: { type: String, required: true },

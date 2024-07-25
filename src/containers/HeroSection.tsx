@@ -6,7 +6,7 @@ import home_page_mobile from "../../public/assets/home_page_mobile_2.jpeg";
 
 const HeroSection = () => {
   return (
-    <div className="flex flex-col items-center text-center">
+    <div className="flex flex-col items-center text-center text-white">
       <div className="relative flex md:hidden">
         <div className="h-[650px] w-screen relative overflow-hidden">
           <Image
@@ -18,7 +18,7 @@ const HeroSection = () => {
             sizes="(max-width: 768px) 100vw, 650px"
           />
         </div>
-        <div className="absolute bottom-0 text-5xl flex flex-col items-center bg-gradient-to-b from-transparent via-zinc-200 to-zinc-200">
+        <div className="absolute bottom-0 text-5xl flex flex-col items-center bg-gradient-to-b from-transparent via-transparent to-zinc-200">
           <div className="w-[90%] font-bold">
             Crafting Timeless Celebrations
           </div>
@@ -35,7 +35,7 @@ const HeroSection = () => {
           </Button>
         </div>
       </div>
-      <div className="hidden md:flex text-white">
+      <div className="hidden md:flex">
         <div className="h-[1200px] w-screen relative overflow-hidden">
           <Image
             src={home_page_pc}

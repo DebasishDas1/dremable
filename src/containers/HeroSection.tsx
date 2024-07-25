@@ -45,7 +45,7 @@ const HeroSection = () => {
             sizes="(min-width: 769px) 100vw, 1200px"
           />
         </div>
-        <div className="absolute top-[600px] text-9xl flex flex-col w-full items-center">
+        <div className="absolute top-[600px] text-7xl flex flex-col w-full items-center">
           <div className="font-bold">Crafting </div>
           <div className="font-bold pb-2">Timeless Celebrations</div>
           <div className="w-[60%] text-lg pb-5 text-center">

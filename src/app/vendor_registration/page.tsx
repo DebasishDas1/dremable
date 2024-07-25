@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import VendorRegistrationForm from "@/containers/VendorRegistrationForm"
+import VendorRegistrationForm from "@/containers/VendorRegistrationForm";
 
 export const metadata: Metadata = {
   title: `Grow Your Wedding Business faster : Register as a Vendor -Dremable`,
-  description: `Join Dremble's thriving Platform & connect with potential couples! Easy vendor Registration, Showcase your work & Get booked for Dream Weddings.`,
+  description: `Join Dremable's thriving Platform & connect with potential couples! Easy vendor Registration, Showcase your work & Get booked for Dream Weddings.`,
 };
 
 const VendorRegistration = () => {
@@ -14,7 +14,8 @@ const VendorRegistration = () => {
           Dremable Wedding Partners Registration
         </div>
         <div className="text-lg text-center">
-          Farest growing wedding platform to connect you with the couples
+          The fastest-growing wedding marketplace to help you get in touch with
+          couples
         </div>
         <VendorRegistrationForm />
       </div>

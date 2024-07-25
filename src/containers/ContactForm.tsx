@@ -193,6 +193,7 @@ const ContactForm = () => {
               }
               className={`cursor-pointer py-2 pl-2`}
               target="_blank"
+              aria-label="Facebook"
             >
               <Facebook />
             </Link>
@@ -202,6 +203,7 @@ const ContactForm = () => {
               }
               className={`cursor-pointer py-2 pl-2`}
               target="_blank"
+              aria-label="Instagram"
             >
               <Instagram />
             </Link>
@@ -209,6 +211,7 @@ const ContactForm = () => {
               href={"https://twitter.com/dremablewedding"}
               className={`cursor-pointer py-2 pl-2`}
               target="_blank"
+              aria-label="x"
             >
               <X />
             </Link>
@@ -216,6 +219,7 @@ const ContactForm = () => {
               href={"https://wa.me/918777790641"}
               className={`cursor-pointer py-2 pl-2`}
               target="_blank"
+              aria-label="WhatsApp"
             >
               <WhatsApp />
             </Link>

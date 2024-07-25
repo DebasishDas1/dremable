@@ -40,7 +40,7 @@ const BanquetHalls = () => {
       <SubNavBar SubNavBarItemList={BanquetHalls_SubNavBar} />
       <div className="flex flex-col items-center text-center">
         <div className="flex flex-col w-[85%] items-center">
-          <PageTitle title="Best wedding venues & Banquet Halls in kolkata" />
+          <PageTitle title="Best wedding venues & Banquet Halls in Goa" />
           <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
             {goaBanquet.map((provider) => (
               <MagiciansCard

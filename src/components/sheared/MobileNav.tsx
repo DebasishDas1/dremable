@@ -15,6 +15,7 @@ import ContactForm from "@/containers/ContactForm";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import Divider from "@mui/material/Divider";
 
 interface NavOption {
   name: string;
@@ -69,10 +70,12 @@ const MobileNav: React.FC = () => {
 
           <SignedOut>
             {renderNavItem({
-              name: "Log in",
+              name: "Sign in / Sign up",
               linkUrl: "/sign-in",
             })}
           </SignedOut>
+
+          <Divider />
 
           {renderNavItem({
             name: "Home",

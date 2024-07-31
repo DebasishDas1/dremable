@@ -107,8 +107,8 @@ const weddingPlanners = () => {
           <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
             Types of Wedding Planning Services in Kolkata
           </div>
-          To cater to diverse client needs, Kolkata's wedding planners offer a
-          range of services:
+          To cater to diverse client needs, Kolkata&apos;s wedding planners
+          offer a range of services:
           <PageBenefitOptions benefits={rightPlanner} />
           <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
             Selecting the Perfect Kolkata Wedding Planner: A Comprehensive Guide
@@ -139,7 +139,7 @@ const weddingPlanners = () => {
           </div>
           <PageBenefitOptions benefits={Mistakes_to_Avoid} />
           By following these guidelines and carefully selecting a wedding
-          planner, you'll create an unforgettable wedding celebration in
+          planner, you&apos;ll create an unforgettable wedding celebration in
           Kolkata.
           <Title>
             Frequently Asked Questions about Kolkata Wedding Planning

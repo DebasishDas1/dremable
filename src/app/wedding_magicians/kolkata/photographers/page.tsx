@@ -90,14 +90,14 @@ const Photographers = () => {
           different preferences and budgets:
           <PageBenefitOptions benefits={Budget_Friendly} />
           By following these guidelines and carefully considering your
-          preferences, you'll find a wedding photographer in Kolkata who
+          preferences, you&apos;ll find a wedding photographer in Kolkata who
           captures the essence of your special day. A skilled photographer not
           only documents your wedding but also creates timeless memories to
           cherish for a lifetime. <br />
           Start your search for the perfect Kolkata wedding photographer today
           and let your love story unfold through stunning images.
           <Title>
-            Frequently Asked Questions (FAQs) about Kolkata’s Wedding
+            Frequently Asked Questions (FAQs) about Kolkata&apos;s Wedding
             Photography
           </Title>
           <FaqSection list={FaqSectionData} />

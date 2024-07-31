@@ -16,6 +16,7 @@ import {
   booking_the_banquet_hall_in_goa,
 } from "@/lib/pageData/wedding_venues_goa_banquet_halls";
 import FaqSection from "@/components/sheared/FaqSection";
+import { auth } from "@clerk/nextjs/server";
 
 export const metadata: Metadata = {
   title:
@@ -35,11 +36,13 @@ const BanquetHalls_SubNavBar = [
 ];
 
 const BanquetHalls = () => {
+  const { userId } = auth();
+
   return (
     <>
       <SubNavBar SubNavBarItemList={BanquetHalls_SubNavBar} />
       <div className="flex flex-col items-center text-center">
-        <div className="flex flex-col w-[85%] items-center">
+        <div className="flex flex-col w-[85%] md:w-[75%] items-center">
           <PageTitle title="Best wedding venues & Banquet Halls in Goa" />
           <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
             {goaBanquet.map((provider) => (
@@ -50,6 +53,7 @@ const BanquetHalls = () => {
                 address={provider.address}
                 rating={Number(provider.rating)}
                 rawImageUrl={provider.image}
+                loggedIn={userId ? true : false}
               />
             ))}
           </div>

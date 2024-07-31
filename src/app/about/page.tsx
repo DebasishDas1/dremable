@@ -43,7 +43,7 @@ const About = () => {
           </Card>
           <Card>
             <Star sx={{ fontSize: 60 }} />
-            <div className="text-2xl font-bold">23</div>
+            <div className="text-2xl font-bold">48</div>
             <div>5 Star Reviews</div>
           </Card>
           <Card>

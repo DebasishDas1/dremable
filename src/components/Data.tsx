@@ -39,15 +39,6 @@ export const plannerData = [
       "https://drive.google.com/file/d/1pyMvxoM6Janz7wo2j_lowxuLjbVMrU-z/view?usp=drive_link",
   },
   {
-    name: "Afterlife Events & Entertainment ",
-    contact: "91632 26709",
-    address: "Kolkata , Howrah",
-    url: "",
-    rating: "4.8",
-    image:
-      "https://drive.google.com/file/d/1ySLu6lL0pmejgFdAINyzfBWvKksHj0H8/view?usp=drive_link",
-  },
-  {
     name: "Karyakram Events",
     contact: "89104 96431",
     address: "Kolkata",
@@ -192,15 +183,6 @@ export const plannerData = [
       "https://drive.google.com/file/d/1ArXY8G6Ern9ag1XEboRHi7vL2rTtdbDt/view?usp=drive_link",
   },
   {
-    name: "Double Apple Entertainment",
-    contact: "89815 39226",
-    address: "46, Bangur Ave, Bangur, Lake Town, Kolkata 700055",
-    url: "",
-    rating: "4.6",
-    image:
-      "https://drive.google.com/file/d/1_hOKAM73kH7ve3ipLOwqAw-VEgbR1JPY/view?usp=drive_link",
-  },
-  {
     name: "Kolkata Surprise Planner",
     contact: "70031 80748",
     address: "51, 32A, Dum Dum Rd, ,Kolkata, 700074",
@@ -264,15 +246,6 @@ export const plannerData = [
     rating: "4.7",
     image:
       "https://drive.google.com/file/d/1H6vZPy40X0dD_V1zTgTLuYrXxbfLqrFm/view?usp=drive_link",
-  },
-  {
-    name: "Afterlife Events and Entertainment",
-    contact: "91632  26709",
-    address: "1a chaitan, Baishab Seth St, Kolkata  700006",
-    url: "",
-    rating: "4.6",
-    image:
-      "https://drive.google.com/file/d/1dXheaqIj_BAjBnqHWvkq8dHoJN0jkzBm/view?usp=drive_link",
   },
   {
     name: "Zenith Eventz",
@@ -649,7 +622,7 @@ export const photographersData = [
     contact: "7603076013",
     address: "Sonamukhi Main Rd, Sonamukhi Daspara, Sarsuna, Kolkata, 700061",
     url: "",
-    rating: "",
+    rating: "4.7",
     image:
       "https://drive.google.com/file/d/1h3IF9JE7b_1x8coeaGQ1xKVi-GmVg3aB/view?usp=drive_link",
   },
@@ -658,7 +631,7 @@ export const photographersData = [
     contact: "9831218141",
     address: "Kalibazar Rd, Green Park, Laskar Pur, Kolkata, 700153",
     url: "",
-    rating: "",
+    rating: "4.8",
     image:
       "https://drive.google.com/file/d/1GX0xU566GLct3TX5EoFAJCoko9LGwK4R/view?usp=drive_link",
   },
@@ -667,7 +640,7 @@ export const photographersData = [
     contact: "9830725195",
     address: "Dumdum, 1/15, Gorakshabasi Rd,  Nagerbazar, Kolkata, 700028",
     url: "",
-    rating: "",
+    rating: "4.7",
     image:
       "https://drive.google.com/file/d/15gXquU5PxUlHO0EsVjvi4IebkQRXoK_j/view?usp=drive_link",
   },
@@ -676,7 +649,7 @@ export const photographersData = [
     contact: "8981042106",
     address: "BLOCK-1, 11/26, Beleghata, Kolkata, 700010",
     url: "",
-    rating: "",
+    rating: "4.9",
     image:
       "https://drive.google.com/file/d/1Gb1xa7OOdyinjFeAz7kkP6nx30IenV74/view?usp=drive_link",
   },
@@ -685,7 +658,7 @@ export const photographersData = [
     contact: "9163515627",
     address: "25A, 2nd Rd, Eastend Park, Kalikapur, Haltu, Kolkata, 700099",
     url: "https://charcoalandvermillion.com",
-    rating: "",
+    rating: "4.8",
     image:
       "https://drive.google.com/file/d/15Qr1fn0Kw7-pZc_SjaKZ_NBeTVI9_UTP/view?usp=drive_link",
   },

@@ -11,6 +11,7 @@ import {
   FaqSectionData,
 } from "@/lib/pageData/wedding_magicians_goa_wedding_planners";
 import FaqSection from "@/components/sheared/FaqSection";
+import { auth } from "@clerk/nextjs/server";
 
 export const metadata: Metadata = {
   title: "Get 20 Best Destination Wedding Planners In Goa for You - Dremable",
@@ -30,11 +31,13 @@ const weddingPlanners_SubNavBar = [
 ];
 
 const weddingPlanners = () => {
+  const { userId } = auth();
+
   return (
     <>
       <SubNavBar SubNavBarItemList={weddingPlanners_SubNavBar} />
       <div className="flex flex-col items-center text-center">
-        <div className="flex flex-col w-[85%] items-center">
+        <div className="flex flex-col w-[85%] md:w-[75%] items-center">
           <PageTitle title="Wedding Planners in Goa" />
           <h1 className="hidden">Wedding Planners in Goa</h1>
           <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
@@ -47,6 +50,7 @@ const weddingPlanners = () => {
                 url={provider.url}
                 rating={Number(provider.rating)}
                 rawImageUrl={provider.image}
+                loggedIn={userId ? true : false}
               />
             ))}
           </div>

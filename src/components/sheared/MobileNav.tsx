@@ -14,6 +14,7 @@ import { ArrowDropDown, Menu } from "@mui/icons-material";
 import ContactForm from "@/containers/ContactForm";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 interface NavOption {
   name: string;
@@ -62,6 +63,17 @@ const MobileNav: React.FC = () => {
           className="backdrop-blur-3xl bg-white/40 text-2xl"
           side="top"
         >
+          <SignedIn>
+            <UserButton afterSwitchSessionUrl="/" />
+          </SignedIn>
+
+          <SignedOut>
+            {renderNavItem({
+              name: "Log in",
+              linkUrl: "/sign-in",
+            })}
+          </SignedOut>
+
           {renderNavItem({
             name: "Home",
             linkUrl: "/",
@@ -109,9 +121,15 @@ const MobileNav: React.FC = () => {
             name: "Vendor Registration",
             linkUrl: "/vendor_registration",
           })}
-          <div className="pt-4">
+
+          <div className="py-4">
             <ContactForm />
           </div>
+
+          {/* {renderNavItem({
+            name: "Talk to Experts",
+            linkUrl: "https://wa.me/918777790641",
+          })} */}
         </SheetContent>
       </Sheet>
     </div>

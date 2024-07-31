@@ -10,6 +10,7 @@ import {
   dremableAdvantage,
 } from "@/lib/pageData/wedding_venues_kolkata_banquet_halls";
 import SubNavBar from "@/components/sheared/SubNavBar";
+import { auth } from "@clerk/nextjs/server";
 
 export const metadata: Metadata = {
   title:
@@ -29,11 +30,13 @@ const BanquetHalls_SubNavBar = [
 ];
 
 const BanquetHalls = () => {
+  const { userId } = auth();
+
   return (
     <>
       <SubNavBar SubNavBarItemList={BanquetHalls_SubNavBar} />
       <div className="flex flex-col items-center text-center">
-        <div className="flex flex-col w-[85%] items-center">
+        <div className="flex flex-col md:w-[75%] w-[85%] items-center">
           <PageTitle title="Best wedding venues & Banquet Halls in kolkata" />
           <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
             {banquet.map((provider) => (
@@ -44,6 +47,7 @@ const BanquetHalls = () => {
                 address={provider.address}
                 rating={Number(provider.rating)}
                 rawImageUrl={provider.image}
+                loggedIn={userId ? true : false}
               />
             ))}
           </div>

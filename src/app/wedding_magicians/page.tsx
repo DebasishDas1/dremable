@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { goaPlannerData, plannerData } from "@/components/Data";
 import MagiciansCard from "@/components/sheared/MagiciansCard";
 import { Button } from "@/components/ui/button";
+import { auth } from "@clerk/nextjs/server";
 
 const magicians_options_data = [
   {
@@ -33,6 +34,8 @@ export const metadata: Metadata = {
 };
 
 const WeddingMagicians = () => {
+  const { userId } = auth();
+
   return (
     <div className="flex flex-col items-center text-center">
       <div className="flex flex-col md:w-[65%] w-[85%] items-center">
@@ -57,6 +60,7 @@ const WeddingMagicians = () => {
               address={provider.address}
               rating={Number(provider.rating)}
               rawImageUrl={provider.image}
+              loggedIn={userId ? true : false}
             />
           ))}
         </div>
@@ -75,6 +79,7 @@ const WeddingMagicians = () => {
               address={provider.address}
               rating={Number(provider.rating)}
               rawImageUrl={provider.image}
+              loggedIn={userId ? true : false}
             />
           ))}
         </div>

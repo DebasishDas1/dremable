@@ -8,11 +8,15 @@ import {
   toDoPhotographer,
   findPhotographer,
   dreamPhotographer,
+  FaqSectionData,
+  Budget_Friendly,
 } from "@/lib/pageData/wedding_magicians_kolkata_photographers";
 import SubNavBar from "@/components/sheared/SubNavBar";
+import FaqSection from "@/components/sheared/FaqSection";
+import { auth } from "@clerk/nextjs/server";
 
 export const metadata: Metadata = {
-  title: "Best Wedding Photographers in Kolkata near me - Dremable",
+  title: "25 Best Wedding Photographers in Kolkata near You- Dremable",
   description: `Looking for Best Wedding Photographers in Kolkata? Dremable connects you with Kolkata's top Photographers expert in pre wedding & candid photography`,
 };
 
@@ -28,12 +32,14 @@ const Photographers_SubNavBar = [
 ];
 
 const Photographers = () => {
+  const { userId } = auth();
+
   return (
     <>
       <SubNavBar SubNavBarItemList={Photographers_SubNavBar} />
       <div className="flex flex-col items-center text-center">
-        <div className="flex flex-col w-[85%] items-center">
-          <PageTitle title="Wedding Photographers in Kolkata" />
+        <div className="flex flex-col w-[85%] md:w-[75%] items-center">
+          <PageTitle title="Best Wedding Photographers in Kolkata" />
           <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
             {photographersData.map((provider) => (
               <MagiciansCard
@@ -44,41 +50,57 @@ const Photographers = () => {
                 url={provider.url}
                 rating={Number(provider.rating)}
                 rawImageUrl={provider.image}
+                loggedIn={userId ? true : false}
               />
             ))}
           </div>
           <Title>
-            Dremable: Capture Timeless Memories with Your Perfect Wedding
-            Photographer!
+            Dremable: Find the Best Wedding Photographers Near You in Kolkata
           </Title>
-          Looking for best wedding photographers near you to capture the magic
-          of your Dream wedding? Your search ends here! Dremable connects you
-          with Kolkata&apos;s best wedding photographers, specializing in
-          various styles, including Bengali wedding photography.
-          <br />
-          <br />
-          Find your ideal match, discover breathtaking portfolios, and book with
-          ease – from stunning portraits to candid moments, we ensure your story
-          unfolds beautifully.
-          <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
-            How to Find Your Perfect Wedding Photographer
+          <div className="md:text-3xl text-2xl font-bold md:p-12 py-4">
+            Capture Timeless Memories with Your Perfect Wedding Photographer
           </div>
+          Your wedding day is a once-in-a-lifetime event brimming with
+          unforgettable moments. To preserve these precious memories, hiring the
+          right wedding photographer is essential. With countless options
+          available, finding the ideal photographer can be overwhelming. This
+          comprehensive guide will assist you in discovering the best wedding
+          photographers near you, specifically in Kolkata, to capture your
+          special day flawlessly.
+          <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
+            Key Factors for Choosing the Perfect Kolkata Wedding Photographer
+          </div>
+          Before embarking on your search, consider these crucial factors to
+          ensure you find a photographer aligned with your vision:
           <PageBenefitOptions benefits={findPhotographer} />
           <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
-            Dremable Makes Finding Your Dream Photographer Easier
+            Discover Top Wedding Photographers in Kolkata
           </div>
+          Leverage these platforms to find exceptional wedding photographers in
+          Kolkata:
           <PageBenefitOptions benefits={dreamPhotographer} />
           <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
-            Before You Say &quot;I Do&quot; to a Photographer
+            Tips for Select the Ideal Kolkata Wedding Photographer
           </div>
           <PageBenefitOptions benefits={toDoPhotographer} />
           <div className="md:text-3xl text-2xl font-bold md:p-12 py-8">
-            Start Your Dream Today
+            Kolkata Wedding Photographers: Budget-Friendly to Luxury Options
           </div>
-          Browse our directory of Kolkata&apos;s most talented wedding
-          photographers and find your perfect match! With Dremable by your side,
-          you can focus on cherishing every moment while they capture timeless
-          memories that will last a lifetime
+          Kolkata offers a diverse range of wedding photographers to cater to
+          different preferences and budgets:
+          <PageBenefitOptions benefits={Budget_Friendly} />
+          By following these guidelines and carefully considering your
+          preferences, you'll find a wedding photographer in Kolkata who
+          captures the essence of your special day. A skilled photographer not
+          only documents your wedding but also creates timeless memories to
+          cherish for a lifetime. <br />
+          Start your search for the perfect Kolkata wedding photographer today
+          and let your love story unfold through stunning images.
+          <Title>
+            Frequently Asked Questions (FAQs) about Kolkata’s Wedding
+            Photography
+          </Title>
+          <FaqSection list={FaqSectionData} />
         </div>
       </div>
     </>

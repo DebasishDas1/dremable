@@ -1,82 +1,214 @@
 export const chooseDremable = [
   {
-    benefitTitle: `Stress-Free Bliss`,
+    benefitTitle: "Unparalleled Expertise",
     benefitDescribe:
-      "Our expert planners handle everything,from venue selection to vendor management, allowing you to savor the excitement",
+      "Benefit from a wedding planner's in-depth knowledge of the local wedding industry.",
   },
   {
-    benefitTitle: `Expertise You Can Trust`,
-    benefitDescribe: `We meticulously curate a network of Kolkata's most qualified and experienced wedding planners. Rest assured, your wedding is in the hands of true professionals.`,
+    benefitTitle: "Personalized Attention",
+    benefitDescribe:
+      "Receive tailored services that align with your unique vision and preferences.",
   },
   {
-    benefitTitle: `Tailored to Your Love Story`,
+    benefitTitle: "Vendor Network",
     benefitDescribe:
-      "No two weddings are alike. Our planners tailor your experience to your unique style, preferences, and budget. Whether you dream of a grand Bengali celebration or an intimate garden soirée, we bring your vision to life authentically.",
+      "Access a curated list of trusted vendors for various wedding services.",
   },
   {
-    benefitTitle: `Local Knowledge, Global Vision`,
+    benefitTitle: "Time Management",
     benefitDescribe:
-      "Our planners are deeply embedded in the Kolkata wedding scene, ensuring smooth navigation of local traditions and vendors. But their expertise extends beyond borders, drawing inspiration from global trends to create truly unique experiences.",
+      "Efficiently allocate your time for other wedding preparations.",
+  },
+
+  {
+    benefitTitle: "Stress Reduction",
+    benefitDescribe:
+      "Delegate responsibilities and enjoy a relaxed planning process.",
   },
   {
-    benefitTitle: `Abundant Choice, Seamless Search`,
+    benefitTitle: "Creative Vision",
     benefitDescribe:
-      "Discover our diverse directory of top Kolkata planners. Compare profiles, packages, and pricing to find the perfect match for your needs. With just a few clicks, connect with multiple planners, request quotes, and schedule consultations.",
+      "Bring your wedding dreams to life with innovative ideas and designs.",
+  },
+  {
+    benefitTitle: "Flawless Execution",
+    benefitDescribe:
+      "Ensure every detail is perfectly executed on your wedding day.",
   },
 ];
 
 export const rightPlanner = [
   {
-    benefitTitle: `Experience`,
+    benefitTitle: "Full-Service Wedding Planning",
     benefitDescribe:
-      "Ask about their specific expertise with your desired style and budget.",
+      "A comprehensive package encompassing every aspect of your wedding, from conceptualization to execution.",
   },
   {
-    benefitTitle: `Portfolio`,
+    benefitTitle: "Partial Wedding Planning",
     benefitDescribe:
-      "Request to see their portfolio and inquire about weddings similar to yours.",
+      "Focus on specific areas such as decor, catering, or guest management.",
   },
   {
-    benefitTitle: `Communication Style`,
+    benefitTitle: "Wedding Consulting",
     benefitDescribe:
-      "Ensure they align with your communication preferences and accessibility needs.",
-  },
-  {
-    benefitTitle: `Vendor Management`,
-    benefitDescribe:
-      "Understand their approach to vendor selection and how they handle contracts.",
-  },
-  {
-    benefitTitle: `Contingency Planning`,
-    benefitDescribe:
-      "Discuss their strategies for unforeseen circumstances, ensuring peace of mind.",
+      "Expert advice and guidance on various wedding-related aspects.",
   },
 ];
 
 export const youAvoid = [
   {
-    benefitTitle: `Budget Busting`,
+    benefitTitle: "Define Your Wedding Vision",
     benefitDescribe:
-      "Our planners guide you in creating a realistic budget and prevent impulsive overspending.",
+      "Clearly articulate your desired wedding style, theme, and atmosphere.",
   },
   {
-    benefitTitle: `Vendor Drama`,
+    benefitTitle: "Set a Realistic Budget",
     benefitDescribe:
-      "They navigate vendor selection and communication, ensuring reliable and professional services.",
+      "Determine your overall wedding budget to guide your planner search.",
   },
   {
-    benefitTitle: `Planning Paralysis`,
+    benefitTitle: "Research Kolkata Wedding Planners",
     benefitDescribe:
-      "They break down the process into manageable steps, keeping you on track and stress-free.",
+      "Explore different planners, read reviews, and compare portfolios.",
   },
   {
-    benefitTitle: `Logistics Lapses`,
+    benefitTitle: "Schedule Consultations",
     benefitDescribe:
-      "They handle all logistical details, from permits to transportation, ensuring smooth execution.",
+      "Meet with potential planners to discuss your vision and chemistry.",
   },
   {
-    benefitTitle: `Missed Moments`,
+    benefitTitle: "Evaluate Experience and Expertise",
     benefitDescribe:
-      "They help you prioritize and delegate tasks, freeing you to savor the precious moments.",
+      "Prioritize planners with a proven track record and relevant experience.",
+  },
+  {
+    benefitTitle: "Review Contracts Thoroughly",
+    benefitDescribe:
+      "Ensure the contract outlines services, responsibilities, and payment terms clearly.",
+  },
+];
+
+export const Top_tier_luxury = [
+  {
+    benefitTitle: "Exceptional Organizational Skills",
+    benefitDescribe:
+      "A well-structured approach to manage multiple tasks efficiently.",
+  },
+  {
+    benefitTitle: "Unwavering Attention to Detail",
+    benefitDescribe:
+      "A keen eye for perfection in every aspect of the wedding.",
+  },
+  {
+    benefitTitle: "Strong Communication",
+    benefitDescribe:
+      "Effective communication with clients, vendors, and the wedding party.",
+  },
+  {
+    benefitTitle: "Creative Flair",
+    benefitDescribe:
+      "A knack for innovative ideas and designs to elevate your wedding.",
+  },
+  {
+    benefitTitle: "Problem-Solving Abilities",
+    benefitDescribe: "The capacity to handle unexpected challenges with grace.",
+  },
+];
+
+export const CraftingDreamWeddings = [
+  {
+    benefitTitle: "Exclusive Venues",
+    benefitDescribe: "Opulent palaces, heritage hotels, or private estates.",
+  },
+  {
+    benefitTitle: "High-End Decor",
+    benefitDescribe:
+      "Sumptuous floral arrangements, exquisite lighting, and luxurious furnishings.",
+  },
+  {
+    benefitTitle: "Gourmet Cuisine",
+    benefitDescribe:
+      "World-class catering with personalized menus and premium beverages.",
+  },
+  {
+    benefitTitle: "Celebrity Entertainment",
+    benefitDescribe: "Live performances by renowned artists or DJs.",
+  },
+  {
+    benefitTitle: "Luxury Transportation",
+    benefitDescribe: "Lavish car rentals or private jet charters.",
+  },
+  {
+    benefitTitle: "Personalized Amenities",
+    benefitDescribe:
+      "Exclusive welcome gifts, bespoke invitations, and luxurious accommodations for guests",
+  },
+];
+
+export const Mistakes_to_Avoid = [
+  {
+    benefitTitle: "Hiring based solely on cost",
+    benefitDescribe: "Prioritize experience and reputation over price.",
+  },
+  {
+    benefitTitle: "Lack of clear communication",
+    benefitDescribe: "Ensure open and honest communication with your planner.",
+  },
+  {
+    benefitTitle: "Ignoring contracts",
+    benefitDescribe: "Always have a detailed contract in place.",
+  },
+  {
+    benefitTitle: "Not setting realistic expectations",
+    benefitDescribe: "Discuss your vision clearly and manage expectations.",
+  },
+];
+
+export const FaqSectionData = [
+  {
+    query: "What services do wedding planners in Kolkata offer?",
+    answer:
+      "Wedding planners in Kolkata typically offer a range of services including venue selection, vendor management, decor planning, guest management, and overall coordination to ensure a seamless wedding experience.",
+  },
+  {
+    query: "How much does a wedding planner in Kolkata cost?",
+    answer:
+      "The cost of a wedding planner in Kolkata varies depending on the services required, the scale of the wedding, and the planner's experience. It's best to request quotes from different planners to compare prices. Generally Starts from Rs. 50,000 to 5 Lakhs and more",
+  },
+  {
+    query: "When should I hire a wedding planner in Kolkata?",
+    answer:
+      "It's advisable to hire a wedding planner as early as possible, ideally 12-18 months before the wedding date. This allows ample time for planning and execution.",
+  },
+  {
+    query: "How do I choose the best wedding planner in Kolkata?",
+    answer:
+      "Choose the best wedding planner who has a proper portfolio, experience in Planning and clarity in communication, You Should also check Market reviews ",
+  },
+  {
+    query: "What questions should I ask a potential wedding planner?",
+    answer:
+      "Ask about their experience, services offered, pricing packages, portfolio, and availability. Feel free to inquire about their process and how they handle stress and challenges.",
+  },
+
+  {
+    query: "What is included in a full-service wedding planning package?",
+    answer:
+      "A full-service wedding planning package typically includes everything from venue selection to day-of coordination. This involves vendor management, decor planning, guest management, and overall event execution.",
+  },
+  {
+    query: "How long does it take to plan a wedding in Kolkata?",
+    answer:
+      "The wedding planning timeline can vary depending on the complexity of the wedding. On average, planning takes anywhere from 6 months to a year.",
+  },
+  {
+    query: "Where can I find good wedding vendors in Kolkata?",
+    answer:
+      "To find Top Wedding Planners and Vendors, Dremable is the Best platform, where you will get everything with lots of options.",
+  },
+  {
+    query: "What are the best months to get married in Kolkata?",
+    answer:
+      "The winter months (October to February) are generally preferred for weddings in Kolkata due to the pleasant weather. However, every season has its charm",
   },
 ];

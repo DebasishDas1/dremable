@@ -3,7 +3,6 @@
 import { Star } from "@mui/icons-material";
 import {
   AlertDialog,
-  AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
@@ -11,8 +10,13 @@ import {
 } from "@/components/ui/alert-dialog";
 import Image from "next/image";
 import logo from "../../../public/shortLogo.png";
-import { Phone, Verified } from "@mui/icons-material";
+import { Close, Phone } from "@mui/icons-material";
 import copy from "copy-to-clipboard";
+import ReactWhatsappButton from "@/components/sheared/ReactWhatsappButton";
+import { AlertDialogAction } from "@/components/ui/alert-dialog";
+import { SignedOut } from "@clerk/nextjs";
+import Link from "next/link";
+import { Button } from "../ui/button";
 
 type Props = {
   name: string;
@@ -21,6 +25,7 @@ type Props = {
   rating: number;
   url?: string;
   rawImageUrl?: string;
+  loggedIn: boolean;
 };
 
 const MagiciansCard = ({
@@ -30,6 +35,7 @@ const MagiciansCard = ({
   rating,
   url,
   rawImageUrl,
+  loggedIn,
 }: Props) => {
   let imageUrl;
   if (rawImageUrl) {
@@ -50,14 +56,7 @@ const MagiciansCard = ({
       </div>
 
       <div className="m-4 flex flex-col flex-1 justify-between p-1">
-        <div className="text-3xl font-black pb-4">
-          {name}
-          {/* <br />
-          <span className="text-xs bg-green-300 py-1 px-3 rounded-full ml-3">
-            <Verified fontSize="small" />
-            Verified
-          </span> */}
-        </div>
+        <div className="text-3xl font-black pb-4">{name}</div>
         <div className="w-full text-sm text-slate-700">{address}</div>
         <div className="m-4 font-bold text-2xl flex items-center justify-center">
           {rating}/5
@@ -70,6 +69,11 @@ const MagiciansCard = ({
             </div>
           </AlertDialogTrigger>
           <AlertDialogContent className="bg-white">
+            <div className="flex justify-end">
+              <AlertDialogCancel className="border-0">
+                <Close />
+              </AlertDialogCancel>
+            </div>
             <AlertDialogDescription className="flex flex-col items-center text-black">
               <div className="h-[120px] w-[150px] relative overflow-hidden">
                 <Image
@@ -81,26 +85,46 @@ const MagiciansCard = ({
                   sizes="(min-width: 780px) 70vw, 100vw"
                 />
               </div>
-              <span className="text-2xl font-bold pb-2 pt-6 text-center">
-                {name}
-              </span>
-              <span className="text-2xl font-bold pb-6">
-                <Phone />
-                <span className="pl-1"> {contact}</span>
-              </span>
-              <span className="text-2xl font-bold pt-4 pb-2 text-center">
-                Want to get a special offer ?
-              </span>
-              <span className="flex p-3 rounded-lg text-center bg-gradient-to-r from-purple-100 to-pink-100">
-                When you call the vender must say you got this contact from
-                Dremable Platform
-              </span>
-              <span className="w-[250px] flex justify-between pt-6">
-                <AlertDialogCancel>Cancel</AlertDialogCancel>
-                <AlertDialogAction onClick={() => copy(contact)}>
-                  Copy contact
-                </AlertDialogAction>
-              </span>
+              {!loggedIn && (
+                <div className="text-lg text-center pt-10">
+                  Verify Your mobile to Contact with
+                  <div className="pb-6 pt-6 text-center text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-purple-600">
+                    {name}
+                  </div>
+                  <SignedOut>
+                    <Button>
+                      <Link href={"/sign-in"}>Verify</Link>
+                    </Button>
+                  </SignedOut>
+                </div>
+              )}
+              {loggedIn && (
+                <div className="text-2xl font-bold text-center">
+                  <div className="pb-2 pt-6 text-center">{name}</div>
+                  <div className="pb-6">
+                    <Phone />
+                    <span className="pl-1"> {contact}</span>
+                  </div>
+                  <div className="pt-4 pb-2 text-center">
+                    Want to get a special offer ?
+                  </div>
+                  <div className="flex p-3 rounded-lg text-center bg-gradient-to-r from-purple-100 to-pink-100 text-sm font-light">
+                    When you call the vender must say you got this contact from
+                    Dremable Platform
+                  </div>
+                  <div className="flex justify-evenly pt-6">
+                    <ReactWhatsappButton
+                      message={`Hi team Dremable i am trying to get information about "${name}"`}
+                    />
+                    <AlertDialogAction
+                      onClick={() => copy(contact)}
+                      className="hidden md:flex"
+                    >
+                      Copy contact
+                    </AlertDialogAction>
+                  </div>
+                </div>
+              )}
             </AlertDialogDescription>
           </AlertDialogContent>
         </AlertDialog>

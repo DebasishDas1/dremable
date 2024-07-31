@@ -10,6 +10,7 @@ import {
   FaqSectionData,
 } from "@/lib/pageData/wedding_magicians_goa_photographers";
 import FaqSection from "@/components/sheared/FaqSection";
+import { auth } from "@clerk/nextjs/server";
 
 export const metadata: Metadata = {
   title: "Top 20 Destination Wedding Photographers in Goa -Dremable",
@@ -28,11 +29,13 @@ const Photographers_SubNavBar = [
 ];
 
 const Photographers = () => {
+  const { userId } = auth();
+
   return (
     <>
       <SubNavBar SubNavBarItemList={Photographers_SubNavBar} />
       <div className="flex flex-col items-center text-center">
-        <div className="flex flex-col w-[85%] items-center">
+        <div className="flex flex-col w-[85%] md:w-[75%] items-center">
           <PageTitle title="Wedding Photographers in Goa" />
           <h1 className="hidden">Wedding Photographers in Goa</h1>
           <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
@@ -45,6 +48,7 @@ const Photographers = () => {
                 url={provider.url}
                 rating={Number(provider.rating)}
                 rawImageUrl={provider.image}
+                loggedIn={userId ? true : false}
               />
             ))}
           </div>

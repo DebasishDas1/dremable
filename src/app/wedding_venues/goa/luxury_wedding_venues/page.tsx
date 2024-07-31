@@ -12,6 +12,7 @@ import {
   FaqSectionData,
 } from "@/lib/pageData/wedding_venues_goa_luxury_wedding_venues";
 import FaqSection from "@/components/sheared/FaqSection";
+import { auth } from "@clerk/nextjs/server";
 
 export const metadata: Metadata = {
   title:
@@ -31,11 +32,13 @@ const LuxuryWeddingVenues_SubNavBar = [
 ];
 
 const LuxuryWeddingVenues = () => {
+  const { userId } = auth();
+
   return (
     <>
       <SubNavBar SubNavBarItemList={LuxuryWeddingVenues_SubNavBar} />
       <div className="flex flex-col items-center text-center">
-        <div className="flex flex-col w-[85%] items-center">
+        <div className="flex flex-col w-[85%] md:w-[75%] items-center">
           <PageTitle title="Luxury 5 Star Hotels & Destination Wedding Venues In Goa" />
           <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
             {goaLuxuryWeddingVenues.map((provider) => (
@@ -46,6 +49,7 @@ const LuxuryWeddingVenues = () => {
                 address={provider.address}
                 rating={Number(provider.rating)}
                 rawImageUrl={provider.image}
+                loggedIn={userId ? true : false}
               />
             ))}
           </div>

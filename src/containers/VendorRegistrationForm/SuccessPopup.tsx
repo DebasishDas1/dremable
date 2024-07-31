@@ -4,9 +4,9 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import ReactWhatsapp from "react-whatsapp";
-import { WhatsApp, Home } from "@mui/icons-material";
+import { Home } from "@mui/icons-material";
 import SuccessPopupImage from "../../../public/assets/Ethnic_friendship_cuate.png";
+import ReactWhatsappButton from "@/components/sheared/ReactWhatsappButton";
 
 type SuccessPopupProp = {
   name: string;
@@ -70,17 +70,5 @@ const SuccessPopup = ({ name, isOpen, onClose }: SuccessPopupProp) => {
     </AnimatePresence>
   );
 };
-
-const ReactWhatsappButton = ({
-  number = "+918777790641",
-  message = "Hi Dremable, I have submitted a registration request to join as a vendor. Please guide me for the next steps.",
-}) => (
-  <div className="bg-green-200 flex items-center rounded-xl flex-2 mx-1 px-3">
-    <ReactWhatsapp number={number} message={message} element="button">
-      <WhatsApp className="text-green-600" sx={{ fontSize: 30 }} />
-      <span className="pl-1 font-bold">Whatsapp</span>
-    </ReactWhatsapp>
-  </div>
-);
 
 export default SuccessPopup;

@@ -9,6 +9,7 @@ import ContactForm from "@/containers/ContactForm";
 import Image from "next/image";
 import logo from "../../../public/longLogo.png";
 import MobileNav from "@/components/sheared/MobileNav";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 const NavBer = () => {
   const [activeOption, setActiveOption] = useState("");
@@ -52,9 +53,24 @@ const NavBer = () => {
             />
           ))}
         </ul>
-        <div className="md:flex hidden ml-6">
+        <div
+          className="md:flex hidden ml-6"
+          onMouseEnter={() => setActiveOption("ContactForm")}
+        >
           <ContactForm />
         </div>
+        <div
+          className="md:flex hidden ml-10 hover:font-bold"
+          onMouseEnter={() => setActiveOption("SignedIn")}
+        >
+          <SignedOut>
+            <Link href={"/sign-in"}>Log in</Link>
+          </SignedOut>
+          <SignedIn>
+            <UserButton afterSwitchSessionUrl="/" />
+          </SignedIn>
+        </div>
+
         <MobileNav />
       </div>
       {activeOption === "Wedding_Venues" && (

@@ -10,6 +10,7 @@ import {
   whyChooseDremable,
 } from "@/lib/pageData/wedding_venues_kolkata_wedding_resorts";
 import SubNavBar from "@/components/sheared/SubNavBar";
+import { auth } from "@clerk/nextjs/server";
 
 export const metadata: Metadata = {
   title:
@@ -30,11 +31,13 @@ const WeddingResorts_SubNavBar = [
 ];
 
 const WeddingResorts = () => {
+  const { userId } = auth();
+
   return (
     <>
       <SubNavBar SubNavBarItemList={WeddingResorts_SubNavBar} />
       <div className="flex flex-col items-center text-center">
-        <div className="flex flex-col w-[85%] items-center">
+        <div className="flex flex-col w-[85%] md:w-[75%] items-center">
           <PageTitle title="Best Destination Wedding Resorts in Kolkata - Dream Wedding Venues for You" />
           <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
             {wedding_resorts_data.map((provider) => (
@@ -45,6 +48,7 @@ const WeddingResorts = () => {
                 address={provider.address}
                 rating={Number(provider.rating)}
                 rawImageUrl={provider.image}
+                loggedIn={userId ? true : false}
               />
             ))}
           </div>

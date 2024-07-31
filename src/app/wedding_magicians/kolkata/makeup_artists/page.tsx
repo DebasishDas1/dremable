@@ -12,6 +12,7 @@ import {
   collaboration,
 } from "@/lib/pageData/wedding_magicians_kolkata_makeup_artists";
 import SubNavBar from "@/components/sheared/SubNavBar";
+import { auth } from "@clerk/nextjs/server";
 
 export const metadata: Metadata = {
   title: "Bridal Makeup Artist in Kolkata |Best Makeup near me-Dremable",
@@ -30,11 +31,13 @@ const makeupArtists_SubNavBar = [
 ];
 
 const makeupArtists = () => {
+  const { userId } = auth();
+
   return (
     <>
       <SubNavBar SubNavBarItemList={makeupArtists_SubNavBar} />
       <div className="flex flex-col items-center text-center">
-        <div className="flex flex-col w-[85%] items-center">
+        <div className="flex flex-col w-[85%] md:w-[75%] items-center">
           <PageTitle title="Bridal makeup artists in kolkata" />
           <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
             {artistsData.map((provider) => (
@@ -46,6 +49,7 @@ const makeupArtists = () => {
                 url={provider.url}
                 rating={Number(provider.rating)}
                 rawImageUrl={provider.image}
+                loggedIn={userId ? true : false}
               />
             ))}
           </div>

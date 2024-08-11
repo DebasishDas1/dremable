@@ -37,10 +37,7 @@ const formSchema = z.object({
     .max(1000, "Description must be at most 1000 characters."),
   urlKey: z.string().min(2, "Title must be at least 3 characters."),
   header: z.string().min(2, "header must be at least 3 characters."),
-  content: z
-    .string()
-    .min(2, "Content must be at least 2 characters.")
-    .max(100000, "Content must be at most 1000 characters."),
+  content: z.string().min(2, "Content must be at least 2 characters."),
   location: z
     .string()
     .min(2, "Location must be at least 3 characters.")

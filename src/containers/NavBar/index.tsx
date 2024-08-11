@@ -26,7 +26,7 @@ const NavBer = () => {
     <div
       className={`sticky top-0 ${
         activeOption ? "bg-white" : "backdrop-blur-3xl bg-white/50"
-      } z-50`}
+      } z-40`}
       onMouseLeave={handleMouseLeave}
     >
       <div className="flex items-center md:justify-center justify-between">

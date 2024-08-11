@@ -15,7 +15,6 @@ import {
 import DropDown from "./DropDown";
 import { FileUploader } from "./FileUploader";
 import BlogFormContent from "./BlogFormContent";
-// import { useState } from "react";
 import { LocationOn, CalendarMonth, Link } from "@mui/icons-material";
 import DatePicker from "react-datepicker";
 // import { useUploadThing } from "@/lib/uploadthing";
@@ -53,9 +52,6 @@ const formSchema = z.object({
 });
 
 const BlogForm = ({ type, oldBlog }: BlogFormProps) => {
-  // const [files, setFiles] = useState<File[]>([]);
-  // const { startUpload } = useUploadThing("imageUploader");
-
   const blogId = oldBlog ? oldBlog._id : "";
   const router = useRouter();
 
@@ -89,12 +85,6 @@ const BlogForm = ({ type, oldBlog }: BlogFormProps) => {
     toast.info("Blog data submitted please wait");
 
     let uploadedImageUrl = values.imageUrl;
-
-    // if (files.length > 0) {
-    //   const uploadedImage = await startUpload(files);
-    //   if (!uploadedImage) return;
-    //   uploadedImageUrl = uploadedImage[0].url;
-    // }
 
     if (type === "Update") {
       if (blogId === "") {
@@ -230,7 +220,6 @@ const BlogForm = ({ type, oldBlog }: BlogFormProps) => {
               )}
             />
           </div>
-          {/* <div className="flex flex-col gap-5 md:flex-row"> */}
           <FormField
             control={form.control}
             name="content"
@@ -261,7 +250,6 @@ const BlogForm = ({ type, oldBlog }: BlogFormProps) => {
               </FormItem>
             )}
           />
-          {/* </div> */}
           <div className="flex flex-col gap-5 md:flex-row">
             <FormField
               control={form.control}

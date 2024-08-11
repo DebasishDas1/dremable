@@ -1,10 +1,14 @@
 "use client";
 
-import SearchIcon from "@mui/icons-material/Search";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { Input } from "../ui/input";
 import { formUrlQuery, removeKeysFromQuery } from "@/lib/utils";
 import { useRouter, useSearchParams } from "next/navigation";
+
+const SearchIcon = dynamic(() => import("@mui/icons-material/Search"), {
+  ssr: false,
+});
 
 const Search = ({
   placeholder = "Search title...",
@@ -14,6 +18,13 @@ const Search = ({
   const [query, setQuery] = useState("");
   const router = useRouter();
   const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const currentQuery = searchParams.get("query") || "";
+    if (currentQuery !== query) {
+      setQuery(currentQuery);
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {

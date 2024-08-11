@@ -3,15 +3,15 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import errorPage from "../../public/assets/404_error_page.png"
+import errorPage from "../../public/assets/404_error_page.png";
 
 const Custom404: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[70vh] py-6 text-center mb-20">
-      <Image 
-      src={errorPage}
-      alt="Error"
-      style={{height: "400px", width: "400px"}}
+    <div className="flex flex-col items-center justify-center h-screen text-center">
+      <Image
+        src={errorPage}
+        alt="Error"
+        style={{ height: "400px", width: "400px" }}
       />
       <p className="text-lg text-gray-600 mb-8 text-center">
         It seems like you&apos;ve stumbled upon a page that doesn&apos;t exist.

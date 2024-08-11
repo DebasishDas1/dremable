@@ -14,8 +14,9 @@ import { Close, Phone } from "@mui/icons-material";
 import copy from "copy-to-clipboard";
 import ReactWhatsappButton from "@/components/sheared/ReactWhatsappButton";
 import { AlertDialogAction } from "@/components/ui/alert-dialog";
-import { SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
+import CallIcon from "@mui/icons-material/Call";
+import { SignedOut, SignedIn } from "@clerk/nextjs";
 import { Button } from "../ui/button";
 
 type Props = {
@@ -25,7 +26,6 @@ type Props = {
   rating: number;
   url?: string;
   rawImageUrl?: string;
-  loggedIn: boolean;
 };
 
 const MagiciansCard = ({
@@ -35,7 +35,6 @@ const MagiciansCard = ({
   rating,
   url,
   rawImageUrl,
-  loggedIn,
 }: Props) => {
   let imageUrl;
   if (rawImageUrl) {
@@ -85,7 +84,8 @@ const MagiciansCard = ({
                   sizes="(min-width: 780px) 70vw, 100vw"
                 />
               </div>
-              {!loggedIn && (
+
+              <SignedOut>
                 <div className="text-lg text-center pt-10">
                   Verify Your mobile to Contact with
                   <div className="pb-6 pt-6 text-center text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-purple-600">
@@ -97,8 +97,9 @@ const MagiciansCard = ({
                     </Button>
                   </SignedOut>
                 </div>
-              )}
-              {loggedIn && (
+              </SignedOut>
+
+              <SignedIn>
                 <div className="text-2xl font-bold text-center">
                   <div className="pb-2 pt-6 text-center">{name}</div>
                   <div className="pb-6">
@@ -112,7 +113,7 @@ const MagiciansCard = ({
                     When you call the vender must say you got this contact from
                     Dremable Platform
                   </div>
-                  <div className="flex justify-evenly pt-6">
+                  <div className="flex justify-evenly mt-6 h-10">
                     <ReactWhatsappButton
                       message={`Hi team Dremable i am trying to get information about "${name}"`}
                     />
@@ -122,9 +123,16 @@ const MagiciansCard = ({
                     >
                       Copy contact
                     </AlertDialogAction>
+                    <Link
+                      href={`tel:${contact}`}
+                      className="flex items-center rounded-lg flex-2 bg-green-400 md:hidden px-4"
+                    >
+                      <CallIcon sx={{ fontSize: 25 }} />
+                      <span className="pl-3 font-bold text-base">Call</span>
+                    </Link>
                   </div>
                 </div>
-              )}
+              </SignedIn>
             </AlertDialogDescription>
           </AlertDialogContent>
         </AlertDialog>

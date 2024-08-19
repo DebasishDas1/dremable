@@ -79,3 +79,36 @@ export const FaqSectionData = [
       "Yes, you can have a legal wedding in Goa. You will need to comply with local marriage laws and regulations.",
   },
 ];
+
+export const popular_searches_word_list = [
+  "Wedding Planners in Goa",
+  "Best Wedding Planning Company in Goa",
+  "Top Wedding Planners in Goa",
+  "Budget Wedding Planners in Goa",
+  "Wedding Organizers in Goa",
+  "Destination Wedding Planner in Goa",
+  "Wedding Organisers in Goa",
+  "Wedding Event Management Companies in Goa",
+  "Top Wedding Planners in Goa",
+  "Goa Wedding Planner",
+  "Luxury Wedding Planners in Goa",
+  "Marriage Planner in Goa",
+];
+
+export const type_word_list = [
+  "Budget Wedding Planners in Goa",
+  "Luxury Wedding Planners in Goa",
+];
+
+export const location_word_list = [
+  "Wedding Planners in North Goa",
+  "Wedding Planners in Panjim",
+  "Wedding Planners in South Goa",
+  "Wedding Planners in Margao",
+  "Wedding Planners in Aradi Socorro",
+  "Wedding Planners in Ponda",
+  "Wedding Planners in Mapusa",
+  "Wedding Planners in Benaulim",
+  "Wedding Planners in Sangolda",
+  "Wedding Planners in Vasco-Da-Gama ",
+];

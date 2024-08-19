@@ -61,7 +61,7 @@ const MobileNav: React.FC = () => {
           <Menu className="inline-block cursor-pointer lg:hidden mr-6" />
         </SheetTrigger>
         <SheetContent
-          className="backdrop-blur-3xl bg-white/40 text-2xl"
+          className="backdrop-blur-3xl bg-white/30 text-2xl"
           side="top"
         >
           <SignedIn>

@@ -212,3 +212,37 @@ export const FaqSectionData = [
       "The winter months (October to February) are generally preferred for weddings in Kolkata due to the pleasant weather. However, every season has its charm",
   },
 ];
+
+export const popular_searches_word_list = [
+  "Wedding Planners in Kolkata",
+  "Bengali Wedding Planners",
+  "Best Wedding Planning Company in Kolkata",
+  "Top Wedding Planners in Kolkata",
+  "Budget Wedding Planners in Kolkata",
+  "Destination Wedding Planner in Kolkata",
+  "Wedding Organizers in Kolkata",
+  "Wedding Event Management Companies in Kolkata",
+  "Kolkata Wedding Planner",
+  "Luxury Wedding Planners in Kolkata",
+  "Marriage Planner in Kolkata",
+];
+
+export const type_word_list = [
+  "Budget Wedding Planners in Kolkata",
+  "Luxury Wedding Planners in Kolkata",
+];
+
+export const location_word_list = [
+  "Wedding Planners in North Kolkata",
+  "Wedding Planners in North 24 Parganas",
+  "Wedding Planners in South Kolkata",
+  "Wedding Planners in South 24 Parganas",
+  "Wedding Planners in Howrah",
+  "Wedding Planners in Dum Dum",
+  "Wedding Planners in Rajarhat New Town",
+  "Wedding Planners in Behala",
+  "Wedding Planners in Tollygunge",
+  "Wedding Planners in Salt Lake",
+  "Wedding Planners in Ballygunge",
+  "Wedding Planners in Bhawanipur",
+];

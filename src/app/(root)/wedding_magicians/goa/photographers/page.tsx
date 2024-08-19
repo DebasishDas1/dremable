@@ -8,8 +8,12 @@ import SubNavBar from "@/components/sheared/SubNavBar";
 import {
   goa_wedding_photographer,
   FaqSectionData,
+  popular_searches_word_list,
+  location_word_list,
+  type_word_list,
 } from "@/lib/pageData/wedding_magicians_goa_photographers";
 import FaqSection from "@/components/sheared/FaqSection";
+import SeoKeyWords from "@/components/sheared/SeoKeyWords";
 
 export const metadata: Metadata = {
   title: "Top 20 Destination Wedding Photographers in Goa -Dremable",
@@ -32,10 +36,9 @@ const Photographers = () => {
     <>
       <SubNavBar SubNavBarItemList={Photographers_SubNavBar} />
       <div className="flex flex-col items-center text-center">
-        <div className="flex flex-col w-[85%] md:w-[75%] items-center">
+        <div className="flex flex-col w-[90%] md:w-[75%] items-center">
           <PageTitle title="Wedding Photographers in Goa" />
-          <h1 className="hidden">Wedding Photographers in Goa</h1>
-          <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-10 md:gap-6">
             {goaPhotographersData.map((provider) => (
               <MagiciansCard
                 key={provider.name}
@@ -89,6 +92,14 @@ const Photographers = () => {
           a talented Goa-based photographer through Dremable, you&apos;ll create
           a stunning visual narrative that will be cherished for generations to
           come.
+          <div className="w-full md:flex">
+            <SeoKeyWords
+              title="Popular Searches"
+              wordList={popular_searches_word_list}
+            />
+            <SeoKeyWords title="By Type " wordList={type_word_list} />
+            <SeoKeyWords title="By Locality" wordList={location_word_list} />
+          </div>
         </div>
       </div>
     </>

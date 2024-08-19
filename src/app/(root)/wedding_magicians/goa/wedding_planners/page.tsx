@@ -9,8 +9,12 @@ import {
   hire_wedding_planner,
   destination_wedding,
   FaqSectionData,
+  popular_searches_word_list,
+  location_word_list,
+  type_word_list,
 } from "@/lib/pageData/wedding_magicians_goa_wedding_planners";
 import FaqSection from "@/components/sheared/FaqSection";
+import SeoKeyWords from "@/components/sheared/SeoKeyWords";
 
 export const metadata: Metadata = {
   title: "Get 20 Best Destination Wedding Planners In Goa for You - Dremable",
@@ -34,10 +38,10 @@ const weddingPlanners = () => {
     <>
       <SubNavBar SubNavBarItemList={weddingPlanners_SubNavBar} />
       <div className="flex flex-col items-center text-center">
-        <div className="flex flex-col w-[85%] md:w-[75%] items-center">
+        <div className="flex flex-col w-[90%] md:w-[75%] items-center">
           <PageTitle title="Wedding Planners in Goa" />
           <h1 className="hidden">Wedding Planners in Goa</h1>
-          <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-10 md:gap-6">
             {goaPlannerData.map((provider) => (
               <MagiciansCard
                 key={provider.name}
@@ -78,6 +82,14 @@ const weddingPlanners = () => {
             FAQs Related to Goa Destination Wedding Planning
           </div>
           <FaqSection list={FaqSectionData} />
+          <div className="w-full md:flex">
+            <SeoKeyWords
+              title="Popular Searches"
+              wordList={popular_searches_word_list}
+            />
+            <SeoKeyWords title="By Type " wordList={type_word_list} />
+            <SeoKeyWords title="By Locality" wordList={location_word_list} />
+          </div>
         </div>
       </div>
     </>

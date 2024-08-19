@@ -14,8 +14,13 @@ import {
   budget_banquet_halls_in_goa,
   FaqSectionData,
   booking_the_banquet_hall_in_goa,
+  popular_searches_word_list,
+  by_vane_type_list,
+  locality_word_list,
+  space_preference_word_list,
 } from "@/lib/pageData/wedding_venues_goa_banquet_halls";
 import FaqSection from "@/components/sheared/FaqSection";
+import SeoKeyWords from "@/components/sheared/SeoKeyWords";
 
 export const metadata: Metadata = {
   title:
@@ -39,9 +44,9 @@ const BanquetHalls = () => {
     <>
       <SubNavBar SubNavBarItemList={BanquetHalls_SubNavBar} />
       <div className="flex flex-col items-center text-center">
-        <div className="flex flex-col w-[85%] md:w-[75%] items-center">
+        <div className="flex flex-col w-[90%] md:w-[75%] items-center">
           <PageTitle title="Best wedding venues & Banquet Halls in Goa" />
-          <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-10 md:gap-6">
             {goaBanquet.map((provider) => (
               <MagiciansCard
                 key={provider.name}
@@ -124,6 +129,20 @@ const BanquetHalls = () => {
           By choosing Goa as your wedding destination and utilizing
           Dremable&apos;s platform, you&apos;re well on your way to planning a
           memorable and stress-free wedding.
+          <div className="w-full md:flex justify-evenly">
+            <SeoKeyWords
+              title="Popular Searches"
+              wordList={popular_searches_word_list}
+            />
+            <SeoKeyWords title="By Venue Type" wordList={by_vane_type_list} />
+          </div>
+          <div className="w-full md:flex justify-evenly">
+            <SeoKeyWords
+              title="By Space Preference"
+              wordList={space_preference_word_list}
+            />
+            <SeoKeyWords title="By Locality" wordList={locality_word_list} />
+          </div>
         </div>
       </div>
     </>

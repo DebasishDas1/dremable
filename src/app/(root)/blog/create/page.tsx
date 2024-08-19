@@ -1,5 +1,6 @@
 import PageTitle from "@/components/sheared/PageTitle";
 import BlogForm from "@/components/sheared/BlogForm";
+import "../blog.css";
 
 const CreateBlog = () => {
   return (

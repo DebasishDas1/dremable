@@ -1,7 +1,8 @@
 import BlogPost from "./BlogPost";
 import { IBlog } from "@/models/blog.model";
-import MoodBadIcon from "@mui/icons-material/MoodBad";
 import Pagination from "./Pagination";
+import Image from "next/image";
+import notFound from "../../../public/assets/Imagination-amico.png";
 
 type BlogPostContainersProps = {
   data?: IBlog[];
@@ -56,8 +57,12 @@ const BlogPostContainers = ({
           )}
         </div>
       ) : (
-        <div className="flex-center wrapper min-h-[300px] w-full flex-col gap-3 rounded-2xl bg-white py-50 text-center m-10">
-          <MoodBadIcon sx={{ fontSize: 100 }} />
+        <div className="flex-center wrapper min-h-[400px] w-full flex-col gap-3 rounded-2xl bg-white py-50 text-center mb-10">
+          <Image
+            src={notFound}
+            alt="Error"
+            style={{ height: "380px", width: "400px" }}
+          />
           <h3 className="p-bold-20 md:h5-bold">{emptyTitle}</h3>
           <p className="p-regular-14">{emptyStateSubtext}</p>
         </div>

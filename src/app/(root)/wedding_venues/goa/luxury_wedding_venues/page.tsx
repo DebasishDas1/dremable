@@ -35,9 +35,9 @@ const LuxuryWeddingVenues = () => {
     <>
       <SubNavBar SubNavBarItemList={LuxuryWeddingVenues_SubNavBar} />
       <div className="flex flex-col items-center text-center">
-        <div className="flex flex-col w-[85%] md:w-[75%] items-center">
+        <div className="flex flex-col w-[90%] md:w-[75%] items-center">
           <PageTitle title="Luxury 5 Star Hotels & Destination Wedding Venues In Goa" />
-          <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-10 md:gap-6">
             {goaLuxuryWeddingVenues.map((provider) => (
               <MagiciansCard
                 key={provider.name}

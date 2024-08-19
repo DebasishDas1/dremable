@@ -8,8 +8,13 @@ import {
   collectionOfWeddingVenues,
   effortlessPlanning,
   dremableAdvantage,
+  popular_searches_word_list,
+  by_vane_type_list,
+  locality_word_list,
+  space_preference_word_list,
 } from "@/lib/pageData/wedding_venues_kolkata_banquet_halls";
 import SubNavBar from "@/components/sheared/SubNavBar";
+import SeoKeyWords from "@/components/sheared/SeoKeyWords";
 
 export const metadata: Metadata = {
   title:
@@ -33,9 +38,9 @@ const BanquetHalls = () => {
     <>
       <SubNavBar SubNavBarItemList={BanquetHalls_SubNavBar} />
       <div className="flex flex-col items-center text-center">
-        <div className="flex flex-col md:w-[75%] w-[85%] items-center">
+        <div className="flex flex-col w-[90%] md:w-[75%] items-center">
           <PageTitle title="Best wedding venues & Banquet Halls in kolkata" />
-          <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-10 md:gap-6">
             {banquet.map((provider) => (
               <MagiciansCard
                 key={provider.name}
@@ -79,6 +84,20 @@ const BanquetHalls = () => {
           Dremable.com sets itself apart by offering a multitude of benefits
           that go beyond simply showcasing wedding venues:
           <PageBenefitOptions benefits={dremableAdvantage} />
+          <div className="w-full md:flex justify-evenly">
+            <SeoKeyWords
+              title="Popular Searches"
+              wordList={popular_searches_word_list}
+            />
+            <SeoKeyWords title="By Venue Type" wordList={by_vane_type_list} />
+          </div>
+          <div className="w-full md:flex justify-evenly">
+            <SeoKeyWords
+              title="By Space Preference"
+              wordList={space_preference_word_list}
+            />
+            <SeoKeyWords title="By Locality" wordList={locality_word_list} />
+          </div>
         </div>
       </div>
     </>

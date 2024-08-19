@@ -78,3 +78,40 @@ export const FaqSectionData = [
       "The delivery time varies depending on the photographer's workload. Typically, you can expect to receive a preview within a few weeks and the final edited photos within a couple of months.",
   },
 ];
+
+export const popular_searches_word_list = [
+  "Best Wedding Photographers in Goa",
+  "Wedding Photo Studio near me",
+  "Wedding Photography in and around Goa",
+  "List of Wedding Photographers in Goa",
+  "Wedding Photo Studio in Goa",
+  "Top Wedding Photographers in Goa",
+  "Goa Wedding Photography Packages",
+  "Wedding Photoshoot in Goa with prices",
+  "Goa Wedding Photography under 50000",
+  "Goa Wedding Photography under 100000",
+  "Goa Wedding Photography under 200000",
+  "Intimate Wedding Photographers in Goa",
+  "Engagement Photographers in Goa",
+  "Candid Photographers in Goa",
+  "Traditional Wedding Photographers in Goa",
+  "Vaccinated Photographers in Goa",
+];
+export const location_word_list = [
+  "Wedding Photographers in North Goa",
+  "Wedding Photographers in South Goa",
+  "Wedding Photographers in Panjim",
+  "Wedding Photographers in Margao",
+  "Wedding Photographers in Mapusa",
+  "Wedding Photographers in Ponda",
+  "Wedding Photographers in Vasco-Da-Gama",
+  "Wedding Photographers in Calangute",
+  "Wedding Photographers in Borim",
+  "Wedding Photographers in Velha Goa",
+];
+export const type_word_list = [
+  "Candid Wedding Photography in Goa",
+  "Traditional Wedding Photography in Goa",
+  "Pre Wedding Photographers in Goa",
+  "Wedding Videographers in Goa",
+];

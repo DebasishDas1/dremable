@@ -43,8 +43,8 @@ const MagiciansCard = ({
   }
 
   return (
-    <div className="group flex flex-col relative md:min-h-[200px] max-w-[600px] bg-white hover:shadow-2xl shadow-lg rounded-xl">
-      <div className="h-[280px] w-[100] relative rounded-lg overflow-hidden">
+    <div className="group flex flex-col relative md:min-h-[200px] max-w-[600px] bg-white hover:shadow-2xl rounded-3xl">
+      <div className="h-[280px] w-[100] relative rounded-3xl overflow-hidden">
         <Image
           src={imageUrl ? imageUrl : logo}
           fill

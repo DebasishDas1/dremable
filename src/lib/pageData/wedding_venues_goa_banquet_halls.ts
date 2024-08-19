@@ -194,3 +194,51 @@ export const booking_the_banquet_hall_in_goa = [
     benefitTitle: "Compare day and night rates for potential cost savings.",
   },
 ];
+
+export const popular_searches_word_list = [
+  "Best Banquet Halls in Goa",
+  "Marriage Halls near me",
+  "Function Halls in and around Goa",
+  "List of Wedding Banquets in Goa",
+  "Budget Convention halls in Goa",
+  "Top Rated Banquets in Goa",
+  "AC Banquet halls near me",
+  "Banquets in Goa with prices",
+  "Goa Banquets with price per plate under 500",
+  "Goa Banquets with price per plate under 1000",
+  "Goa Banquets with price per plate under 2000",
+  "Intimate Wedding Banquets in Goa",
+  "Small Wedding Banquets in Goa for 500 guests",
+  "Party halls in Goa for 500-1000 guests",
+  "Large Marriage halls in Goa for 1000-2000 guests",
+];
+
+export const by_vane_type_list = [
+  "Best Banquet halls in Goa",
+  "Best Lawns & Farmhouses in Goa",
+  "Best 4-Star Hotels in Goa",
+  "Best Wedding Resorts in Goa",
+  "Best Kalyana Mandapams in Goa",
+  "Best Small Function Halls in Goa",
+  "Best Heritage property in Goa",
+];
+
+export const locality_word_list = [
+  "Banquet Halls in North Goa",
+  "Banquet Halls in South Goa",
+  "Banquet Halls in Calangute",
+  "Banquet Halls in Panjim",
+  "Banquet Halls in Candolim",
+  "Banquet Halls in Baga",
+  "Banquet Halls in Morjim",
+  "Banquet Halls in Margao",
+  "anquet Halls in Anjuna",
+  "Banquet Halls in Vagator",
+];
+
+export const space_preference_word_list = [
+  "Indoor Venues in Goa",
+  "Outdoor Venues in Goa",
+  "Poolside Venues in Goa",
+  "Terrace Venues in Goa",
+];

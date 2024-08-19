@@ -24,6 +24,7 @@ const Search = ({
     if (currentQuery !== query) {
       setQuery(currentQuery);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   useEffect(() => {

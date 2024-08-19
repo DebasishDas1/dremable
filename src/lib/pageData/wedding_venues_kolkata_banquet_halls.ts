@@ -86,3 +86,51 @@ export const dremableAdvantage = [
       "Expand on the idea of Kolkata as a destination wedding location. Highlight the city's rich cultural heritage, diverse cuisine, and convenient travel connections. Offer guidance for couples planning a destination wedding in Kolkata, including logistics and vendor recommendations",
   },
 ];
+
+export const popular_searches_word_list = [
+  "Best Banquet Halls in Kolkata",
+  "Marriage Halls near me",
+  "Function Halls in and around Kolkata",
+  "List of Wedding Banquets in Kolkata",
+  "Budget Convention halls in Kolkata",
+  "Top Rated Banquets in Kolkata",
+  "AC Banquet halls near me",
+  "Banquets in Kolkata with prices",
+  "Kolkata Banquets with price per plate under 500",
+  "Kolkata Banquets with price per plate under 1000",
+  "Kolkata Banquets with price per plate under 2000",
+  "Intimate Wedding Banquets in Kolkata",
+  "Small Wedding Banquets in Kolkata for 500 guests",
+  "Party halls in Kolkata for 500-1000 guests",
+  "Large Marriage halls in Kolkata for 1000-2000 guests",
+];
+
+export const by_vane_type_list = [
+  "Best Banquet halls in Kolkata",
+  "Best Lawns & Farmhouses in Kolkata",
+  "Best 4 Star Hotels in Kolkata",
+  "Best Wedding Resorts in Kolkata",
+  "Best Kalyana Mandapams in Kolkata",
+  "Best Small Function Halls in Kolkata",
+  "Best Heritage property in Kolkata",
+];
+
+export const locality_word_list = [
+  "Indoor Venues in Kolkata",
+  "Outdoor Venues in Kolkata",
+  "Poolside Venues in Kolkata",
+  "Terrace Venues in Kolkata ",
+];
+
+export const space_preference_word_list = [
+  "Banquet Halls in North Kolkata",
+  "Banquet Halls in South 24 Parganas",
+  "Banquet Halls in North 24 Parganas ",
+  "Banquet Halls in South Kolkata",
+  "Banquet Halls in Ballygunge",
+  "Banquet Halls in Rajarhat New Town ",
+  "Banquet Halls in Howrah",
+  "Banquet Halls in Dum Dum",
+  "Banquet Halls in Sector 3 Salt Lake",
+  "Banquet Halls in Baguiati",
+];

@@ -104,7 +104,7 @@ type VenueOptionsNavProp = {
 const VenueOptionsNav = ({ name, url, imageUrl }: VenueOptionsNavProp) => {
   return (
     <Link className="py-2 text-3xl font-bold" href={url}>
-      <div className="h-[280px] w-[100] relative mb-4 rounded-xl overflow-hidden ">
+      <div className="h-[280px] w-[100] relative mb-4 rounded-3xl overflow-hidden ">
         <Image
           src={imageUrl}
           fill

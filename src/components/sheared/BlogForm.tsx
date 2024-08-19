@@ -124,7 +124,7 @@ const BlogForm = ({ type, oldBlog }: BlogFormProps) => {
   }
 
   return (
-    <div className="bg-white w-full p-3 border-r-8 rounded-xl shadow-lg">
+    <div className="bg-white w-full p-3 rounded-xl shadow-lg">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}

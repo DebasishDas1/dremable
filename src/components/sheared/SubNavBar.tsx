@@ -23,7 +23,7 @@ const SubNavBar = ({ SubNavBarItemList }: SubNavBarProps) => {
         <Link
           key={index}
           href={url}
-          className={`mx-3 text-center items-center px-8 rounded-lg hover:shadow-2xl shadow-lg md: flex
+          className={`mx-3 text-center items-center px-8 rounded-2xl hover:shadow-2xl shadow-lg md: flex
           ${pathname.includes(title.toLowerCase()) ? "bg-white" : "bg-white/30"}
           `}
         >

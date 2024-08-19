@@ -123,3 +123,47 @@ export const FaqSectionData = [
       "Consider creating a physical wedding album, printing selected images, or using digital storage options like external hard drives or cloud storage.",
   },
 ];
+
+export const popular_searches_word_list = [
+  "Best Wedding Photographers in Kolkata",
+  "Wedding Photography in and around Kolkata",
+  "List of Wedding Photographers in Kolkata",
+  "Top Wedding Photographers in Kolkata",
+  "Kolkata Wedding Photography Packages",
+  "Wedding Photoshoot in Kolkata with prices",
+  "Kolkata Wedding Photography under 50000",
+  "Kolkata Wedding Photography under 100000",
+  "Kolkata Wedding Photography under 200000",
+  "Intimate Wedding Photographers in Kolkata",
+  "Engagement Photographers in Kolkata",
+  "Candid Photographers in Kolkata",
+  "Traditional Wedding Photographers in Kolkata",
+  "Wedding Photo Studio near me",
+  "Pre wedding shoot in Kolkata",
+  "Pre wedding Photographers in Kolkata",
+  "Kolkata Bengali wedding photography",
+  "Marriage photography Kolkata",
+  "Wedding Videographers in Kolkata",
+];
+
+export const type_word_list = [
+  "Candid Wedding Photography in Kolkata",
+  "Traditional Wedding Photography in Kolkata",
+  "Pre-Wedding Photographers in Kolkata",
+  "Wedding Videographers in Kolkata",
+];
+
+export const location_word_list = [
+  "Wedding Photographers in North Kolkata",
+  "Wedding Photographers in North 24 Parganas",
+  "Wedding Photographers in South 24 Parganas ",
+  "Wedding Photographers in South Kolkata",
+  "Wedding Photographers in Dum Dum",
+  "Wedding Photographers in Howrah",
+  "Wedding Photographers in Rajarhat New Town",
+  "Wedding Photographers in Tollygunge",
+  "Wedding Photographers in Barasat",
+  "Wedding Photographers in Bhawanipur",
+  "Wedding Photographers in Behala",
+  "Wedding Photographers in Salt Lake",
+];

@@ -10,9 +10,13 @@ import {
   dreamPhotographer,
   FaqSectionData,
   Budget_Friendly,
+  popular_searches_word_list,
+  location_word_list,
+  type_word_list,
 } from "@/lib/pageData/wedding_magicians_kolkata_photographers";
 import SubNavBar from "@/components/sheared/SubNavBar";
 import FaqSection from "@/components/sheared/FaqSection";
+import SeoKeyWords from "@/components/sheared/SeoKeyWords";
 
 export const metadata: Metadata = {
   title: "25 Best Wedding Photographers in Kolkata near You- Dremable",
@@ -35,9 +39,9 @@ const Photographers = () => {
     <>
       <SubNavBar SubNavBarItemList={Photographers_SubNavBar} />
       <div className="flex flex-col items-center text-center">
-        <div className="flex flex-col w-[85%] md:w-[75%] items-center">
+        <div className="flex flex-col w-[90%] md:w-[75%] items-center">
           <PageTitle title="Best Wedding Photographers in Kolkata" />
-          <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-10 md:gap-6">
             {photographersData.map((provider) => (
               <MagiciansCard
                 key={provider.name}
@@ -97,6 +101,53 @@ const Photographers = () => {
             Photography
           </Title>
           <FaqSection list={FaqSectionData} />
+          <h2 className="font-bold text-xl my-4">
+            Latest Trends in Kolkata Bengali Wedding Photography: Capturing
+            Moments in Style
+          </h2>
+          Kolkata&apos;s wedding scene is a vibrant tapestry of traditions and
+          trends. Let&apos;s explore some of the latest photographic styles that
+          are making waves in the city of joy.
+          <h2 className="font-bold text-xl my-4">
+            Pre-Wedding Shoots: A Romantic Prelude
+          </h2>
+          Modern Bengali couples are embracing pre-wedding shoots as a way to
+          capture their love story before the big day. These photo sessions
+          offer a chance to experiment with different themes, locations, and
+          styles, creating a unique visual narrative. Whether it&apos;s a
+          fairytale-themed shoot or a casual outing, pre-wedding photography has
+          become an essential part of wedding planning.
+          <h2 className="font-bold text-xl my-4">
+            Drone Photography: A New Perspective
+          </h2>
+          With the rise of drone technology, Kolkata&apos;s wedding
+          photographers are offering a fresh perspective on capturing the
+          grandeur of Bengali weddings. Aerial shots provide stunning visuals of
+          the venue, guests, and the couple, adding a dramatic element to the
+          wedding album.
+          <h2 className="font-bold text-xl my-4">
+            Monochrome Magic: Timeless Elegance
+          </h2>
+          Black and white photography continues to be a popular choice for
+          Bengali weddings. The classic charm of monochrome images adds a touch
+          of sophistication and elegance to the wedding album. It highlights the
+          emotions and details, creating a timeless and artistic look.
+          <h2 className="font-bold text-xl my-4">
+            Mobile Photography: Capturing Candid Moments
+          </h2>
+          Smartphones have revolutionized the way we capture memories. With
+          advanced camera features, mobile photography has become a viable
+          option for capturing candid moments and behind-the-scenes glimpses at
+          the wedding festivities. It offers a more relaxed and intimate
+          perspective compared to traditional DSLR photography.
+          <div className="w-full md:flex">
+            <SeoKeyWords
+              title="Popular Searches"
+              wordList={popular_searches_word_list}
+            />
+            <SeoKeyWords title="By Type " wordList={type_word_list} />
+            <SeoKeyWords title="By Locality" wordList={location_word_list} />
+          </div>
         </div>
       </div>
     </>

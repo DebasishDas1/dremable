@@ -115,7 +115,7 @@ const BlogDetailsPage = async ({
       </div>
 
       <div className="blogContent">
-        <div className="w-[93%] flex items-center flex-col text-center text-clip">
+        <div className="w-[93%] flex items-center flex-col">
           {/* <div dangerouslySetInnerHTML={{ __html: blogDetails.content }} /> */}
           <Markdown>{blogDetails.content}</Markdown>
         </div>

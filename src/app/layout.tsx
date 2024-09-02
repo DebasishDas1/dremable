@@ -33,14 +33,14 @@ export const metadata: Metadata = {
       "Your Dream Wedding starts from here. Get All Top wedding planners, photographers, vendors & Venues in a single click. Let’s Turn your Love story into a Timeless Celebration.",
     url: "https://www.dremable.com/",
     siteName: "Dremable - India’s One-Stop Wedding Planning Platform",
-    images: "../../public/longLogo.png",
+    images: "../../public/assets/longLogo_2.png",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Dremable - India’s One-Stop Wedding Planning Platform",
-    images: ["../../public/longLogo.png"],
+    images: ["../../public/assets/longLogo_2.png"],
   },
 };
 

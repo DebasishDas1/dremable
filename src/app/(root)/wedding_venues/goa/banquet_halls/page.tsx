@@ -23,8 +23,7 @@ import FaqSection from "@/components/sheared/FaqSection";
 import SeoKeyWords from "@/components/sheared/SeoKeyWords";
 
 export const metadata: Metadata = {
-  title:
-    "Top 10 Banquet Halls in Goa | Best Affordable Wedding Venues -Reviews",
+  title: "Top 10 Banquet Halls in Goa | Best Affordable Wedding Venues Reviews",
   description: `Planning a Goa wedding? Find the best banquet halls for your special day. We offer a wide range of options to suit every style and budget. Book now!`,
 };
 

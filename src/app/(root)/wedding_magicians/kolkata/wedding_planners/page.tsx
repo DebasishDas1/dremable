@@ -21,7 +21,7 @@ import FaqSection from "@/components/sheared/FaqSection";
 import SeoKeyWords from "@/components/sheared/SeoKeyWords";
 
 export const metadata: Metadata = {
-  title: "25 Best Wedding Planners in Kolkata for You - Dremable",
+  title: "25 Best Wedding Planners in Kolkata for You",
   description:
     "Searching for the Best Wedding Planner in Kolkata ? Dremable connects you with top Marriage planners in Kolkata, making your dream wedding a reality.",
 };

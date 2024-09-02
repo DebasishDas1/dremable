@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Dremable - Your Dream Wedding starts from here",
+  title: "Your Dream Wedding starts from here",
   description:
     "Dream of a perfect wedding? Dremable makes it real! From wedding planners & photographers to makeup artists & vendors, find everything as you dream.",
 };

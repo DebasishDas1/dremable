@@ -14,7 +14,7 @@ import {
 import SubNavBar from "@/components/sheared/SubNavBar";
 
 export const metadata: Metadata = {
-  title: "Bridal Makeup Artist in Kolkata |Best Makeup near me-Dremable",
+  title: "Bridal Makeup Artist in Kolkata |Best Makeup near me",
   description: `Dream of picture-perfect Wedding glow? Dremable connects you with Kolkata's best bridal makeup artists  Discover best makeup artists with top Ratings`,
 };
 

@@ -15,6 +15,7 @@ import { formatDateTime } from "@/lib/utils";
 import Link from "next/link";
 import type { Metadata } from "next";
 import BlogPostContainers from "@/components/sheared/BlogPostContainers";
+import Markdown from "react-markdown";
 import "../blog.css";
 
 interface BlogDetailsPageProps {
@@ -26,9 +27,27 @@ export async function generateMetadata({
   params,
 }: BlogDetailsPageProps): Promise<Metadata> {
   const blogDetails = await getBlogByUrlKey(params.urlKey);
+  const publishedAt = new Date(blogDetails.date).toISOString();
+
   return {
     title: blogDetails.title,
     description: blogDetails.description.substring(0, 150) + "...",
+    openGraph: {
+      title: blogDetails.title,
+      description: blogDetails.description.substring(0, 50) + "...",
+      url: `https://www.dremable.com/${blogDetails.url}`,
+      siteName: "Dremable",
+      locale: "en_US",
+      type: "article",
+      publishedTime: publishedAt,
+      images: blogDetails.imageUrl,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: blogDetails.title,
+      description: blogDetails.description.substring(0, 50) + "...",
+      images: blogDetails.imageUrl,
+    },
   };
 }
 
@@ -51,7 +70,7 @@ const BlogDetailsPage = async ({
         <div className="md:text-6xl md:p-10 text-3xl font-bold p-4 text-center md:w-[85%]">
           {blogDetails.header}
         </div>
-        <div className="h-[300px] md:h-[600px] w-[95%] relative mb-4 rounded-3xl overflow-hidden ">
+        <div className="h-[333px] md:h-[600px] w-[95%] relative mb-4 rounded-3xl overflow-hidden ">
           <Image
             src={blogDetails.imageUrl}
             alt={blogDetails.title}
@@ -71,13 +90,13 @@ const BlogDetailsPage = async ({
             <Place className="mr-3" />
             {blogDetails.location}
           </p>
+        </div>
+
+        <div className="flex gap-3 p-2 text-sm">
           <p className="rounded-full bg-yellow-500/10 px-4 py-2 flex items-center">
             <CalendarMonth className="mr-3" />
             {formatDateTime(blogDetails.date).dateOnly}
           </p>
-        </div>
-
-        <div className="flex gap-3 p-2 text-sm">
           {blogDetails.url && (
             <Link
               href={blogDetails.url}
@@ -95,8 +114,11 @@ const BlogDetailsPage = async ({
         </div>
       </div>
 
-      <div className="md:w-[75%] w-[93%]">
-        <div dangerouslySetInnerHTML={{ __html: blogDetails.content }} />
+      <div className="blogContent">
+        <div className="w-[93%] flex items-center flex-col text-center text-clip">
+          {/* <div dangerouslySetInnerHTML={{ __html: blogDetails.content }} /> */}
+          <Markdown>{blogDetails.content}</Markdown>
+        </div>
       </div>
 
       <div className="md:text-4xl text-2xl font-bold py-10 text-center">

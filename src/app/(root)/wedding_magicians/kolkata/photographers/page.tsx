@@ -19,7 +19,7 @@ import FaqSection from "@/components/sheared/FaqSection";
 import SeoKeyWords from "@/components/sheared/SeoKeyWords";
 
 export const metadata: Metadata = {
-  title: "25 Best Wedding Photographers in Kolkata near You- Dremable",
+  title: "25 Best Wedding Photographers in Kolkata near You",
   description: `Looking for Best Wedding Photographers in Kolkata? Dremable connects you with Kolkata's top Photographers expert in pre wedding & candid photography`,
 };
 

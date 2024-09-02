@@ -13,8 +13,7 @@ import {
 import FaqSection from "@/components/sheared/FaqSection";
 
 export const metadata: Metadata = {
-  title:
-    "20 Best Wedding Makeup Artists in Goa | Bridal Makeup for You-Dremable",
+  title: "20 Best Wedding Makeup Artists in Goa | Bridal Makeup for You",
   description: `Unveil your bridal glow with Goa's top-rated makeup artists! Dremable connects you with experts for flawless, long-lasting looks.`,
 };
 

@@ -17,7 +17,7 @@ import FaqSection from "@/components/sheared/FaqSection";
 import SeoKeyWords from "@/components/sheared/SeoKeyWords";
 
 export const metadata: Metadata = {
-  title: "Get 20 Best Destination Wedding Planners In Goa for You - Dremable",
+  title: "Get 20 Best Destination Wedding Planners In Goa for You",
   description:
     "Plan your dream Destination wedding in Goa with Dremable! Find top wedding planners in Goa. Stress-free One Stop planning for an unforgettable wedding awaits.",
 };
@@ -40,7 +40,6 @@ const weddingPlanners = () => {
       <div className="flex flex-col items-center text-center">
         <div className="flex flex-col w-[90%] md:w-[75%] items-center">
           <PageTitle title="Wedding Planners in Goa" />
-          <h1 className="hidden">Wedding Planners in Goa</h1>
           <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-10 md:gap-6">
             {goaPlannerData.map((provider) => (
               <MagiciansCard

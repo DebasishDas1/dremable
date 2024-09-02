@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import home_page_pc from "../../public/assets/home_page_pc.jpg";
+import home_page_pc from "../../public/assets/home_page_pc_1.jpg";
 import home_page_mobile from "../../public/assets/home_page_mobile_2.jpeg";
 
 const HeroSection = () => {
@@ -11,7 +11,7 @@ const HeroSection = () => {
         <div className="h-[650px] w-screen relative overflow-hidden">
           <Image
             src={home_page_mobile}
-            alt="landing page"
+            alt="Dremable - India’s One-Stop Wedding Planning Platform"
             fill
             priority
             className="object-cover"
@@ -20,7 +20,7 @@ const HeroSection = () => {
         </div>
         <div className="absolute bottom-0 text-5xl flex flex-col items-center bg-gradient-to-b from-transparent via-transparent to-zinc-200">
           <div className="w-[90%] font-bold">
-            Crafting Timeless Celebrations
+            India&apos;s one Stop Wedding Platform
           </div>
           <div className="w-[90%] text-sm">
             Your dream wedding starts from here. Expression of Dreams
@@ -39,16 +39,16 @@ const HeroSection = () => {
         <div className="h-[1200px] w-screen relative overflow-hidden">
           <Image
             src={home_page_pc}
-            alt="landing page"
+            alt="Dremable - India’s One-Stop Wedding Planning Platform"
             fill
             priority
             className="object-cover"
             sizes="(min-width: 769px) 100vw, 1200px"
           />
         </div>
-        <div className="absolute top-[500px] text-8xl flex flex-col w-full items-center">
-          <div className="font-bold">Crafting </div>
-          <div className="font-bold pb-2">Timeless Celebrations</div>
+        <div className="absolute top-[420px] text-8xl flex flex-col w-full items-center">
+          <div className="font-bold">India&apos;s One Stop </div>
+          <div className="font-bold pb-2">Wedding Platform </div>
           <div className="w-[60%] text-lg pb-5 text-center">
             Your dream wedding starts from here. Expression of Dreams
             specializes in turning your love story into a breathtaking

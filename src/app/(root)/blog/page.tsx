@@ -7,7 +7,7 @@ import CategoryFilter from "@/components/sheared/CategoryFilter";
 import "./blog.css";
 
 export const metadata: Metadata = {
-  title: "Blogs - Dremable",
+  title: "Blogs",
   description: "Blogs - Dremable",
 };
 
@@ -30,7 +30,7 @@ const Blog = async ({ searchParams }: SearchParamProps) => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex flex-col w-[90%] items-center">
+      <div className="flex flex-col md:w-[65%] w-[90%] items-center">
         <PageTitle title="Wedding Blog" />
 
         <div className="md:flex w-full">

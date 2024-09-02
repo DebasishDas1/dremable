@@ -16,7 +16,7 @@ import FaqSection from "@/components/sheared/FaqSection";
 import SeoKeyWords from "@/components/sheared/SeoKeyWords";
 
 export const metadata: Metadata = {
-  title: "Top 20 Destination Wedding Photographers in Goa -Dremable",
+  title: "Top 20 Destination Wedding Photographers in Goa",
   description: `Capture memories that last a lifetime! Find Goa's top destination wedding photographers on Dremable. Stunning beach weddings, vibrant celebrations`,
 };
 

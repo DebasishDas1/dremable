@@ -28,7 +28,7 @@ const magicians_options_data = [
 ];
 
 export const metadata: Metadata = {
-  title: "Wedding Venues - Dremable",
+  title: "Wedding Venues",
   description: `Find the best wedding venue near you`,
 };
 

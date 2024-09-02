@@ -20,9 +20,28 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Dremable - Your Dream Wedding starts from here",
+  metadataBase: new URL("https://www.dremable.com/"),
+  title: {
+    template: `%s - Dremable`,
+    default: "Dremable - India’s One-Stop Wedding Planning Platform",
+  },
   description:
-    "Dream of a perfect wedding? Dremable makes it real! From wedding planners & photographers to makeup artists & vendors, find everything as you dream.",
+    "Your Dream Wedding starts from here. Get All Top wedding planners, photographers, vendors & Venues in a single click. Let’s Turn your Love story into a Timeless Celebration.",
+  openGraph: {
+    title: "Dremable - India’s One-Stop Wedding Planning Platform",
+    description:
+      "Your Dream Wedding starts from here. Get All Top wedding planners, photographers, vendors & Venues in a single click. Let’s Turn your Love story into a Timeless Celebration.",
+    url: "https://www.dremable.com/",
+    siteName: "Dremable - India’s One-Stop Wedding Planning Platform",
+    images: "../../public/longLogo.png",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dremable - India’s One-Stop Wedding Planning Platform",
+    images: ["../../public/longLogo.png"],
+  },
 };
 
 export default function RootLayout({

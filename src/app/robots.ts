@@ -4,10 +4,11 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        userAgent: ["Googlebot", "Applebot", "Bingbot"],
-        allow: ["/"],
-        disallow: ["/blog/create", "/community"],
+        userAgent: "*",
+        allow: "/",
+        // disallow: ["/blog/create", "/community", "/magicians"],
       },
     ],
+    sitemap: "https://www.dremable.com/sitemap.xml",
   };
 }

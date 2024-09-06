@@ -6,6 +6,10 @@ import Community from "./Community";
 export const metadata: Metadata = {
   title: "Community",
   description: "Community - Dremable",
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 const blog: React.FC = () => {

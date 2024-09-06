@@ -75,8 +75,6 @@ export const getBlogByUrlKey = async (urlKey: string) => {
 
     const blog = await Blog.findOne({ urlKey });
 
-    if (!blog) throw new Error("event not found");
-
     return JSON.parse(JSON.stringify(blog));
   } catch (error) {
     handleError(error);

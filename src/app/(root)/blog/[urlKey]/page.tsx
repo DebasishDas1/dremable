@@ -145,7 +145,6 @@ const BlogDetailsPage = async ({
           )}
         </div>
       </div>
-      for large screen all in one line
       <BlogContent content={blogDetails.content} />
       <div className="md:text-4xl text-2xl font-bold py-10 text-center">
         Related Blogs

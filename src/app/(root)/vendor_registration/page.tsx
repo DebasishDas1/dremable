@@ -4,6 +4,10 @@ import VendorRegistrationForm from "@/containers/VendorRegistrationForm";
 export const metadata: Metadata = {
   title: `Grow Your Wedding Business faster : Register as a Vendor`,
   description: `Join Dremable's thriving Platform & connect with potential couples! Easy vendor Registration, Showcase your work & Get booked for Dream Weddings.`,
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 const VendorRegistration = () => {

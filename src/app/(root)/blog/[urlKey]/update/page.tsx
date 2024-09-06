@@ -1,7 +1,17 @@
+import type { Metadata } from "next";
 import { getBlogByUrlKey } from "@/actions/blog.action";
 import PageTitle from "@/components/sheared/PageTitle";
 import BlogForm from "@/components/sheared/BlogForm";
 import "../../blog.css";
+
+export const metadata: Metadata = {
+  title: "Update blog",
+  description: "Update blog - Dremable",
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 type UpdateBlogProps = {
   params: { urlKey: string };

@@ -7,6 +7,7 @@ import home_page_mobile from "../../public/assets/home_page_mobile_2.jpeg";
 const HeroSection = () => {
   return (
     <div className="flex flex-col items-center text-center text-white">
+      {/* Mobile View */}
       <div className="relative flex md:hidden">
         <div className="h-[650px] w-screen relative overflow-hidden">
           <Image
@@ -19,14 +20,13 @@ const HeroSection = () => {
           />
         </div>
         <div className="absolute bottom-0 text-5xl flex flex-col items-center bg-gradient-to-b from-transparent via-transparent to-zinc-200">
-          <div className="w-[90%] font-bold">
+          <div className="w-[90%] font-bold bg-gradient-to-br from-indigo-300 via-purple-300 to-pink-300 text-transparent bg-clip-text">
             India&apos;s one Stop Wedding Platform
           </div>
           <div className="w-[90%] text-sm">
-            Your dream wedding starts from here. Expression of Dreams
-            specializes in turning your love story into a breathtaking
-            celebration, blending elegance, imagination, and heartfelt
-            dedication
+            Your Dream Wedding starts from here. Get All Top wedding planners,
+            photographers, vendors & Venues in a single click. Let’s Turn your
+            Love story into a Timeless Celebration
           </div>
           <Button size="lg" asChild className="button w-fit mt-4">
             <Link href={"/wedding_magicians/kolkata/wedding_planners"}>
@@ -35,8 +35,10 @@ const HeroSection = () => {
           </Button>
         </div>
       </div>
-      <div className="hidden md:flex">
-        <div className="h-[1200px] w-screen relative overflow-hidden">
+
+      {/* Desktop View */}
+      <div className="relative hidden md:flex">
+        <div className="h-[600px] w-screen relative overflow-hidden">
           <Image
             src={home_page_pc}
             alt="Dremable - India’s One-Stop Wedding Planning Platform"
@@ -46,14 +48,18 @@ const HeroSection = () => {
             sizes="(min-width: 769px) 100vw, 1200px"
           />
         </div>
-        <div className="absolute top-[420px] text-8xl flex flex-col w-full items-center">
-          <div className="font-bold">India&apos;s One Stop </div>
-          <div className="font-bold pb-2">Wedding Platform </div>
-          <div className="w-[60%] text-lg pb-5 text-center">
-            Your dream wedding starts from here. Expression of Dreams
-            specializes in turning your love story into a breathtaking
-            celebration, blending elegance, imagination, and heartfelt
-            dedication
+
+        {/* White Gradient at Bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-60 bg-gradient-to-t from-zinc-200 to-transparent"></div>
+
+        <div className="absolute top-0 text-8xl flex flex-col items-center w-screen backdrop-blur-3xl bg-white/10 pb-6 pt-14 rounded-b-full shadow-2xl">
+          <h2 className="w-[70%] font-poppins bg-gradient-to-br from-indigo-500 via-purple-300 to-pink-300 text-transparent bg-clip-text">
+            India&apos;s one Stop Wedding Platform
+          </h2>
+          <div className="w-[60%] text-lg pb-5 text-center text-white">
+            Your Dream Wedding starts from here. Get All Top wedding planners,
+            photographers, vendors & Venues in a single click. Let’s Turn your
+            Love story into a Timeless Celebration
           </div>
           <Button size="lg" asChild className="button w-full sm:w-fit">
             <Link href={"/wedding_magicians/kolkata/wedding_planners"}>

@@ -137,7 +137,7 @@ const DremableFeatures = async () => {
           data={blogs?.data}
           emptyTitle="No Blog Found"
           emptyStateSubtext="try searching for a different blog"
-          collectionType="All_Events"
+          collectionType="All_Blogs"
           limit={6}
           page={1}
           totalPages={blogs?.totalPages}

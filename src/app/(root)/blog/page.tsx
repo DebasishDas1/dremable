@@ -42,7 +42,7 @@ const Blog = async ({ searchParams }: SearchParamProps) => {
           data={blogs?.data}
           emptyTitle="No Blog Found"
           emptyStateSubtext="try searching for a different blog"
-          collectionType="All_Events"
+          collectionType="All_Blogs"
           limit={6}
           page={page}
           totalPages={blogs?.totalPages}

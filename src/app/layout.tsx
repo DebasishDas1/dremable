@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import { Toaster } from "sonner";
+import dynamic from "next/dynamic";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "@/app/api/uploadthing/core";
@@ -9,10 +9,20 @@ import {
   SeoOptimizationHeader,
   SeoOptimizationBody,
 } from "@/components/sheared/Seo";
-import WhatsAppFloat from "@/components/sheared/WhatsAppFloat";
 import { Partytown } from "@builder.io/partytown/react";
+import Script from "next/script";
 import "./globals.css";
 
+// Lazy load non-critical components
+const WhatsAppFloat = dynamic(
+  () => import("@/components/sheared/WhatsAppFloat"),
+  { ssr: false }
+);
+const Toaster = dynamic(() => import("sonner").then((mod) => mod.Toaster), {
+  ssr: false,
+});
+
+// Preload Google Font (Poppins)
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -27,20 +37,8 @@ export const metadata: Metadata = {
   },
   description:
     "Your Dream Wedding starts from here. Get All Top wedding planners, photographers, vendors & Venues in a single click. Let’s Turn your Love story into a Timeless Celebration.",
-  openGraph: {
-    title: "Dremable - India’s One-Stop Wedding Planning Platform",
-    description:
-      "Your Dream Wedding starts from here. Get All Top wedding planners, photographers, vendors & Venues in a single click. Let’s Turn your Love story into a Timeless Celebration.",
-    url: "https://www.dremable.com/",
-    siteName: "Dremable - India’s One-Stop Wedding Planning Platform",
-    images: "../../public/assets/longLogo_2.png",
-    locale: "en_US",
-    type: "website",
-  },
   twitter: {
     card: "summary_large_image",
-    title: "Dremable - India’s One-Stop Wedding Planning Platform",
-    images: ["../../public/assets/longLogo_2.png"],
   },
 };
 
@@ -53,14 +51,36 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <head>
+          {/* Preload Poppins font to prevent render-blocking */}
+          <link
+            rel="preload"
+            href="/fonts/poppins-latin.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
           <SeoOptimizationHeader />
+
+          {/* Partytown setup with deferred scripts */}
           <Partytown debug={true} forward={["dataLayer.push"]} />
         </head>
         <body className={poppins.variable}>
           <SeoOptimizationBody />
+
+          {/* External script optimized using next/script */}
+          <Script
+            src="https://example.com/non-essential-script.js"
+            strategy="lazyOnload" // Loads when the page is idle
+          />
+
+          {/* NextSSRPlugin for file upload */}
           <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
+
+          {/* Lazy-loaded components */}
           <WhatsAppFloat />
           <Toaster richColors />
+
+          {/* Main content */}
           {children}
         </body>
       </html>

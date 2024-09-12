@@ -18,6 +18,7 @@ import type { Metadata } from "next";
 import BlogPostContainers from "@/components/sheared/BlogPostContainers";
 import { notFound } from "next/navigation";
 import BlogContent from "@/components/sheared/BlogContent";
+import shortLogo from "../../../../../public/shortLogo.png";
 
 interface BlogDetailsPageProps {
   params: { urlKey: string };
@@ -96,13 +97,15 @@ const BlogDetailsPage = async ({
           {blogDetails.header}
         </div>
 
-        <div className="h-[333px] md:h-[600px] w-[95%] relative mb-4 rounded-3xl overflow-hidden">
+        <div className="h-[333px] md:h-[600px] w-[95%] relative mb-4 rounded-3xl overflow-hidden shadow-2xl">
           <Image
             src={blogDetails.imageUrl}
             alt={blogDetails.title}
             fill
             priority
             className="object-cover"
+            placeholder="blur"
+            blurDataURL={shortLogo.src} // Use the `src` property to pass the string URL
             sizes="(min-width: 780px) 70vw, 100vw"
           />
         </div>

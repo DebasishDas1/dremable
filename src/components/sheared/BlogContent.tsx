@@ -44,16 +44,14 @@ const BlogContent = ({ content }: { content: string }) => {
           ),
           img: ({ node, ...props }) => (
             <img
-              className="w-full max-w-[700px] h-auto rounded-xl shadow-lg my-4"
+              className="w-full max-w-[700px] h-auto rounded-2xl shadow-xl my-4"
               alt={props.alt || "Blog image - Dremable"}
               src={props.src}
               {...props}
             />
           ),
-          // Italic: <em> or <i>
           em: ({ node, ...props }) => <em className="italic" {...props} />,
           i: ({ node, ...props }) => <i className="italic" {...props} />,
-          // Underline: <u>
           u: ({ node, ...props }) => <u className="underline" {...props} />,
         }}
       >

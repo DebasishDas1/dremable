@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import PageTitle from "@/components/sheared/PageTitle";
 import BlogForm from "@/components/sheared/BlogForm";
-import "../blog.css";
 
 export const metadata: Metadata = {
   title: "Create blog",

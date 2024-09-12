@@ -16,7 +16,6 @@ import { formatDateTime } from "@/lib/utils";
 import Link from "next/link";
 import type { Metadata } from "next";
 import BlogPostContainers from "@/components/sheared/BlogPostContainers";
-import "../blog.css";
 import { notFound } from "next/navigation";
 import BlogContent from "@/components/sheared/BlogContent";
 

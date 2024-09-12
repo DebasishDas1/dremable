@@ -14,6 +14,15 @@ const BlogContent = ({ content }: { content: string }) => {
           h3: ({ node, ...props }) => (
             <h3 className="text-2xl font-medium my-2" {...props} />
           ),
+          h4: ({ node, ...props }) => (
+            <h4 className="text-xl font-medium my-2" {...props} />
+          ),
+          h5: ({ node, ...props }) => (
+            <h5 className="text-xl font-medium my-2 bg-violet-200" {...props} />
+          ),
+          b: ({ node, ...props }) => (
+            <b className="text-border leading-relaxed my-2" {...props} />
+          ),
           p: ({ node, ...props }) => (
             <p className="text-base leading-relaxed my-2" {...props} />
           ),
@@ -25,7 +34,7 @@ const BlogContent = ({ content }: { content: string }) => {
           ),
           li: ({ node, ...props }) => <li className="ml-4" {...props} />,
           a: ({ node, ...props }) => (
-            <a className="text-blue-500 hover:underline" {...props} />
+            <a className="text-violet-500 hover:underline" {...props} />
           ),
           blockquote: ({ node, ...props }) => (
             <blockquote
@@ -41,6 +50,11 @@ const BlogContent = ({ content }: { content: string }) => {
               {...props}
             />
           ),
+          // Italic: <em> or <i>
+          em: ({ node, ...props }) => <em className="italic" {...props} />,
+          i: ({ node, ...props }) => <i className="italic" {...props} />,
+          // Underline: <u>
+          u: ({ node, ...props }) => <u className="underline" {...props} />,
         }}
       >
         {content}

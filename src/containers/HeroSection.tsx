@@ -20,7 +20,7 @@ const HeroSection = () => {
           />
         </div>
         <div className="absolute bottom-0 text-5xl flex flex-col items-center bg-gradient-to-b from-transparent via-transparent to-zinc-200">
-          <div className="w-[90%] font-bold bg-gradient-to-br from-indigo-300 via-purple-300 to-pink-300 text-transparent bg-clip-text">
+          <div className="w-[90%] font-black bg-white/70 text-transparent bg-clip-text pb-4">
             India&apos;s one Stop Wedding Platform
           </div>
           <div className="w-[90%] text-sm">
@@ -52,8 +52,8 @@ const HeroSection = () => {
         {/* White Gradient at Bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-60 bg-gradient-to-t from-zinc-200 to-transparent"></div>
 
-        <div className="absolute top-0 text-8xl flex flex-col items-center w-screen backdrop-blur-3xl bg-white/10 pb-6 pt-14 rounded-b-full shadow-2xl">
-          <h2 className="w-[70%] font-poppins bg-gradient-to-br from-indigo-500 via-purple-300 to-pink-300 text-transparent bg-clip-text">
+        <div className="absolute top-0 text-8xl flex flex-col items-center w-screen pb-6 pt-14">
+          <h2 className="w-[70%] bg-white/60 text-transparent bg-clip-text font-bold p-6">
             India&apos;s one Stop Wedding Platform
           </h2>
           <div className="w-[60%] text-lg pb-5 text-center text-white">

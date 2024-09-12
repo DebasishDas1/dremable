@@ -279,7 +279,14 @@ const BlogForm = ({ type, oldBlog }: BlogFormProps) => {
                       <CalendarMonth />
                       <DatePicker
                         selected={field.value}
-                        onChange={(date: Date) => field.onChange(date)}
+                        onChange={(date: Date | null) => {
+                          if (date) {
+                            field.onChange(date);
+                          } else {
+                            // Handle the case where date is null, if needed
+                            field.onChange(null);
+                          }
+                        }}
                         showTimeSelect
                         timeInputLabel="Time:"
                         wrapperClassName="datePicker"

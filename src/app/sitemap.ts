@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllBlog } from "@/actions/blog.action";
 
-const base_url = "https://www.dremable.com/";
+const base_url = "https://www.dremable.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogs = await getAllBlog({

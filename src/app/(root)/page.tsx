@@ -21,10 +21,8 @@ export default function Home() {
           your special day.
         </div>
 
-        {/* Features Section */}
         <DremableFeatures />
 
-        {/* Benefits Section */}
         <Title> How Dremable makes your planning smooth sailing</Title>
         {benefits.map(({ title, describe }) => (
           <div

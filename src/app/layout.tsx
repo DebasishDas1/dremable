@@ -51,16 +51,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <head>
-          {/* Preload Poppins font to prevent render-blocking */}
-          <link
-            rel="preload"
-            href="/fonts/poppins-latin.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
           <SeoOptimizationHeader />
-
           {/* Partytown setup with deferred scripts */}
           <Partytown debug={true} forward={["dataLayer.push"]} />
         </head>

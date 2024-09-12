@@ -12,6 +12,10 @@ export default function Loading() {
           <WeddingCardSkeleton />
           <WeddingCardSkeleton />
           <WeddingCardSkeleton />
+          <WeddingCardSkeleton />
+          <WeddingCardSkeleton />
+          <WeddingCardSkeleton />
+          <WeddingCardSkeleton />
         </ul>
       </div>
     </div>

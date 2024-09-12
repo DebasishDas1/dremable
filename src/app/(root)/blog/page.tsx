@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { getAllBlog } from "@/actions/blog.action";
 import Search from "@/components/sheared/Search";
 import CategoryFilter from "@/components/sheared/CategoryFilter";
-import "./blog.css";
 
 export const metadata: Metadata = {
   title: "Blogs",

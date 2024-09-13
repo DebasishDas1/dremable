@@ -51,18 +51,12 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <head>
-          <SeoOptimizationHeader />
+          {/* <SeoOptimizationHeader /> */}
           {/* Partytown setup with deferred scripts */}
           <Partytown debug={true} forward={["dataLayer.push"]} />
         </head>
         <body className={poppins.variable}>
-          <SeoOptimizationBody />
-
-          {/* External script optimized using next/script */}
-          <Script
-            src="https://example.com/non-essential-script.js"
-            strategy="lazyOnload" // Loads when the page is idle
-          />
+          {/* <SeoOptimizationBody /> */}
 
           {/* NextSSRPlugin for file upload */}
           <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />

@@ -44,7 +44,7 @@ const BlogContent = ({ content }: { content: string }) => {
           ),
           img: ({ node, ...props }) => (
             <img
-              className="w-full max-w-[700px] h-auto rounded-2xl shadow-xl my-4"
+              className="w-full max-w-[700px] h-auto rounded-2xl shadow-2xl my-4"
               alt={props.alt || "Blog image - Dremable"}
               src={props.src}
               {...props}

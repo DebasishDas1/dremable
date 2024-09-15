@@ -8,7 +8,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col bg-zinc-200">
+    <div className="flex flex-col bg-zinc-100">
       <NavBar />
       <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
       <Footer />

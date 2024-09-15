@@ -30,7 +30,7 @@ const BlogPostContainers = ({
     <>
       {hasData ? (
         <div className="flex flex-col items-center gap-10">
-          <ul className="grid w-full grid-cols-1 gap-5">
+          <ul className="grid w-full grid-cols-1 gap-8">
             {data.map((blog) => {
               const hasOrderLink = collectionType === "Events_Organized";
               return (
@@ -57,7 +57,7 @@ const BlogPostContainers = ({
           )}
         </div>
       ) : (
-        <div className="flex-center wrapper min-h-[400px] w-full flex-col gap-3 rounded-2xl bg-white py-50 text-center mb-10">
+        <div className="flex-center wrapper min-h-[400px] w-full flex-col gap-3 rounded-3xl bg-white py-50 text-center mb-10">
           <Image
             src={notFound}
             alt="Error"

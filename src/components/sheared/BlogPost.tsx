@@ -35,7 +35,7 @@ const BlogPost = ({
   const limitedDescription = limitDescription(description);
 
   return (
-    <div className="group relative flex flex-col md:min-h-[200px] max-w-[600px] overflow-hidden rounded-xl bg-white">
+    <div className="group relative flex flex-col md:min-h-[200px] max-w-[600px] overflow-hidden rounded-2xl bg-white shadow-xl">
       <Link
         href={`/blog/${urlKey}`}
         className="flex-center flex-grow bg-cover bg-center md:hidden h-[120px] relative "

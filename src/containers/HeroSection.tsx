@@ -19,7 +19,7 @@ const HeroSection = () => {
             sizes="(max-width: 768px) 100vw, 650px"
           />
         </div>
-        <div className="absolute bottom-0 text-5xl flex flex-col items-center bg-gradient-to-b from-transparent via-transparent to-zinc-200">
+        <div className="absolute bottom-0 text-5xl flex flex-col items-center bg-gradient-to-b from-transparent via-transparent to-zinc-100">
           <div className="w-[90%] font-black bg-white/70 text-transparent bg-clip-text pb-4">
             India&apos;s one Stop Wedding Platform
           </div>
@@ -50,7 +50,7 @@ const HeroSection = () => {
         </div>
 
         {/* White Gradient at Bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-60 bg-gradient-to-t from-zinc-200 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-60 bg-gradient-to-t from-zinc-100 to-transparent"></div>
 
         <div className="absolute top-0 text-8xl flex flex-col items-center w-screen pb-6 pt-14">
           <h2 className="w-[70%] bg-white/60 text-transparent bg-clip-text font-bold p-6">

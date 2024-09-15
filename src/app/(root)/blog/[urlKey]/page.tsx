@@ -94,13 +94,13 @@ const BlogDetailsPage = async ({
   const blurDataURL = `https://drive.google.com/uc?export=view&id=1JQZm2NANXRyYPCywf3NN_gXDxlZjCFhS`;
 
   return (
-    <div className="flex flex-col items-center bg-zinc-100">
+    <div className="flex flex-col items-center">
       <div className="flex flex-col md:w-[80%] w-full items-center">
-        <div className="md:text-6xl md:py-10 text-3xl font-extrabold p-8 text-center w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+        <div className="md:text-6xl md:py-10 text-3xl font-extrabold px-4 py-8 text-center w-full">
           {blogDetails.header}
         </div>
 
-        <div className="h-[333px] md:h-[600px] w-[95%] relative mb-4 rounded-3xl overflow-hidden shadow-2xl">
+        <div className="h-[333px] md:h-[600px] w-[95%] relative mb-6 rounded-3xl overflow-hidden shadow-2xl">
           <Image
             src={blogDetails.imageUrl}
             alt={blogDetails.title}

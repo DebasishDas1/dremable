@@ -11,6 +11,8 @@ import {
   CalendarMonth,
   PhoneIphone,
   InsertLink,
+  AutoFixHigh,
+  FmdGood,
 } from "@mui/icons-material";
 import { formatDateTime } from "@/lib/utils";
 import Link from "next/link";
@@ -18,7 +20,7 @@ import type { Metadata } from "next";
 import BlogPostContainers from "@/components/sheared/BlogPostContainers";
 import { notFound } from "next/navigation";
 import BlogContent from "@/components/sheared/BlogContent";
-import shortLogo from "../../../../../public/shortLogo.png";
+import { purple } from "@mui/material/colors";
 
 interface BlogDetailsPageProps {
   params: { urlKey: string };
@@ -89,11 +91,12 @@ const BlogDetailsPage = async ({
     limit: 3,
     page: 1,
   });
+  const blurDataURL = `https://drive.google.com/uc?export=view&id=1JQZm2NANXRyYPCywf3NN_gXDxlZjCFhS`;
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center bg-zinc-100">
       <div className="flex flex-col md:w-[80%] w-full items-center">
-        <div className="md:text-6xl md:p-10 text-3xl font-bold p-4 text-center w-full">
+        <div className="md:text-6xl md:py-10 text-3xl font-extrabold p-8 text-center w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
           {blogDetails.header}
         </div>
 
@@ -102,29 +105,29 @@ const BlogDetailsPage = async ({
             src={blogDetails.imageUrl}
             alt={blogDetails.title}
             fill
-            priority
+            priority={true}
             className="object-cover"
             placeholder="blur"
-            blurDataURL={shortLogo.src} // Use the `src` property to pass the string URL
+            blurDataURL={blurDataURL}
             sizes="(min-width: 780px) 70vw, 100vw"
           />
         </div>
 
         <div className="grid grid-cols-2 gap-3 p-4 text-xs md:grid-cols-4">
           {/* Category */}
-          <div className="rounded-full bg-green-500/10 px-4 py-2 text-green-700 flex items-center w-full md:w-auto">
+          <div className="rounded-xl bg-green-500/10 px-4 py-2 text-green-700 flex items-center w-full md:w-auto">
             <Celebration className="mr-3" />
             {categoryDetails.name}
           </div>
 
           {/* Location */}
-          <div className="rounded-full bg-blue-500/10 px-4 py-2 text-violate-500 flex items-center w-full md:w-auto">
+          <div className="rounded-xl bg-blue-500/10 px-4 py-2 text-violate-500 flex items-center w-full md:w-auto">
             <Place className="mr-3" />
             {blogDetails.location}
           </div>
 
           {/* Date */}
-          <div className="rounded-full bg-yellow-500/10 px-4 py-2 flex items-center w-full md:w-auto">
+          <div className="rounded-xl bg-yellow-500/10 px-4 py-2 flex items-center w-full md:w-auto">
             <CalendarMonth className="mr-3" />
             {formatDateTime(blogDetails.date).dateOnly}
           </div>
@@ -133,13 +136,13 @@ const BlogDetailsPage = async ({
           {blogDetails.url ? (
             <Link
               href={blogDetails.url}
-              className="rounded-full bg-orange-500/10 px-4 py-2 flex items-center text-orange-700 w-full md:w-auto"
+              className="rounded-xl bg-orange-500/10 px-4 py-2 flex items-center text-orange-700 w-full md:w-auto"
             >
               <InsertLink className="mr-3" /> Check it out
             </Link>
           ) : (
             blogDetails.phone && (
-              <div className="rounded-full bg-purple-500/10 text-purple-700 px-4 py-2 flex items-center w-full md:w-auto">
+              <div className="rounded-xl bg-purple-500/10 text-purple-700 px-4 py-2 flex items-center w-full md:w-auto">
                 <PhoneIphone className="mr-3" />
                 {blogDetails.phone}
               </div>
@@ -148,7 +151,8 @@ const BlogDetailsPage = async ({
         </div>
       </div>
       <BlogContent content={blogDetails.content} />
-      <div className="md:text-4xl text-2xl font-bold py-10 text-center">
+
+      <div className="md:text-4xl text-3xl font-bold py-10 text-center">
         Related Blogs
       </div>
       <div className="md:w-[75%] w-[90%]">
@@ -161,6 +165,25 @@ const BlogDetailsPage = async ({
           page={1}
           totalPages={relatedBlogs?.totalPages}
         />
+        <div className="md:text-4xl text-3xl font-bold py-10 text-center">
+          I am looking for
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-6 w-full text-xl pb-10">
+          <Link
+            href={"https://www.dremable.com/wedding_magicians"}
+            className="bg-white rounded-3xl h-36 shadow-lg flex items-center flex-col justify-center"
+          >
+            <AutoFixHigh sx={{ fontSize: 50 }} style={{ color: purple[200] }} />
+            Wedding magicians
+          </Link>
+          <Link
+            href={"https://www.dremable.com/wedding_venues"}
+            className="bg-white rounded-3xl h-36 shadow-lg flex items-center flex-col justify-center"
+          >
+            <FmdGood sx={{ fontSize: 50 }} style={{ color: purple[200] }} />
+            Wedding venues
+          </Link>
+        </div>
       </div>
     </div>
   );

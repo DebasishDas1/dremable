@@ -18,7 +18,10 @@ const BlogContent = ({ content }: { content: string }) => {
             <h4 className="text-xl font-medium my-2" {...props} />
           ),
           h5: ({ node, ...props }) => (
-            <h5 className="text-xl font-medium my-2 bg-violet-200" {...props} />
+            <h5
+              className="text-xl my-2 bg-violet-300 font-black p-1"
+              {...props}
+            />
           ),
           b: ({ node, ...props }) => (
             <b className="text-border leading-relaxed my-2" {...props} />
@@ -34,7 +37,10 @@ const BlogContent = ({ content }: { content: string }) => {
           ),
           li: ({ node, ...props }) => <li className="ml-4" {...props} />,
           a: ({ node, ...props }) => (
-            <a className="text-violet-500 hover:underline" {...props} />
+            <a
+              className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent hover:underline"
+              {...props}
+            />
           ),
           blockquote: ({ node, ...props }) => (
             <blockquote

@@ -51,12 +51,12 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <head>
-          {/* <SeoOptimizationHeader /> */}
+          <SeoOptimizationHeader />
           {/* Partytown setup with deferred scripts */}
           <Partytown debug={true} forward={["dataLayer.push"]} />
         </head>
         <body className={poppins.variable}>
-          {/* <SeoOptimizationBody /> */}
+          <SeoOptimizationBody />
 
           {/* NextSSRPlugin for file upload */}
           <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />

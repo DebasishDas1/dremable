@@ -18,9 +18,9 @@ const PageBenefitOptions = ({ benefits }: PageBenefitOptions) => {
           >
             <div className="flex items-center mb-2">
               <LocationSearching className="text-2xl md:text-3xl" />
-              <h3 className="ml-2 text-lg md:text-xl font-semibold">
+              <h4 className="ml-2 text-lg md:text-xl font-semibold">
                 {benefitTitle}
-              </h3>
+              </h4>
             </div>
             {benefitDescribe && (
               <p className="text-gray-700">{benefitDescribe}</p>

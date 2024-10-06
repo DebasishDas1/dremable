@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  trailingSlash: false, // Clean URLs without trailing slash
+  trailingSlash: true, // Clean URLs without trailing slash
   images: {
     remotePatterns: [
       {
@@ -28,10 +28,10 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   compress: true, // Enable Gzip or Brotli compression
-  i18n: {
-    locales: ["en-IN", "hi-IN"], // Support both English and Hindi for Indian audience
-    defaultLocale: "en-IN", // English (India) as default locale
-  },
+  // i18n: {
+  //   locales: ["en-IN", "hi-IN"], // Support both English and Hindi for Indian audience
+  //   defaultLocale: "en-IN", // English (India) as default locale
+  // },
   async headers() {
     return [
       {

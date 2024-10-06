@@ -40,6 +40,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
+  alternates: {
+    canonical: "./",
+  },
+  authors: [{ name: "Dremable", url: "https://www.dremable.com/" }],
 };
 
 export default function RootLayout({

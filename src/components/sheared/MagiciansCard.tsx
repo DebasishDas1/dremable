@@ -55,8 +55,8 @@ const MagiciansCard = ({
       </div>
 
       <div className="m-4 flex flex-col flex-1 justify-between p-1">
-        <div className="text-3xl font-black pb-4">{name}</div>
-        <div className="w-full text-sm text-slate-700">{address}</div>
+        <h2 className="text-3xl font-black pb-4">{name}</h2>
+        <h3 className="w-full text-sm text-slate-700">{address}</h3>
         <div className="m-4 font-bold text-2xl flex items-center justify-center">
           {rating}/5
           <Star />

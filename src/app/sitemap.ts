@@ -36,22 +36,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ({ urlKey, date }: { urlKey: string; date: string }) => ({
       url: `${base_url}/blog/${urlKey}/`,
       lastModified: new Date(date),
-      changeFrequency: "daily",
+      // changeFrequency: "daily",
       priority: 0.8,
     })
   );
 
   const pageEntries: MetadataRoute.Sitemap = pages.map((page) => ({
     url: `${base_url}/${page}/`,
-    changeFrequency: "weekly",
+    // changeFrequency: "weekly",
     priority: 0.9,
   }));
 
   return [
     {
       url: base_url,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
+      // lastModified: new Date(),
+      // changeFrequency: "weekly",
       priority: 1,
     },
     ...pageEntries,
